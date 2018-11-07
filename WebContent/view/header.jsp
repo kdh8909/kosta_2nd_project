@@ -7,7 +7,7 @@
 <link rel="favicon" href="images/basic/favicon.png">
 <title>코스타 구인 | 구직 메인</title>
 
-	<!-- Bootstrap CSS -->
+<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 
@@ -261,7 +261,7 @@ $(function(){
 										<a href="#" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
-										<a style="color: black" id="logout">로그아웃</a>
+										<a style="color: black" id="logout">로그아읏</a>
 									</div>
 									<div class="top-login">
 										<a style="padding-top: 13px; color: black"> ${sessionScope.userId}님 반갑습니다.</a>
@@ -345,7 +345,7 @@ $(function(){
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
 							<li class="page-scroll"><a href="#3"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
-							<li class="page-scroll"><a href="#4"
+							<li class="page-scroll"><a href="resume.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>
 
 						</ul>
@@ -371,8 +371,6 @@ $(function(){
 
 					
 					<form class="seminor-login-form" method="post" action="controller">
-					<input type="hidden" class="form-control" name="command" value="login">
-					<input type="hidden" class="form-control" name="perOrCom" value="Person">
 						<div class="form-group">
 							<input type="text" class="form-control" name="userId" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
@@ -380,6 +378,7 @@ $(function(){
 						<div class="form-group">
 							<input type="password" class="form-control" name="userPwd" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd" >비밀번호</label>
+							<input type="hidden" class="form-control" name="command" value="login">
 						</div>
 					<!-- 	<div class="form-group">
 							<label class="container-checkbox"> 내 정보 기억하기 <input type="checkbox" checked="checked" required>
@@ -426,19 +425,19 @@ $(function(){
 						<i class="fas fa-times-circle" aria-hidden="true"></i>
 					</button>
 
-					<form class="seminor-login-form" action="controller">
-					<input type="hidden" class="form-control" name="command" value="signup">
+
+					<form class="seminor-login-form">
 						<div class="form-group">
-							<input type="text" name="signId" class="form-control" required autocomplete="off"> 
+							<input type="text" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
 						</div>
 						<div class="form-group">
-							<input type="password" name="signPwd" class="form-control" required autocomplete="off"> 
+							<input type="password" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd">비밀번호</label>
 						</div>
 						
 						<div class="form-group">
-							<input type="text" name="signPhone" class="form-control" required autocomplete="off"> 
+							<input type="text" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="phone">연락처(ex. 010-1234-1234)</label>
 						</div>
 						
