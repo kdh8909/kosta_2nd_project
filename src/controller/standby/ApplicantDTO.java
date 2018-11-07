@@ -1,4 +1,4 @@
-package service.dto;
+package controller.standby;
 
 public class ApplicantDTO extends MemberDTO {
 	public ApplicantDTO(String string) {

@@ -2,10 +2,11 @@ package service.aimpl;
 
 import java.util.List;
 
+import controller.standby.ApplicantDTO;
 import service.ApplicantService;
 import service.dao.ApplicantDAO;
 import service.dao.aimpl.ApplicantDAOImpl;
-import service.dto.ApplicantDTO;
+
 
 public class ApplicantServiceImpl implements ApplicantService {
 	private static ApplicantService sv = new ApplicantServiceImpl();

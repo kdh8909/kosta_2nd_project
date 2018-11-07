@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.ApplicantService;
 import service.aimpl.ApplicantServiceImpl;
-import service.dto.ApplicantDTO;
+
 import controller.ApplicantCURD;
 import controller.Controller;
+import controller.standby.ApplicantDTO;
 import controller.util.ModelAndView;
 
 public class ApplicantControllerImpl implements ApplicantCURD, Controller {

@@ -2,8 +2,7 @@ package service.dao;
 
 import java.util.List;
 
-import service.ApplicantService;
-import service.dto.ApplicantDTO;
+import controller.standby.ApplicantDTO;
 
 public interface ApplicantDAO {
 

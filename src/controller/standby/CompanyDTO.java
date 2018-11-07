@@ -1,4 +1,4 @@
-package service.dto;
+package controller.standby;
 
 public class CompanyDTO extends MemberDTO {
 	public CompanyDTO() {

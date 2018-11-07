@@ -2,7 +2,11 @@ package service.dao;
 
 import java.util.List;
 
-import service.dto.MemberDTO;
+import controller.standby.MemberDTO;
+
+
+
+
 
 public interface MemberDAO {
 

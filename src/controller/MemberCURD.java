@@ -2,8 +2,10 @@ package controller;
 
 import java.util.List;
 
+import controller.standby.MemberDTO;
 import service.MemberService;
-import service.dto.MemberDTO;
+
+
 
 public interface MemberCURD {
 

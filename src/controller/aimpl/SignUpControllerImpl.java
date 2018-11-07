@@ -15,7 +15,7 @@ public class SignUpControllerImpl implements Controller {
 
 	@Override
 	public ModelAndView execute(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
-		System.out.println("LoginControllerImpl-execute");
+		System.out.println("SignUpControllerImpl-execute");
 		rep.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		PrintWriter out = rep.getWriter();

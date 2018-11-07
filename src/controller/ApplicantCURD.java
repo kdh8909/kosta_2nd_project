@@ -2,7 +2,8 @@ package controller;
 
 import java.util.List;
 
-import service.dto.ApplicantDTO;
+import controller.standby.ApplicantDTO;
+
 
 public interface ApplicantCURD {
 

@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import controller.standby.ApplicantDTO;
 import service.dao.ApplicantDAO;
-import service.dto.ApplicantDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
 
@@ -23,7 +23,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	public List<ApplicantDTO> selectAll() {
 		Connection con=null;//지역변수 초기화 
 		PreparedStatement ps=null;
-		String sql=SqlQuerys.SELECTBYSEARCH;
+		String sql=SqlQuerys.P_SELECT_RESUME_ALL;
 		ResultSet rs=null;
 		List<ApplicantDTO> list=new ArrayList<>();
 		try { con=DBUtil.getConnection();//로드 후 연결

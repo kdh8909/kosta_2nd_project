@@ -425,19 +425,19 @@ $(function(){
 						<i class="fas fa-times-circle" aria-hidden="true"></i>
 					</button>
 
-
-					<form class="seminor-login-form">
+					<form class="seminor-login-form" action="controller">
+					<input type="hidden" class="form-control" name="command" value="signup">
 						<div class="form-group">
-							<input type="text" class="form-control" required autocomplete="off"> 
+							<input type="text" name="signId" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" required autocomplete="off"> 
+							<input type="password" name="signPwd" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd">비밀번호</label>
 						</div>
 						
 						<div class="form-group">
-							<input type="text" class="form-control" required autocomplete="off"> 
+							<input type="text" name="signPh" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="phone">연락처(ex. 010-1234-1234)</label>
 						</div>
 						
