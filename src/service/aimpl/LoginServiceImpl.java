@@ -2,8 +2,6 @@ package service.aimpl;
 
 import java.sql.SQLException;
 
-import service.dao.ApplicantDAO;
-import service.dao.aimpl.ApplicantDAOImpl;
 import service.dao.aimpl.LoginDAOImpl;
 import service.dto.LoginDTO;
 
@@ -16,7 +14,8 @@ public class LoginServiceImpl {
 	}
 	
 	LoginDAOImpl dao = new LoginDAOImpl().getInstance();
-
+	
+	//로그인. id check 사용 가능~                    //test시 id & pw 대소문자 구분 조심하세요~
 	public int userLogin(LoginDTO idAndPwd) {
 		boolean result=false;
 		try { result=dao.userLogin(idAndPwd);

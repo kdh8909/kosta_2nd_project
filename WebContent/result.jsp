@@ -12,13 +12,21 @@
 
 	<div class="outer-wrapper">
 		<!-- Header !-->
-		<%@ include file="view/header.jsp"%>
+		<%@ include file="../view/header.jsp"%>
 
 		<!-- Main !-->
-		<%@ include file="view/main.jsp"%>
+		<div class="inner-content no-padding">
+		<div class="team-home" >
+			<div class="text-center space40" style="padding:10%">
+				<h2 class="title uppercase">${sessionScope.resultMsg}</h2><br><br>
+				<input type="button" value="홈으로" class="btn btn-primary" onclick="location.href='index.jsp'">
+			</div>
+			
+		</div>
+		</div>
 
 		<!-- FOOTER COPYRIGHT -->
-		<%@ include file="view/footer.jsp"%>
+		<%@ include file="../view/footer.jsp"%>
 	</div>
 
 	<!-- jQuery -->

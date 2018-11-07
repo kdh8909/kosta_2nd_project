@@ -3,9 +3,8 @@ package controller.util;
 public class Propertiez {
 
 	public enum Controllers {
-		forward("controller.standby.ForwardControllerImpl"), 
-		redirect("controller.standby.RedirectControllerImpl"), 
-		
+		//forward("controller.standby.ForwardControllerImpl"), 
+		//redirect("controller.standby.RedirectControllerImpl"), 
 		login("controller.aimpl.LoginControllerImpl"),
 		signup("controller.aimpl.SignUpControllerImpl");
 

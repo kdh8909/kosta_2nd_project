@@ -1,22 +1,23 @@
 package service.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
-import controller.standby.ApplicantDTO;
 
 public interface ApplicantDAO {
 
-	public List<PersonResumeDTO> selectAll();
+	//회원 가입 
+	public int insert(PersonLoginDTO memberData) throws SQLException;
+	
+	public List<PersonResumeDTO> selectAll() throws SQLException;
 
-	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther);
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) throws SQLException;
 
-	public int delete(PersonLoginDTO idOrOther);
-
-	public boolean idCheck(PersonLoginDTO idOrOther);
-
-	public int insert(PersonLoginDTO memberData);
-
-	public int update(PersonLoginDTO memberData);
+	//회원 정보수정
+	public int update(PersonLoginDTO memberData) throws SQLException;
+	
+	//회원 탈퇴
+	public int delete(PersonLoginDTO idOrOther) throws SQLException;
 }

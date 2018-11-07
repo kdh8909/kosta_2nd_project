@@ -261,7 +261,7 @@ $(function(){
 										<a href="#" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
-										<a style="color: black" id="logout">로그아읏</a>
+										<a style="color: black" id="logout">로그아웃</a>
 									</div>
 									<div class="top-login">
 										<a style="padding-top: 13px; color: black"> ${sessionScope.userId}님 반갑습니다.</a>
@@ -438,7 +438,7 @@ $(function(){
 						</div>
 						
 						<div class="form-group">
-							<input type="text" name="signPh" class="form-control" required autocomplete="off"> 
+							<input type="text" name="signPhone" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="phone">연락처(ex. 010-1234-1234)</label>
 						</div>
 						

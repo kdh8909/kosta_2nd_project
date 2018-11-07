@@ -1,7 +1,5 @@
 package controller.util;
 
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.Filter;
