@@ -1,14 +1,8 @@
-package service.dao;
+package controller.standby;
 
 import java.util.List;
 
-import controller.standby.MemberDTO;
-
-
-
-
-
-public interface MemberDAO {
+public interface MemberService {
 
 	public List<MemberDTO> selectAll();
 

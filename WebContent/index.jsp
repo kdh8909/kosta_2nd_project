@@ -20,7 +20,6 @@
 		<%@ include file="view/footer.jsp"%>
 	</div>
 
-
 	<!-- jQuery -->
 	<script src="js/jquery.js"></script>
 

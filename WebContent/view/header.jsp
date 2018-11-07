@@ -371,6 +371,8 @@ $(function(){
 
 					
 					<form class="seminor-login-form" method="post" action="controller">
+					<input type="hidden" class="form-control" name="command" value="login">
+					<input type="hidden" class="form-control" name="perOrCom" value="Person">
 						<div class="form-group">
 							<input type="text" class="form-control" name="userId" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
@@ -378,7 +380,6 @@ $(function(){
 						<div class="form-group">
 							<input type="password" class="form-control" name="userPwd" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd" >비밀번호</label>
-							<input type="hidden" class="form-control" name="command" value="login">
 						</div>
 					<!-- 	<div class="form-group">
 							<label class="container-checkbox"> 내 정보 기억하기 <input type="checkbox" checked="checked" required>

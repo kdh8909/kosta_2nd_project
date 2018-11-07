@@ -2,20 +2,21 @@ package service;
 
 import java.util.List;
 
+import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import controller.standby.ApplicantDTO;
-
 
 public interface ApplicantService {
 
-	public List<ApplicantDTO> selectAll();
+	public List<PersonResumeDTO> selectAll();
 
-	public List<ApplicantDTO> selectBySearch(ApplicantDTO idOrOther);
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther);
 
-	public int delete(ApplicantDTO idOrOther);
+	public int delete(PersonLoginDTO idOrOther);
 
-	public boolean idCheck(ApplicantDTO idOrOther);
+	public boolean idCheck(PersonLoginDTO idOrOther);
 
-	public int insert(ApplicantDTO memberData);
+	public int insert(PersonLoginDTO memberData);
 
-	public int update(ApplicantDTO memberData);
+	public int update(PersonLoginDTO memberData);
 }

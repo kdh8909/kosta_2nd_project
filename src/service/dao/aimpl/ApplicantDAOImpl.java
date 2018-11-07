@@ -9,6 +9,8 @@ import java.util.List;
 
 import controller.standby.ApplicantDTO;
 import service.dao.ApplicantDAO;
+import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
 
@@ -20,17 +22,17 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	}
 	
 	@Override
-	public List<ApplicantDTO> selectAll() {
+	public List<PersonResumeDTO> selectAll() {
 		Connection con=null;//지역변수 초기화 
 		PreparedStatement ps=null;
 		String sql=SqlQuerys.P_SELECT_RESUME_ALL;
 		ResultSet rs=null;
-		List<ApplicantDTO> list=new ArrayList<>();
+		List<PersonResumeDTO> list=new ArrayList<>();
 		try { con=DBUtil.getConnection();//로드 후 연결
 			  ps=con.prepareStatement(sql);//실행
 			  rs=ps.executeQuery();
 			  while(rs.next()) {
-				  list.add(new ApplicantDTO(rs.getString(""))); 
+				  list.add(new PersonResumeDTO(rs.getString("id"), sql, sql, sql, sql, 0, sql, sql, sql, sql, sql)); 
 			  } System.out.println("ApplicantDAOImpl-selectAll: "+list);
 		} catch(SQLException e) { e.printStackTrace(); 
 		} finally { DBUtil.dbClose(rs, ps, con); }//닫기
@@ -38,7 +40,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	}
 
 	@Override//idOrOther.id, idOrOther.name 형태로 사용하세요~
-	public List<ApplicantDTO> selectBySearch(ApplicantDTO idOrOther) {
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) {
 		String sql="";
 	    if(idOrOther.equals("id")) 
 	    	sql+="id like ?";
@@ -49,13 +51,13 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	    Connection con=null;//지역변수 초기화 
 		PreparedStatement ps=null;
 		ResultSet rs=null; String keyWord="%"+idOrOther+"%";
-		List<ApplicantDTO> list=new ArrayList<>(); System.out.println(keyWord);
+		List<PersonResumeDTO> list=new ArrayList<>(); System.out.println(keyWord);
 		try { con=DBUtil.getConnection();//로드 후 연결
 			  ps=con.prepareStatement(sql); 
 			  ps.setString(1, keyWord);//실행
 			  rs=ps.executeQuery();
 			  while(rs.next()) {
-				  list.add(new ApplicantDTO(rs.getString("id"))); 
+				  list.add(new PersonResumeDTO(rs.getString("id"), keyWord, keyWord, keyWord, keyWord, 0, keyWord, keyWord, keyWord, keyWord, keyWord)); 
 			  }  
 		} catch(SQLException e) { e.printStackTrace(); 
 		} finally { DBUtil.dbClose(rs, ps, con); }//닫기
@@ -63,13 +65,13 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	}
 
 	@Override
-	public int delete(ApplicantDTO idOrOther) {
+	public int delete(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override//idOrOther.id, idOrOther.name 형태로 사용하세요~
-	public boolean idCheck(ApplicantDTO idOrOther) {
+	public boolean idCheck(PersonLoginDTO idOrOther) {
 		Connection con=null;//지역변수 초기화 
 		PreparedStatement ps=null;
 		String sql="";
@@ -86,7 +88,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	}
 
 	@Override
-	public int insert(ApplicantDTO memberData) {
+	public int insert(PersonLoginDTO memberData) {
 		Connection con=null;//지역변수 초기화 
 		PreparedStatement ps=null;
 		String sql="";
@@ -101,7 +103,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	}
 
 	@Override
-	public int update(ApplicantDTO memberData) {
+	public int update(PersonLoginDTO memberData) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

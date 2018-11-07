@@ -12,13 +12,9 @@ import javax.sql.DataSource;
 public class DBUtil {
 	static DataSource ds;
 	/** 로드 */
-	static {
-		try {
-			Context initContext = new InitialContext();
-			ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/myoracle");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+	static { try { Context initContext = new InitialContext();
+			       ds = (DataSource) initContext.lookup("java:/comp/env/jdbc/myoracle");
+		     } catch (Exception e) { e.printStackTrace(); }
 	}
 
 	/** 연결 */
@@ -28,24 +24,15 @@ public class DBUtil {
 
 	/** 닫기 (insert, update ,delete 인경우 ) */
 	public static void dbClose(Statement st, Connection con) {
-		try {
-			if (st != null)
-				st.close();
-			if (con != null)
-				con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		try { if(st != null) st.close();
+			  if(con != null) con.close();
+		} catch (SQLException e) { e.printStackTrace(); }
 	}
 
 	/** 닫기(select 인경우) */
 	public static void dbClose(ResultSet rs, Statement st, Connection con) {
-		try {
-			if (rs != null)
-				rs.close();
-			dbClose(st, con);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		try { if (rs != null) rs.close();
+			  dbClose(st, con);
+		} catch (SQLException e) { e.printStackTrace(); }
 	}
 }

@@ -6,6 +6,8 @@ import controller.standby.ApplicantDTO;
 import service.ApplicantService;
 import service.dao.ApplicantDAO;
 import service.dao.aimpl.ApplicantDAOImpl;
+import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 
 
 public class ApplicantServiceImpl implements ApplicantService {
@@ -16,39 +18,39 @@ public class ApplicantServiceImpl implements ApplicantService {
 	}
 
 	ApplicantDAO dao = new ApplicantDAOImpl().getInstance();
-
+	
 	@Override
-	public List<ApplicantDTO> selectAll() {
-		 List<ApplicantDTO>  list = dao.selectAll();//dao 호출
+	public List<PersonResumeDTO> selectAll() {
+		 List<PersonResumeDTO>  list = dao.selectAll();//dao 호출
 		return list;
 	}
 
 	@Override
-	public List<ApplicantDTO> selectBySearch(ApplicantDTO idOrOther) {
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int delete(ApplicantDTO idOrOther) {
+	public int delete(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public boolean idCheck(ApplicantDTO idOrOther) {
+	public boolean idCheck(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public int insert(ApplicantDTO memberData) {
+	public int insert(PersonLoginDTO memberData) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(ApplicantDTO memberData) {
+	public int update(PersonLoginDTO memberData) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

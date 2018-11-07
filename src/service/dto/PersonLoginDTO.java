@@ -1,38 +1,42 @@
 package service.dto;
 
-public class PersonLoginDTO {
-	
-	private String personId;
-	private String personPwd;
+public class PersonLoginDTO extends LoginDTO {
+	private String id;
+	private String pwd;
 	private String personPhone;
+	private String perOrCom="Person";
 	
 	public PersonLoginDTO() {
 
 	}
 
-	public PersonLoginDTO(String personId, String personPwd, String personPhone) {
+	public PersonLoginDTO(String personId, String personPwd, String personPhone, String perOrCom) {
 		super();
-		this.personId = personId;
-		this.personPwd = personPwd;
+		this.id = personId;
+		this.pwd = personPwd;
 		this.personPhone = personPhone;
+		this.perOrCom = perOrCom;
 	}
 	
 	public String getPersonId() {
-		return personId;
+		return id;
 	}
 	public void setPersonId(String personId) {
-		this.personId = personId;
+		this.id = personId;
 	}
 	public String getPersonPwd() {
-		return personPwd;
+		return pwd;
 	}
 	public void setPersonPwd(String personPwd) {
-		this.personPwd = personPwd;
+		this.pwd = personPwd;
 	}
 	public String getPersonPhone() {
 		return personPhone;
 	}
 	public void setPersonPhone(String personPhone) {
 		this.personPhone = personPhone;
+	}
+	public String getPerOrCom() {
+		return perOrCom;
 	}
 }

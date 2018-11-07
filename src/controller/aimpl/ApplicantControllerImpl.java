@@ -9,19 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import service.ApplicantService;
 import service.aimpl.ApplicantServiceImpl;
-
+import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import controller.ApplicantCURD;
 import controller.Controller;
 import controller.standby.ApplicantDTO;
 import controller.util.ModelAndView;
 
 public class ApplicantControllerImpl implements ApplicantCURD, Controller {
-	private static ApplicantControllerImpl con = new ApplicantControllerImpl();
-
-	public static ApplicantControllerImpl getInstance() {
-		return con;
-	}
-
 	ApplicantService sv = ApplicantServiceImpl.getInstance();
 
 	@Override
@@ -29,39 +24,39 @@ public class ApplicantControllerImpl implements ApplicantCURD, Controller {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	@Override
-	public List<ApplicantDTO> selectAll() {
+	public List<PersonResumeDTO> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<ApplicantDTO> selectBySearch(ApplicantDTO idOrOther) {
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int delete(ApplicantDTO idOrOther) {
+	public int delete(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public boolean idCheck(ApplicantDTO idOrOther) {
+	public boolean idCheck(PersonLoginDTO idOrOther) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public int insert(ApplicantDTO memberData) {
+	public int insert(PersonLoginDTO memberData) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(ApplicantDTO memberData) {
+	public int update(PersonLoginDTO memberData) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

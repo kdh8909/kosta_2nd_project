@@ -1,9 +1,6 @@
-package controller;
+package controller.standby;
 
 import java.util.List;
-
-import controller.standby.MemberDTO;
-import service.MemberService;
 
 
 
