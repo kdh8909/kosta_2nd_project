@@ -55,7 +55,7 @@ a:hover {
 
 	<div class="outer-wrapper">
 		<!-- Header !-->
-		<%@ include file="view/header.jsp"%>
+		<%@ include file="header.jsp"%>
 
 		<!-- PAGE HEADER -->
 		<div class="page_header">
@@ -404,7 +404,7 @@ a:hover {
 
 
 	<!-- FOOTER COPYRIGHT -->
-	<%@ include file="view/footer.jsp"%>
+	<%@ include file="footer.jsp"%>
 	</div>
 
 
