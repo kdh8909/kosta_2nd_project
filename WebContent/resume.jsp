@@ -15,7 +15,7 @@
 
 	<!-- PAGE HEADER -->
 	<div class="page_header">
-		<div class="page_header_parallax">
+		<div class="page_header_parallax2">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
