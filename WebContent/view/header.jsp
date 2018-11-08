@@ -338,7 +338,7 @@ $(function(){
 						<ul class="nav navbar-nav">
 							<li class="page-scroll""><a href="index.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">홈</a></li>
-							<li class="page-scroll"><a href="person.jsp"
+							<li class="page-scroll"><a href="controller?command=resumeSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">개인</a></li>
 							<li class="page-scroll"><a href="#2"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>

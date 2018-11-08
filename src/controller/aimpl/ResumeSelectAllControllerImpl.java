@@ -31,7 +31,7 @@ public class ResumeSelectAllControllerImpl implements Controller {
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
 		List<PersonResumeDTO> list = new ArrayList<>();
-		try { mv.setPath("./events/result.jsp");
+		try { mv.setPath("./person.jsp");
 			  list = asv.resumeSelectAll();
 			  System.out.println("ResumeSelectAllControllerImpl-execute-list: "+list);
 			  session.setAttribute("list", list); req.setAttribute("listNull", 1);

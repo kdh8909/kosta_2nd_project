@@ -51,7 +51,8 @@ a:hover {
 }
 </style>
 </head>
-<body onload="window.location.href='controller?command=resumeSelectAll'">
+<body>
+<!-- <body onload="window.location.href='controller?command=resumeSelectAll'"> -->
 
 	<div class="outer-wrapper">
 		<!-- Header !-->
@@ -161,10 +162,9 @@ a:hover {
 				</aside>
 
 
-
 				<!-- List -->
-				
-				<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
+				<c:forEach items="${list}" var="itms">	
+				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
 							<div class="card-img">
 								<img class="img-responsive"
@@ -172,7 +172,7 @@ a:hover {
 							</div>
 							<div class="card-block">
 								<div class="card-title">
-									<h4>장동건(jdg1235)</h4>
+									<h4>${itms.personId}(${itms.personName})</h4>
 								</div>
 								<div class="card-text">
 									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
@@ -197,179 +197,7 @@ a:hover {
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://archivenew.vop.co.kr/images/90952a5d266e2222a78d4eb07938162f/2018-10/28050644_43665746325657.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>하현우(abcd1234)</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://www.topstarnews.net/news/photo/201810/511108_174213_1236.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>허영지(hyj)</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://imgnews.naver.net/image/5353/2018/03/26/0000317927_003_20180326110419981.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>장동건(jdg1235)</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://archivenew.vop.co.kr/images/90952a5d266e2222a78d4eb07938162f/2018-10/28050644_43665746325657.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>하현우(abcd1234)</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://www.topstarnews.net/news/photo/201810/511108_174213_1236.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>허영지(hyj)</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
+					</c:forEach>
 
 
 
@@ -386,8 +214,6 @@ a:hover {
 							</ul>
 						</div>
 					</div>
-				
-
 
 
 
