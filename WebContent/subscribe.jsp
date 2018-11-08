@@ -47,7 +47,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3>
-							<span>이력서</span>Presentation <br>your career!
+							<span>스크랩</span>Keep <br>your interest!
 						</h3>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 					<div class="col-md-12">
 						<ul class="bcrumbs">
 							<li><a href="#"><i class="fa fa-home"></i> 홈</a></li>
-							<li><a href="#">이력서작성</a></li>
+							<li><a href="#">스크랩</a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -69,17 +69,17 @@
 	</div>
 
 	<!-- INNER CONTENT -->
-	<div class="inner-content">
+	<div class="inner-content" style="padding-top:30px;">
 		<div class="container">
-			<div class="block-heading">
-				<h3><span>Accordion - #1</span></h3>
+			<div class="row" style="margin-bottom:30px;">
+				<h3 class="uppercase text-center">스크랩</h3>
 			</div>
 			<div class="panel-group" id="accordion-e1">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
-							Lorem ipsum dolor sit amet consectetur adipiscing elit
+							<h5>회사명</h5><h5>대표</h5><h5>업종</h5><h5>위치</h5><h5>설립일</h5><h5>홈페이지</h5>
 							<span class="fa fa-chevron-down"></span>
 							</a>
 						</h4>

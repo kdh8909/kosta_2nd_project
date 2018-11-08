@@ -60,12 +60,12 @@ a:hover {
 
 		<!-- PAGE HEADER -->
 		<div class="page_header">
-			<div class="page_header_parallax">
+			<div class="page_header_parallax3">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
 							<h3>
-								<span>개인</span>Present <br>your work experience
+								<span>회사</span>Show <br>your company
 							</h3>
 						</div>
 					</div>
