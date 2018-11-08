@@ -14,6 +14,23 @@ public class CompanyRecruitDTO {
 	
 	public CompanyRecruitDTO() {	}
 	
+	
+	
+	public CompanyRecruitDTO(int recruitNumber, String companyId, String companyWorkAddr, String companyEmploymentType,
+			String companySalary, String companyCareer, String companyEducation, String recruitTilte,
+			String recruitDeadline) {
+
+		this.recruitNumber = recruitNumber;
+		this.companyId = companyId;
+		this.companyWorkAddr = companyWorkAddr;
+		this.companyEmploymentType = companyEmploymentType;
+		this.companySalary = companySalary;
+		this.companyCareer = companyCareer;
+		this.companyEducation = companyEducation;
+		this.recruitTilte = recruitTilte;
+		this.recruitDeadline = recruitDeadline;
+	}
+	
 	public int getRecruitNumber() {
 		return recruitNumber;
 	}
@@ -68,5 +85,17 @@ public class CompanyRecruitDTO {
 	public void setRecruitDeadline(String recruitDeadline) {
 		this.recruitDeadline = recruitDeadline;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "CompanyRecruitDTO [recruitNumber=" + recruitNumber + ", companyId=" + companyId + ", companyWorkAddr="
+				+ companyWorkAddr + ", companyEmploymentType=" + companyEmploymentType + ", companySalary="
+				+ companySalary + ", companyCareer=" + companyCareer + ", companyEducation=" + companyEducation
+				+ ", recruitTilte=" + recruitTilte + ", recruitDeadline=" + recruitDeadline + "]";
+	}
+	
+	
 
 }

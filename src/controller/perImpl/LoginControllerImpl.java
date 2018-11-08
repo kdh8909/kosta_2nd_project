@@ -1,4 +1,4 @@
-package controller.aimpl;
+package controller.perImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -40,8 +40,9 @@ public class LoginControllerImpl implements Controller {
 			  } else { mv.setPath("./events/result.jsp");
 			  	  session.setAttribute("resultMsg", "로그인에 실패하였습니다..");  
 			  }// 최종 결과를 받아서 저장해서 뷰로 이동한다
-		} catch (SQLException e) { mv.setPath("./errors/error.jsp"); 
-								   session.setAttribute("errMsg", e.toString()); 
+		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
+								   mv.setPath("./events/result.jsp");
+								   session.setAttribute("resultMsg", "로그인에 실패하였습니다..");  
 								   return mv; }
 		return mv;
 	}

@@ -129,4 +129,6 @@ public class PersonResumeDTO {
 				+ personEmail + ", personHopePlace=" + personHopePlace + ", personJobStatus=" + personJobStatus + "]";
 	}
 	
+	
+	
 }

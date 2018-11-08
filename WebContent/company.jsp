@@ -163,43 +163,24 @@ a:hover {
 
 
 				<!-- List -->
+				<div class="col-md-9" style="padding: 5px 5px 5px 5px;">
 				<h4 class="space30">Recent Posts</h4>
-				<c:forEach items="${list}" var="itms">	
-				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
-						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://imgnews.naver.net/image/5353/2018/03/26/0000317927_003_20180326110419981.jpg">
-							</div>
-							<div class="card-block">
-								<div class="card-title">
-									<h4>${itms.personId}(${itms.personName})</h4>
-								</div>
-								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
-								</div>
-								<div class="card-icons">
-									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
-										</h4>
-								</div>
-								<hr>
-								<div class="card-footer">
-									<ul class="list-inline">
-										<li><a style="cursor: pointer;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right out-border"><a
-											style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
+					<ul class="f-posts">
+					<c:forEach items="${list}" var="itms">
+						<li>
+							<img src="images/blog/1/1.jpg" class="img-responsive" alt=""/>
+							
+								<h4><a href="#">${itms.recruitNumber}(${itms.companyId})</a></h4>
+								<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp; / &nbsp;</span><span>분야</span>
+								<h5 style="width: auto; height: 30px; overflow: hidden;">
+								간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기</h5>			
+								<i class="fa fa-comments"></i> 5 Comments
+								<a style="cursor: pointer;"><i class="far fa-envelope-open"></i>쪽지보내기</a>
+								<a style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a>
+						</li>
 					</c:forEach>
-
+					</ul>
+				</div>
 
 
 					<div class="sorter" style="margin: auto;left:-15px;">

@@ -13,16 +13,16 @@ public interface SqlQuerys {
    String C_LOGIN = "SELECT * FROM company_login WHERE company_id = ? AND company_pwd = ?";
 
    // 모집공고추가
-   String C_ADD_RECRUIT = "INSERT INTO COMPANY_recruit VALUES('DDD','WARKADDR1','EMPLOYMENT1','SALARY1','CAREER1','EDUCATION1','TITLE1','DEADLINE1')";
+   String C_ADD_RECRUIT = "INSERT INTO COMPANY_recruit VALUES(RECRUIT_SEQ.NEXTVAL,?,?,?,?,?,?,?,?)";
 
-   // 모집공고 조회 (회사이름으로 조회)
+   // 모집공고 전체조회
    String C_SELECT_RECRUIT_ALL = "SELECT * FROM COMPANY_recruit";  
 
    // 모집공고 조회 (회사이름으로 조회)
-   String C_SELECT_RECRUIT_BY_C_NAME = "SELECT A.* FROM COMPANY_recruit A, company_login B WHERE A.company_id=B.company_id AND A.company_number LIKE '%?%'";  
+   String C_SELECT_RECRUIT_BY_C_NAME = "SELECT A.* FROM COMPANY_recruit A, company_info B WHERE A.company_id=B.company_id AND b.company_name LIKE ?";
 
    // 조회수 올리기
-   String C_ADD_VIEWS = "INSERT INTO company_info SET company_views = company_views + 1 WHERE company_id=?";
+   String C_ADD_VIEWS = "UPDATE company_info SET company_views = company_views + 1 WHERE company_id = ?";
 
    // 개인회원가입
    String P_JOIN = "INSERT INTO person_login VALUES(?,?,?)";
@@ -66,8 +66,8 @@ public interface SqlQuerys {
    // 개인이 회사 스크랩
    String SCRAP_C_P = "INSERT INTO scrap_company VALUES(scrap_company_seq.nextval,SYSDATE,?, ?)";
 
-   // 개인이 회사 스크랩 취소
-   String SCRAP_DELETE_C_P = "DELETE scrap_company WHERE scrap_no=?";
+   // 개인이 회사 스크랩 취소 //
+   String SCRAP_DELETE_C_P = "DELETE scrap_company WHERE person_scraper_id=? and company_target_id=?";
 
    // 회사별 스크랩 수
    String SCRAP_NUMBERS = "SELECT COUNT(*) FROM scrap_company WHERE company_target_id = ?";
@@ -75,6 +75,6 @@ public interface SqlQuerys {
    // 기업이 개인 스크랩
    String SCRAP_P_C = "INSERT INTO scrap_person VALUES(scrap_person_seq.nextval,SYSDATE,?, ?)";
 
-   // 기업이 개인 스크랩 취소
-   String SCRAP_DELETE_P_C= "DELETE scrap_person WHERE scrap_no=?";
+   // 기업이 개인 스크랩 취소 //
+   String SCRAP_DELETE_P_C= "DELETE scrap_person WHERE company_scraper_id=? and person_target_id=? ";
 }

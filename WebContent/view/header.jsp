@@ -261,7 +261,7 @@ $(function(){
 										<a href="#" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
-										<a style="color: black" id="logout">로그아읏</a>
+										<a style="color: black" id="logout">로그아웃</a>
 									</div>
 									<div class="top-login">
 										<a style="padding-top: 13px; color: black"> ${sessionScope.userId}님 반갑습니다.</a>
@@ -340,9 +340,9 @@ $(function(){
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">홈</a></li>
 							<li class="page-scroll"><a href="controller?command=resumeSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">개인</a></li>
-							<li class="page-scroll"><a href="#2"
+							<li class="page-scroll"><a href="controller?command=companyRecruitSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
-							<li class="page-scroll"><a href="#3"
+							<li class="page-scroll"><a href="subscribe.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
 							<li class="page-scroll"><a href="resume.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>

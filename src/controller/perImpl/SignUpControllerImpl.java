@@ -1,4 +1,4 @@
-package controller.aimpl;
+package controller.perImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -52,8 +52,9 @@ public class SignUpControllerImpl implements Controller {
 				} else if(lresult==0) { mv.setPath("./events/result.jsp");
 					                    session.setAttribute("resultMsg", "아이디가 중복됩니다.."); 
 				}// 최종 결과를 받아서 저장해서 뷰로 이동한다
-		} catch (SQLException e) { mv.setPath("./errors/error.jsp"); 
-								   session.setAttribute("errMsg", e.toString()); 
+		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
+								   mv.setPath("./events/result.jsp");
+								   session.setAttribute("resultMsg", "회원가입에 실패하였습니다.."); 
 								   return mv; }
 		return mv;
 	}

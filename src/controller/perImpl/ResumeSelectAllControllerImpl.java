@@ -1,4 +1,4 @@
-package controller.aimpl;
+package controller.perImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,6 @@ import controller.util.ModelAndView;
 import service.ApplicantService;
 import service.aimpl.ApplicantServiceImpl;
 import service.aimpl.LoginServiceImpl;
-import service.dto.LoginDTO;
 import service.dto.PersonResumeDTO;
 
 public class ResumeSelectAllControllerImpl implements Controller {

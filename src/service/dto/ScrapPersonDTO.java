@@ -39,10 +39,5 @@ public class ScrapPersonDTO {
 		public void setPersonTargetId(String personTargetId) {
 			this.personTargetId = personTargetId;
 		}
-		
-		
-		
-
-	
 }
 

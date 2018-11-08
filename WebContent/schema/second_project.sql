@@ -1,4 +1,4 @@
------------------------- Í≥ÑÏ†ïÏÉùÏÑ± ---------------------------
+------------------------------------------------ ªı∞Ë¡§√ﬂ∞°
 CONN system/admin;
 CREATE USER pjt2 IDENTIFIED BY pjt2;
 ALTER USER pjt2 IDENTIFIED BY pjt2;
@@ -7,9 +7,14 @@ GRANT CONNECT, RESOURCE TO pjt2;
 
 CONN pjt2/pjt2;
 DROP USER pjt2 CASCADE;
+------------------------------------------------ ≈◊¿Ã∫ÌµÂ∂¯
 
------------------------- CREATE ---------------------------
---Í∏∞ÏóÖ ÌöåÏõêÍ∞ÄÏûÖ
+DROP TABLE message_box_c_p
+DROP TABLE message_box_p_c
+DROP TABLE COMPANY_RECRUIT
+
+------------------------------------------------ ≈◊¿Ã∫Ìª˝º∫
+
 CREATE TABLE company_login
 (
    company_id            VARCHAR2(20) NOT NULL PRIMARY KEY ,
@@ -17,10 +22,10 @@ CREATE TABLE company_login
    company_number        VARCHAR2(18) NOT NULL 
 );
 
---Î™®ÏßëÍ≥µÍ≥†
 CREATE TABLE COMPANY_RECRUIT
 (
-   company_id            VARCHAR2(20) NOT NULL PRIMARY KEY references company_login(company_id) on delete cascade,
+   recruit_number        NUMBER(5) NOT NULL PRIMARY KEY,
+   company_id            VARCHAR2(20) NOT NULL references company_login(company_id) on delete cascade,
    company_work_addr     VARCHAR2(100) NOT NULL ,
    company_employment_type  VARCHAR2(100) NOT NULL ,
    company_salary        VARCHAR2(100)  NULL,
@@ -30,7 +35,6 @@ CREATE TABLE COMPANY_RECRUIT
    recruit_deadline      VARCHAR2(100) NOT NULL 
 );
 
---Í∏∞ÏóÖÏ†ïÎ≥¥
 CREATE TABLE company_info
 (
    company_id            VARCHAR2(20) NOT NULL PRIMARY KEY references company_login(company_id) on delete cascade,
@@ -38,15 +42,15 @@ CREATE TABLE company_info
    company_ceo           VARCHAR2(20) NOT NULL ,
    company_name          VARCHAR2(100) NOT NULL ,
    company_head_addr     VARCHAR2(300) NOT NULL ,
-   company_type          VARCHAR2(300) NOT NULL , --Í∏∞ÏóÖÌòïÌÉú
+   company_type          VARCHAR2(300) NOT NULL ,
     company_employees     NUMBER(5) NOT NULL,
    company_phone         VARCHAR2(18) NOT NULL ,
-   company_estblish      VARCHAR2(100) NOT NULL , --ÏÑ§Î¶ΩÏùº
+   company_estblish      VARCHAR2(100) NOT NULL ,
    company_page          VARCHAR2(200) NOT NULL,
     company_VIEWS        NUMBER(7)
 );
 
---Í∞úÏù∏ ÌöåÏõêÍ∞ÄÏûÖ
+
 CREATE TABLE person_login
 (
    person_id             VARCHAR2(20) NOT NULL PRIMARY KEY ,
@@ -54,12 +58,12 @@ CREATE TABLE person_login
    person_phone          VARCHAR2(20) NOT NULL
 );
 
---Í∞úÏù∏ Ïù¥Î†•ÏÑú
+
 CREATE TABLE person_resume
 (
    person_id             VARCHAR2(20) NOT NULL PRIMARY KEY references person_login(person_id) on delete cascade,
     person_name           VARCHAR2(30) NOT NULL ,
-    person_occupation     VARCHAR2(30) NOT NULL , --Ìù¨ÎßùÏßÅÏ¢Ö
+    person_occupation     VARCHAR2(30) NOT NULL ,
    person_career         VARCHAR2(4000) NOT NULL ,
    person_img            VARCHAR2(30) NOT NULL ,
    person_age            NUMBER(3)  NULL ,
@@ -70,29 +74,26 @@ CREATE TABLE person_resume
    person_job_status     VARCHAR2(50) NOT NULL 
 );
 
---Í∏∞ÏóÖ -> Í∞úÏù∏ Î©îÏÑ∏ÏßÄ
 CREATE TABLE message_box_c_p
 (
    message_no            NUMBER(7) NOT NULL PRIMARY KEY ,
    message_date          DATE NOT NULL ,
-   message_contents      VARCHAR2(20) NOT NULL ,
+   message_contents      VARCHAR2(200) NOT NULL ,
    message_flag          NUMBER(1) NOT NULL ,
    company_send_id       VARCHAR2(20) NOT NULL references company_login(company_id) on delete cascade,
    person_receive_id     VARCHAR2(20) NOT NULL references person_login(person_id) on delete cascade
 );
 
---Í∞úÏù∏ -> Í∏∞ÏóÖ Î©îÏÑ∏ÏßÄ
 CREATE TABLE message_box_p_c
 (
    message_no            NUMBER(7) NOT NULL PRIMARY KEY ,
    message_date          DATE NOT NULL ,
-   message_contents      VARCHAR2(20) NOT NULL ,
+   message_contents      VARCHAR2(200) NOT NULL ,
    message_flag          NUMBER(1) NOT NULL ,
    person_send_id        VARCHAR2(20) NOT NULL references person_login(person_id) on delete cascade,
    company_receive_id    VARCHAR2(20) NOT NULL references company_login(company_id) on delete cascade
 );
 
---Í∞úÏù∏Ïù¥ Í∏∞ÏóÖ Ïä§ÌÅ¨Îû©
 CREATE TABLE scrap_company
 (
    scrap_no              NUMBER(7) NOT NULL PRIMARY KEY ,
@@ -101,7 +102,7 @@ CREATE TABLE scrap_company
    company_target_id     VARCHAR2(20) NOT NULL references company_login(company_id) on delete cascade
 );
 
---Í∏∞ÏóÖÏù¥ Í∞úÏù∏ Ïä§ÌÅ¨Îû©
+
 CREATE TABLE scrap_person
 (
    scrap_no              NUMBER(7) NOT NULL PRIMARY KEY ,
@@ -111,7 +112,8 @@ CREATE TABLE scrap_person
    
 );
 
----ÏãúÌÄÄÏä§
+------------------------------------------------ Ω√ƒˆΩ∫ª˝º∫
+
 create sequence message_box_c_p_seq
 start with 1
 increment by 1
@@ -132,169 +134,52 @@ start with 1
 increment by 1
 nocache;
 
---drop table message_box_c_p_seq;
+create sequence recruit_seq
+start with 1
+increment by 1
+nocache;
 
------------------------- insert ---------------------------
---- PERSON
-INSERT INTO person_login VALUES('AAA','1234','011-000-0000');
-INSERT INTO PERSON_RESUME VALUES('AAA','NAME1','OCCUPATION1','CAREER1','IMG1','21','SEX1','BIRTH1','EMAIL1','HOPE1','JOB1');
+------------------------------------------------ µ•¿Ã≈Õª¿‘
 
-INSERT INTO person_login VALUES('BBB','1234','010-000-0000');
-INSERT INTO PERSON_RESUME VALUES('BBB','NAME2','OCCUPATION2','CAREER2','IMG2','22','SEX2','BIRTH2','EMAIL2','HOPE_P2','JOB_S2');
+INSERT INTO COMPANY_LOGIN VALUES ('COMPANY01','1234', '12345678');
+INSERT INTO COMPANY_LOGIN VALUES ('COMPANY02','1234', '12344444');
+INSERT INTO COMPANY_LOGIN VALUES ('COMPANY03','1234', '27979098');
+INSERT INTO COMPANY_LOGIN VALUES ('COMPANY04','1234', '43613752');
+INSERT INTO COMPANY_LOGIN VALUES ('COMPANY05','1234', '59248406');
 
-INSERT INTO person_login VALUES('CCC','1234','017-000-0000');
-INSERT INTO PERSON_RESUME VALUES('CCC','NAME3','OCCUPATION3','CAREER3','IMG3','23','SEX3','BIRTH3','EMAIL3','HOPE_P3','JOB_S3');
+INSERT INTO COMPANY_RECRUIT VALUES (RECRUIT_SEQ.NEXTVAL, 'COMPANY01', 'º≠øÔ ∞≠≥≤±∏', '¡§±‘¡˜', '4000', '«¡∑Œ±◊∑°∏”', '¥Î¡π', '∏∑≥Îµø¿⁄ ±∏«‘', '43465');
+INSERT INTO COMPANY_RECRUIT VALUES (RECRUIT_SEQ.NEXTVAL, 'COMPANY01', 'º≠øÔ øµµÓ∆˜±∏', '∫Ò¡§±‘¡˜', '5000', '»∏∞ËªÁ', '∞Ì¡π', '±ﬁ±∏) ¿¸»≠±≥»Øø¯', '43465');
+INSERT INTO COMPANY_RECRUIT VALUES (RECRUIT_SEQ.NEXTVAL, 'COMPANY02', '∫ŒªÍ', '¡§±‘¡˜', '6000', '∫Ø»£ªÁ', '¥Î«–ø¯¡π', '¿•∞≥πﬂ¿⁄±ﬁ±∏', '43485');
+INSERT INTO COMPANY_RECRUIT VALUES (RECRUIT_SEQ.NEXTVAL, 'COMPANY03', '¡¶¡÷µµ', '∫Ò¡§±‘¡˜', '7100', '¿«ªÁ', 'π⁄ªÁ', 'æÓ«√∏∏µÈªÁ∂˜ ±∏«‘', '43491');
+INSERT INTO COMPANY_RECRUIT VALUES (RECRUIT_SEQ.NEXTVAL, 'COMPANY04', '±§¡÷', '∫Ò¡§±‘¡˜', '8000', 'ªÁπ´¡˜', '√ ¡π', 'ø¯æÁæÓº±≈ªªÁ∂˜ ±∏«‘', '43491');
 
----COMPANY
-INSERT INTO COMPANY_LOGIN VALUES('DDD','1234','010-1111-0000');
-INSERT INTO COMPANY_Î™®ÏßëÍ≥µÍ≥† VALUES('DDD','WARKADDR1','EMPLOYMENT1','SALARY1','CAREER1','EDUCATION1','TITLE1','DEADLINE1');
+INSERT INTO COMPANY_INFO VALUES ('COMPANY01', '¿Ø≈Î', '»´±Êµø', '∞°≥™ƒƒ∆€¥œ', 'º≠øÔ ∞≠≥≤±∏', '∞¯±‚æ˜', '65', '02-222-3333', '43101', 'www.abc.com', '0');
+INSERT INTO COMPANY_INFO VALUES ('COMPANY02', 'ƒƒ«ª≈Õ', '¿Â»Ò¡§', '¥Ÿ∂Ûƒƒ∆€¥œ', 'º≠øÔ ¡ﬂ±∏', 'ªÁ±‚æ˜', '654', '02-333-2222', '43102', 'www.basf.com', '0');
+INSERT INTO COMPANY_INFO VALUES ('COMPANY03', 'µµ∏≈', '±Ë»Òº±', '∏∂πŸƒƒ∆€¥œ', 'º≠øÔ ¡æ∑Œ±∏', '¡ﬂº“±‚æ˜', '44', '02-888-5555', '43134', 'www.asdf.com', '0');
+INSERT INTO COMPANY_INFO VALUES ('COMPANY04', '±›¿∂', '¿Ã≥™øµ', 'ªÁæ∆ƒƒ∆€¥œ', 'º≠øÔ øµµÓ∆˜±∏', '¥Î±‚æ˜', '11', '02-777-8888', '43193', 'www.afaf.com', '0');
+INSERT INTO COMPANY_INFO VALUES ('COMPANY05', 'º≠∫ÒΩ∫', '±Ë≈¬»Ò', 'æ∆¿⁄ƒƒ∆€¥œ', 'º≠øÔ ±§¡¯±∏', '¡ﬂ∞ﬂ±‚æ˜', '22', '02-111-8888', '42858', 'www.ggg.com', '0');
 
-INSERT INTO COMPANY_INFO VALUES('DDD','CATEGORY1','NAME1','CEO1','H_ADDR1','CORPORATE1',2000,'PHONE1','ESTBLISH1','PAGE1');
+INSERT INTO PERSON_LOGIN VALUES ('PERSON01','4321', '010-1234-5678');
+INSERT INTO PERSON_LOGIN VALUES ('PERSON02','4321', '010-1111-5555');
+INSERT INTO PERSON_LOGIN VALUES ('PERSON03','4321', '010-4444-1555');
+INSERT INTO PERSON_LOGIN VALUES ('PERSON04','4321', '010-7777-8888');
+INSERT INTO PERSON_LOGIN VALUES ('PERSON05','4321', '010-4444-8884');
 
-INSERT INTO COMPANY_LOGIN VALUES('EEE','1234','010-2222-0000');
-INSERT INTO COMPANY_Î™®ÏßëÍ≥µÍ≥† VALUES('EEE','WARKADDR2','EMPLOYMENT2','SALARY2','CAREER2','EDUCATION2','TITLE2','DEADLINE2');
+INSERT INTO PERSON_RESUME VALUES ('PERSON01', '¿Â»Ò¡§', 'π´¡˜', '∞Ê∑¬æ¯¿Ω', 'PERSON01.jpg', 6, 'ø©¿⁄', '36800', '11@naver.com', 'º≠øÔ', '0');
+INSERT INTO PERSON_RESUME VALUES ('PERSON02', '¿Â»Ò¿Â', '«–ª˝', '∞Ê∑¬5≥‚', 'PERSON02.jpg', '7', '≥≤¿⁄', '36852', '22@naver.com', '∞Ê±‚µµ', '0');
+INSERT INTO PERSON_RESUME VALUES ('PERSON03', '¿Â»Ò√ª', 'π´¡˜', '∞Ê∑¬10≥‚', 'PERSON03.jpg', '8', 'ø©¿⁄', '40897', '33@naver.com', '∫ŒªÍ', '1');
+INSERT INTO PERSON_RESUME VALUES ('PERSON04', '¿Â»Ò√Ê', '«–ª˝', '∞Ê∑¬æ¯¿Ω', 'PERSON04.jpg', '9', '≥≤¿⁄', '41053', '44@naver.com', '¡¶¡÷µµ', '1');
+INSERT INTO PERSON_RESUME VALUES ('PERSON05', '¿Â»Òƒ™', '¥Î«–ø¯ª˝', '∞Ê∑¬20≥‚', 'PERSON05.jpg', '10', 'ø©¿⁄', '40891', '55@naver.com', '±§¡÷', '1');
 
-INSERT INTO COMPANY_INFO VALUES('EEE','CATEGORY2','NAME2','CEO2','H_ADDR2','CORPORATE2',4000,'PHONE2','ESTBLISH2','PAGE2');
+INSERT INTO MESSAGE_BOX_C_P VALUES (MESSAGE_BOX_C_P_SEQ.NEXTVAL, SYSDATE, 'æ»≥Á«œººø∞', '0', 'COMPANY01', 'PERSON03');
+INSERT INTO MESSAGE_BOX_C_P VALUES (MESSAGE_BOX_C_P_SEQ.NEXTVAL, SYSDATE, '∏ﬁ∑’', '0', 'COMPANY02', 'PERSON04');
 
-INSERT INTO COMPANY_LOGIN VALUES('FFF','1234','010-3333-0000');
-INSERT INTO COMPANY_Î™®ÏßëÍ≥µÍ≥† VALUES('FFF','WARKADDR3','EMPLOYMENT3','SALARY3','CAREER3','EDUCATION3','TITLE3','DEADLINE3');
+INSERT INTO MESSAGE_BOX_P_C VALUES (MESSAGE_BOX_P_C_SEQ.NEXTVAL, SYSDATE, '§§§©§§§©§§', '0', 'PERSON01', 'COMPANY04');
+INSERT INTO MESSAGE_BOX_P_C VALUES (MESSAGE_BOX_P_C_SEQ.NEXTVAL, SYSDATE, '§≤24§≤§°', '0', 'PERSON02', 'COMPANY05');
 
-INSERT INTO COMPANY_INFO VALUES('FFF','CATEGORY3','NAME3','CEO3','H_ADDR3','CORPORATE3',10000,'PHONE3','ESTBLISH3','PAGE3');
+INSERT INTO SCRAP_COMPANY VALUES (SCRAP_COMPANY_SEQ.NEXTVAL, SYSDATE, 'PERSON01', 'COMPANY02');
+INSERT INTO SCRAP_COMPANY VALUES (SCRAP_COMPANY_SEQ.NEXTVAL, SYSDATE, 'PERSON01', 'COMPANY04');
 
---MESSAGE
-INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'CONTENTS1','0','EEE','AAA');
-INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'CONTENTS1','0','DDD','BBB');
-INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'CONTENTS1','0','FFF','CCC');
+INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY02', 'PERSON01');
+INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY01', 'PERSON02');
 
-INSERT INTO MESSAGE_BOX_P_C VALUES(message_box_p_c_seq.nextval,SYSDATE,'CONTENTS2','1','AAA','EEE');
-INSERT INTO MESSAGE_BOX_P_C VALUES(message_box_p_c_seq.nextval,SYSDATE,'CONTENTS2','1','BBB','DDD');
-INSERT INTO MESSAGE_BOX_P_C VALUES(message_box_p_c_seq.nextval,SYSDATE,'CONTENTS2','1','CCC','FFF');
-
----SCRAP
-INSERT INTO SCRAP_COMPANY VALUES(scrap_company_seq.nextval,SYSDATE,'AAA','EEE');
-INSERT INTO SCRAP_COMPANY VALUES(scrap_company_seq.nextval,SYSDATE,'BBB','DDD');
-INSERT INTO SCRAP_COMPANY VALUES(scrap_company_seq.nextval,SYSDATE,'CCC','FFF');
-
-INSERT INTO SCRAP_PERSON VALUES(scrap_person_seq.nextval,SYSDATE,'EEE','AAA');
-INSERT INTO SCRAP_PERSON VALUES(scrap_person_seq.nextval,SYSDATE,'DDD','BBB');
-INSERT INTO SCRAP_PERSON VALUES(scrap_person_seq.nextval,SYSDATE,'FFF','CCC');
-
---COMPANY_COUNT
---INSERT INTO COMPANY_COUNT VALUES('DDD',100,77,50);
---INSERT INTO COMPANY_COUNT VALUES('EEE',50,31,20);
---INSERT INTO COMPANY_COUNT VALUES('FFF',20,15,10);
-
---- QUERY Î¨∏ -------
-
---Í≤ÄÏÉâ
-SELECT message_box_c_p_seq FROM MESSAGE_BOX_C_P WHERE company_send_id='DDD';
-
-SELECT * FROM PERSON_RESUME 
-WHERE PERSON_ID=(SELECT PERSON_ID FROM PERSON_LOGIN WHERE ID='AAA');
-
-SELECT * FROM PERSON_RESUME 
-WHERE PERSON_ID=(SELECT PERSON_RECEIVE_ID FROM MESSAGE_BOX_C_P WHERE PERSON_RECEIVE_ID='AAA');
-
-select message_box_c_p_seq.CURRVAL from message_box_c_p;
-
---ÏÉùÏÑ±
-INSERT INTO PERSON_LOGIN VALUES('ABCD','1234','010-0000-0010');
-INSERT INTO person__resume VALUES('ABCD','Ïù¥Î¶Ñ','ÏùòÍ≤¨','Í≤ΩÎ†•','Ïù¥ÎØ∏ÏßÄ','25','Ïó¨ÏÑ±','ÏÉùÏù∏','Ïù¥Î©îÏùº','ÏÑúÏö∏','Î¨¥ÏßÅ');
-
---ÏàòÏ†ï
-UPDATE PERSON__RESUME SET PERSON_SEX='ÎÇ®ÏÑ±' WHERE PERSON_ID='AAA';
-
---ÏÇ≠Ï†ú
-DELETE person_LOGIN 
-WHERE PERSON_ID='ABCD';
-
-DELETE COMPANY_LOGIN 
-WHERE COMPANY_ID='DDD';
-
-------------------- SELECT ------------------------
-SELECT * FROM COMPANY_LOGIN;
-
-SELECT * FROM COMPANY_Î™®ÏßëÍ≥µÍ≥†;
-SELECT * FROM COMPANY_INFO;
-SELECT * FROM COMPANY_COUNT;
-
-SELECT * FROM PERSON_LOGIN WHERE person_id = 'AAA' and person_pwd = '1234'; 
-SELECT * FROM PERSON_LOGIN;
-SELECT * FROM PERSON_RESUME;
-
-SELECT * FROM MESSAGE_BOX_C_P;
-SELECT * FROM MESSAGE_BOX_P_C;
-SELECT * FROM SCRAP_COMPANY;
-SELECT * FROM SCRAP_PERSON;
-
-ROLLBACK;
-COMMIT;
-
---ÌÖåÏù¥Î∏î ÏÇ≠Ï†ú
-DROP TABLE PERSON_LOGIN;
-DROP TABLE PERSON_RESUME;
-
-DROP TABLE COMPANY_LOGIN;
-DROP TABLE COMPANY_Î™®ÏßëÍ≥µÍ≥†;
-DROP TABLE COMPANY_INFO;
-DROP TABLE COMPANY_COUNT;
-DROP TABLE COMPANY_RECRUIT;
-
-DROP TABLE MESSAGE_BOX_C_P;
-DROP TABLE MESSAGE_BOX_P_C;
-DROP TABLE SCRAP_COMPANY;
-DROP TABLE SCRAP_PERSON;
-
----------------------------------------------
--- Í∏∞ÏóÖÌöåÏõêÍ∞ÄÏûÖ
-INSERT INTO company_login VALUES(?,?,?)
--- ÏïÑÏù¥Îîî Ï§ëÎ≥µÏ≤¥ÌÅ¨
-SELECT * FROM company_login WHERE company_id = ?
--- Î°úÍ∑∏Ïù∏
-SELECT * FROM company_login WHERE company_id = ? AND company_pwd = ?
--- Î™®ÏßëÍ≥µÍ≥† Ï∂îÍ∞Ä
-INSERT INTO COMPANY_RECRUIT VALUES('DDD','WARKADDR1','EMPLOYMENT1','SALARY1','CAREER1','EDUCATION1','TITLE1','DEADLINE1');
--- Î™®ÏßëÍ≥µÍ≥† Ï°∞Ìöå (ÌöåÏÇ¨Ïù¥Î¶ÑÏúºÎ°ú Ï°∞Ìöå)
-SELECT A.* FROM COMPANY_RECRUIT A, company_login B WHERE A.company_id=B.company_id AND A.company_number LIKE '%?%'
--- Î™®ÏßëÍ≥µÍ≥† Ï†ÑÏ≤¥Ï°∞Ìöå (Ï†ÑÏ≤¥ Ï°∞Ìöå)
-SELECT * FROM COMPANY_RECRUIT;
--- Í∏∞ÏóÖÏ†ïÎ≥¥ Ï∂îÍ∞Ä
-INSERT INTO COMPANY_INFO VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0);
--- Í∏∞ÏóÖÏ†ïÎ≥¥ Ï°∞Ìöå
-SELECT * FROM COMPANY_INFO
--- Ï°∞ÌöåÏàò Ïò¨Î¶¨Í∏∞
-INSERT INTO company_info SET company_VIEWS = company_VIEWS + 1 WHERE company_id=?
--- INSERT
-INSERT INTO person_login VALUES(?,?,?);
--- ÏïÑÏù¥ÎîîÏ§ëÎ≥µÏ°∞Ìöå
-SELECT * FROM person_login WHERE person_id = ? 
--- Î°úÍ∑∏Ïù∏
-SELECT * FROM person_login WHERE person_id = ? AND person_pwd = ?
--- Ïù¥Î†•ÏÑú Ï∂îÍ∞Ä
-INSERT INTO PERSON__RESUME VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
--- Ï°∞Ìöå
-SELECT * FROM PERSON__RESUME
--- Ï∂îÍ∞Ä
-INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,?, 0, ?, ?);
--- Ï°∞Ìöå
-SELECT * FROM MESSAGE_BOX_C_P
--- ÏùΩÏóàÏúºÎ©¥ ÏóÖÎç∞Ïù¥Ìä∏
-UPDATE MESSAGE_BOX_C_P SET message_flag = '1' WHERE message_no = ?
--- Ï∂îÍ∞Ä
-INSERT INTO message_box_p_c VALUES(message_box_p_c_seq.nextval,SYSDATE,?, 0, ?, ?);
--- Ï°∞Ìöå
-SELECT * FROM message_box_p_c
--- ÏùΩÏóàÏúºÎ©¥ ÏóÖÎç∞Ïù¥Ìä∏
-UPDATE message_box_p_c SET message_flag = '1' WHERE message_no = ?
--- ÌöåÏÇ¨Î≥Ñ ÏßÄÏõêÏûê Ïàò
-SELECT COUNT(DISTINCT person_send_id) FROM message_box_p_c WHERE company_receive_id = ?
--- Ïä§ÌÅ¨Îû©
-INSERT INTO scrap_company VALUES(scrap_company_seq.nextval,SYSDATE,?, ?);
--- Ïä§ÌÅ¨Îû©Ï∑®ÏÜå
-DELETE scrap_company WHERE scrap_no=?
--- ÌöåÏÇ¨Î≥Ñ Ïä§ÌÅ¨Îû© Ïàò
-SELECT COUNT(*) FROM scrap_company WHERE company_target_id = ?
--- Ïä§ÌÅ¨Îû©
-INSERT INTO scrap_person VALUES(scrap_person_seq.nextval,SYSDATE,?, ?);
--- Ïä§ÌÅ¨Îû©Ï∑®ÏÜå
-DELETE scrap_person WHERE scrap_no=?

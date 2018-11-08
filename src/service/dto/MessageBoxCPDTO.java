@@ -2,14 +2,14 @@ package service.dto;
 
 public class MessageBoxCPDTO {
 	
-	private String messageNo;
+	private int messageNo;
 	private String messageDate;
 	private String messageContents;
-	private String messageFlag;
+	private int messageFlag;
 	private String companySendId;
 	private String personReceiveId;
 	
-	public MessageBoxCPDTO(String messageNo, String messageDate, String messageContents, String messageFlag,
+	public MessageBoxCPDTO(int messageNo, String messageDate, String messageContents, int messageFlag,
 			String companySendId, String personReceiveId) {
 		super();
 		this.messageNo = messageNo;
@@ -20,11 +20,11 @@ public class MessageBoxCPDTO {
 		this.personReceiveId = personReceiveId;
 	}
 
-	public String getMessageNo() {
+	public int getMessageNo() {
 		return messageNo;
 	}
 
-	public void setMessageNo(String messageNo) {
+	public void setMessageNo(int messageNo) {
 		this.messageNo = messageNo;
 	}
 
@@ -44,11 +44,11 @@ public class MessageBoxCPDTO {
 		this.messageContents = messageContents;
 	}
 
-	public String getMessageFlag() {
+	public int getMessageFlag() {
 		return messageFlag;
 	}
 
-	public void setMessageFlag(String messageFlag) {
+	public void setMessageFlag(int messageFlag) {
 		this.messageFlag = messageFlag;
 	}
 
@@ -66,6 +66,13 @@ public class MessageBoxCPDTO {
 
 	public void setPersonReceiveId(String personReceiveId) {
 		this.personReceiveId = personReceiveId;
+	}
+
+	@Override
+	public String toString() {
+		return "MessageBoxCPDTO [messageNo=" + messageNo + ", messageDate=" + messageDate + ", messageContents="
+				+ messageContents + ", messageFlag=" + messageFlag + ", companySendId=" + companySendId
+				+ ", personReceiveId=" + personReceiveId + "]";
 	}
 	
 	

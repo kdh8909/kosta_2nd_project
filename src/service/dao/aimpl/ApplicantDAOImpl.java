@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import service.dao.ApplicantDAO;
+import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
+import service.dto.ScrapCompanyDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
 
@@ -67,31 +69,6 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 		return list;
 	}
 
-	@Override//idOrOther.id, idOrOther.name 형태로 사용하세요~
-	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) throws SQLException {
-		String sql="";
-	    if(idOrOther.equals("id")) 
-	    	sql+="id like ?";
-	    else if(idOrOther.equals("name")) 
-	    	sql+="name like ?";
-	    else if(idOrOther.equals("addr")) 
-	    	sql+="addr like ?";
-	    Connection con=null;//지역변수 초기화 
-		PreparedStatement ps=null;
-		ResultSet rs=null; String keyWord="%"+idOrOther+"%";
-		List<PersonResumeDTO> list=new ArrayList<>(); System.out.println(keyWord);
-		try { con=DBUtil.getConnection();//로드 후 연결
-			  ps=con.prepareStatement(sql); 
-			  ps.setString(1, keyWord);//실행
-			  rs=ps.executeQuery();
-			  while(rs.next()) {
-				  list.add(new PersonResumeDTO(rs.getString("id"), keyWord, keyWord, keyWord, keyWord, 0, keyWord, keyWord, keyWord, keyWord, keyWord)); 
-			  }  
-		} catch(SQLException e) { e.printStackTrace(); 
-		} finally { DBUtil.dbClose(rs, ps, con); }//닫기
-		return list;
-	}
-
 	@Override//회원 정보수정
 	public int update(PersonLoginDTO memberData) throws SQLException {
 		// TODO Auto-generated method stub
@@ -103,4 +80,200 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	
+	
+	@Override
+	public int insertPersonResume(PersonResumeDTO personResumeDTO) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		int result = 0;
+		String sql = SqlQuerys.P_ADD_RESUME;
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, personResumeDTO.getPersonId());
+			ps.setString(2, personResumeDTO.getPersonName());
+			ps.setString(3, personResumeDTO.getPersonOccupation());
+			ps.setString(4, personResumeDTO.getPersonCareer());
+			ps.setString(5, personResumeDTO.getPersonImg());
+			ps.setInt(6, personResumeDTO.getPersonAge());
+			ps.setString(7, personResumeDTO.getPersonSex());
+			ps.setString(8, personResumeDTO.getPersonBirth());
+			ps.setString(9, personResumeDTO.getPersonEmail());
+			ps.setString(10, personResumeDTO.getPersonHopePlace());
+			ps.setString(11, personResumeDTO.getPersonJobStatus());
+
+			result = ps.executeUpdate();
+
+		} finally {
+			//닫기
+			DBUtil.dbClose(ps, con);
+		}
+		return result;	
+
+	}
+
+	@Override
+	public PersonResumeDTO resumeSelectbypersonId(String personId) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PersonResumeDTO personResumeDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.P_SELECT_RESUME_BY_ID;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, personId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				personResumeDTO = new PersonResumeDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						                             ,rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8)
+						                             ,rs.getString(9), rs.getString(10), rs.getString(11));
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return personResumeDTO;
+		
+	}
+
+	@Override
+	public int sendMessagePtoC(MessageBoxPCDTO messageBoxPCDTO) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		int result = 0;
+		String sql = SqlQuerys.SEND_MESSAGE_P_C;
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, messageBoxPCDTO.getMessageContents());
+			ps.setString(2, messageBoxPCDTO.getPersonSendId());
+			ps.setString(3, messageBoxPCDTO.getCompanyReceiveId());
+			
+			result = ps.executeUpdate();
+
+		} finally {
+			//닫기
+			DBUtil.dbClose(ps, con);
+		}
+		return result;
+	}
+
+	@Override
+	public List<MessageBoxPCDTO> companyCheckMessage(String companyReceiveId) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<MessageBoxPCDTO> list = new ArrayList<MessageBoxPCDTO>();
+		MessageBoxPCDTO messageBoxPCDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SELECT_MESSAGE_P_C;
+			ps = con.prepareStatement(sql);
+			
+			ps.setString(1, companyReceiveId);
+
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				messageBoxPCDTO = new MessageBoxPCDTO(rs.getInt(1), rs.getString(2), rs.getString(3)
+						               ,rs.getInt(4), rs.getString(5), rs.getString(6));
+				list.add(messageBoxPCDTO);
+			}
+			
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+
+	@Override
+	public int companyCheckedMessage(int messageNo) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		int result = 0;
+		String sql = SqlQuerys.CHECK_MESSAGE_P_C;
+		
+		try {
+			con = DBUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			
+			ps.setInt(1, messageNo);
+			
+			result = ps.executeUpdate();
+
+		} finally {
+			//닫기
+			DBUtil.dbClose(ps, con);
+		}
+		return result;
+	}
+
+	@Override
+	public int scrapCompany(ScrapCompanyDTO scrapCompanyDTO) throws SQLException {
+
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      int result = 0;
+	      String sql = SqlQuerys.SCRAP_C_P;
+	      
+	      try {
+	         con = DBUtil.getConnection();
+	         ps = con.prepareStatement(sql);
+	         
+	         ps.setString(1, scrapCompanyDTO.getPersonScraperId());
+	         ps.setString(2, scrapCompanyDTO.getCompanyTargetId());
+
+	         result = ps.executeUpdate();
+
+	      } finally {
+	         //닫기
+	         DBUtil.dbClose(ps, con);
+	      }
+	      return result;
+		
+	}
+
+	 @Override
+	   public int scrapCompanyCancel(ScrapCompanyDTO scrapCompanyDTO) throws SQLException {
+	      Connection con = null;
+	         PreparedStatement ps = null;
+	         int result = 0;
+	         String sql=SqlQuerys.SCRAP_DELETE_C_P;
+	         
+	         try {
+	            con = DBUtil.getConnection();
+	            ps = con.prepareStatement(sql);
+	            
+	            ps.setString(1, scrapCompanyDTO.getPersonScraperId());
+	            ps.setString(2, scrapCompanyDTO.getCompanyTargetId());
+	            
+	            result = ps.executeUpdate();
+	   
+	         } finally {
+	            //닫기
+	            DBUtil.dbClose(ps, con);
+	         }
+	         return result;
+	   }
 }

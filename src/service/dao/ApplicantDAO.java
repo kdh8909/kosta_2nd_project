@@ -3,8 +3,10 @@ package service.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
+import service.dto.ScrapCompanyDTO;
 
 public interface ApplicantDAO {
 
@@ -14,11 +16,32 @@ public interface ApplicantDAO {
 	// 개인이력서 전체조회
 	public List<PersonResumeDTO> resumeSelectAll() throws SQLException;
 
-	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) throws SQLException;
-
 	//회원 정보수정
 	public int update(PersonLoginDTO memberData) throws SQLException;
 	
 	//회원 탈퇴
 	public int delete(PersonLoginDTO idOrOther) throws SQLException;
+	
+	
+	
+		//개인 이력서 추가
+		public int insertPersonResume(PersonResumeDTO personResumeDTO) throws SQLException;
+			
+		//개인 이력서 조회 (사람별)
+		public PersonResumeDTO resumeSelectbypersonId(String personId) throws SQLException;
+		
+		// 개인 -> 기업 메세지 보내기
+		public int sendMessagePtoC(MessageBoxPCDTO messageBoxPCDTO) throws SQLException;
+			
+		// 개인 -> 기업 메시지 조회 (기업이 받은 메시지 조회) //
+		public List<MessageBoxPCDTO> companyCheckMessage(String companyReceiveId) throws SQLException;
+			
+		// 개인 > 기업 메시지 확인시 업데이트 (읽었음표시)
+		public int companyCheckedMessage (int messageNo) throws SQLException;
+		
+		// 개인이 회사 스크랩
+	    public int scrapCompany(ScrapCompanyDTO scrapCompanyDTO) throws SQLException;
+	   
+	    // 개인이 회사 스크랩 취소
+	    public int scrapCompanyCancel(ScrapCompanyDTO scrapCompanyDTO) throws SQLException;
 }
