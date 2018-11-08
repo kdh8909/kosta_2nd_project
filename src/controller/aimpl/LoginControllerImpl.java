@@ -2,6 +2,7 @@ package controller.aimpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,15 +31,18 @@ public class LoginControllerImpl implements Controller {
 		String pPwd = req.getParameter("userPwd");
 		dto.setPerOrCom(perOrCom); dto.setId(pId); dto.setPwd(pPwd);
 		// Id와 Pwd일치 여부를 판단
-		int result = sv.userLogin(dto);
-		System.out.println("LoginControllerImpl-execute:"+result);
-		if (result>0) { // 일치하면 session에 Id 저장 후
-			            session.setAttribute("userId", pId);
-			          //session.setAttribute("logDate", session.getCreationTime());
-			          mv.setPath("./index.jsp");// 로그인 페이지로 이동
-		} else { mv.setPath("./result.jsp");
-	     		 session.setAttribute("resultMsg", "로그인에 실패하였습니다..");  
-		}// 최종 결과를 받아서 저장해서 뷰로 이동한다
+		try { int result = sv.userLogin(dto);
+		      System.out.println("LoginControllerImpl-execute:"+result);
+			  if (result>0) { // 일치하면 session에 Id 저장 후
+				  session.setAttribute("userId", pId);
+				  //session.setAttribute("logDate", session.getCreationTime());
+				  mv.setPath("./index.jsp");// 로그인 페이지로 이동
+			  } else { mv.setPath("./events/result.jsp");
+			  	  session.setAttribute("resultMsg", "로그인에 실패하였습니다..");  
+			  }// 최종 결과를 받아서 저장해서 뷰로 이동한다
+		} catch (SQLException e) { mv.setPath("./errors/error.jsp"); 
+								   session.setAttribute("errMsg", e.toString()); 
+								   return mv; }
 		return mv;
 	}
 }

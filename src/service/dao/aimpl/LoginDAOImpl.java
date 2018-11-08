@@ -43,7 +43,7 @@ public class LoginDAOImpl {
 			  	  if(rs.next()) result=false; else result=true;
 			  }
 			  System.out.println("LoginDAOImpl-userLogin-result: "+result);
-		} catch(SQLException e) { e.printStackTrace(); 
+		} catch(SQLException e) { e.printStackTrace(); throw new SQLException(); 
 		} finally { DBUtil.dbClose(rs, ps, con); }//´Ý±â
 		return result;
 	}

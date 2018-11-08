@@ -33,26 +33,37 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 		  	  ps.setString(3, memberData.getPersonPhone());
 		      rs=ps.executeUpdate();//실행
 		      System.out.println("ApplicantDAOImpl-insert-result: "+rs);
-		} catch(SQLException e) { e.printStackTrace(); 
+		} catch(SQLException e) { e.printStackTrace(); throw new SQLException(); 
 		} finally { DBUtil.dbClose(ps, con); }//닫기
 		return rs;
 	}
 	
 	@Override
-	public List<PersonResumeDTO> selectAll() throws SQLException {
-		Connection con=null;//지역변수 초기화 
-		PreparedStatement ps=null;
-		String sql=SqlQuerys.P_SELECT_RESUME_ALL;
-		ResultSet rs=null;
-		List<PersonResumeDTO> list=new ArrayList<>();
-		try { con=DBUtil.getConnection();//로드 후 연결
-			  ps=con.prepareStatement(sql);//실행
-			  rs=ps.executeQuery();
-			  while(rs.next()) {
-				  list.add(new PersonResumeDTO(rs.getString("id"), sql, sql, sql, sql, 0, sql, sql, sql, sql, sql)); 
-			  } System.out.println("ApplicantDAOImpl-selectAll: "+list);
-		} catch(SQLException e) { e.printStackTrace(); 
-		} finally { DBUtil.dbClose(rs, ps, con); }//닫기
+	public List<PersonResumeDTO> resumeSelectAll() throws SQLException {
+
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<PersonResumeDTO> list = new ArrayList<>();
+		PersonResumeDTO personResumeDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.P_SELECT_RESUME_ALL;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				personResumeDTO = new PersonResumeDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						                             ,rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8)
+						                             ,rs.getString(9), rs.getString(10), rs.getString(11));
+				list.add(personResumeDTO);
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
 		return list;
 	}
 

@@ -11,7 +11,8 @@ public interface ApplicantDAO {
 	//회원 가입 
 	public int insert(PersonLoginDTO memberData) throws SQLException;
 	
-	public List<PersonResumeDTO> selectAll() throws SQLException;
+	// 개인이력서 전체조회
+	public List<PersonResumeDTO> resumeSelectAll() throws SQLException;
 
 	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) throws SQLException;
 

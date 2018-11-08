@@ -16,10 +16,9 @@ public class LoginServiceImpl {
 	LoginDAOImpl dao = new LoginDAOImpl().getInstance();
 	
 	//로그인. id check 사용 가능~                    //test시 id & pw 대소문자 구분 조심하세요~
-	public int userLogin(LoginDTO idAndPwd) {
+	public int userLogin(LoginDTO idAndPwd) throws SQLException {
 		boolean result=false;
-		try { result=dao.userLogin(idAndPwd);
-		} catch (SQLException e) { e.printStackTrace(); }
+		result=dao.userLogin(idAndPwd);
 		System.out.println("LoginServiceImpl-userLogin-result: "+result);
 		if(result) return 1;
 		return 0;

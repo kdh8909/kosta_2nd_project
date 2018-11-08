@@ -333,7 +333,6 @@ $(function(){
 							</div>
 						</div>
 					</div>
-
 					<div id="navbar-collapse-1"
 						class="navbar-collapse collapse navbar-right">
 						<ul class="nav navbar-nav">
@@ -371,6 +370,8 @@ $(function(){
 
 					
 					<form class="seminor-login-form" method="post" action="controller">
+					<input type="hidden" class="form-control" name="command" value="login">
+					<input type="hidden" class="form-control" name="perOrCom" value="Person">
 						<div class="form-group">
 							<input type="text" class="form-control" name="userId" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
@@ -378,7 +379,7 @@ $(function(){
 						<div class="form-group">
 							<input type="password" class="form-control" name="userPwd" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd" >비밀번호</label>
-							<input type="hidden" class="form-control" name="command" value="login">
+							
 						</div>
 					<!-- 	<div class="form-group">
 							<label class="container-checkbox"> 내 정보 기억하기 <input type="checkbox" checked="checked" required>
@@ -426,18 +427,20 @@ $(function(){
 					</button>
 
 
-					<form class="seminor-login-form">
+					<form class="seminor-login-form" method="post" action="controller">
+					<input type="hidden" class="form-control" name="command" value="signup">
+					<input type="hidden" class="form-control" name="perOrCom" value="Person">
 						<div class="form-group">
-							<input type="text" class="form-control" required autocomplete="off"> 
+							<input type="text" name="signId" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="id">ID</label>
 						</div>
 						<div class="form-group">
-							<input type="password" class="form-control" required autocomplete="off"> 
+							<input type="password" name="signPwd" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="pwd">비밀번호</label>
 						</div>
 						
 						<div class="form-group">
-							<input type="text" class="form-control" required autocomplete="off"> 
+							<input type="text" name="signPhone" class="form-control" required autocomplete="off"> 
 							<label class="form-control-placeholder" for="phone">연락처(ex. 010-1234-1234)</label>
 						</div>
 						

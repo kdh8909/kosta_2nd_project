@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import service.ApplicantService;
 import service.dao.ApplicantDAO;
 import service.dao.aimpl.ApplicantDAOImpl;
@@ -21,36 +22,34 @@ public class ApplicantServiceImpl implements ApplicantService {
 	ApplicantDAO dao = new ApplicantDAOImpl().getInstance();
 	
 	@Override//회원 가입
-	public int insert(PersonLoginDTO memberData) {
+	public int insert(PersonLoginDTO memberData) throws SQLException {
 		int result=0;
-		try { result=dao.insert(memberData);
-		} catch (SQLException e) { e.printStackTrace(); }
+		result=dao.insert(memberData);
 		System.out.println("ApplicantServiceImpl-insert-result: "+result);
 		return result;
 	}
 	
 	@Override
-	public List<PersonResumeDTO> selectAll() {
-		List<PersonResumeDTO> list=new ArrayList();
-		try { list = dao.selectAll();//dao 호출
-		} catch (SQLException e) { e.printStackTrace(); }
+	public List<PersonResumeDTO> resumeSelectAll() throws SQLException {
+		List<PersonResumeDTO> list = dao.resumeSelectAll();
 		return list;
 	}
+	
 
 	@Override
-	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) {
+	public List<PersonResumeDTO> selectBySearch(PersonLoginDTO idOrOther) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override//회원 정보 수정
-	public int update(PersonLoginDTO memberData) {
+	public int update(PersonLoginDTO memberData) throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
 	@Override//회원 탈퇴
-	public int delete(PersonLoginDTO idOrOther) {
+	public int delete(PersonLoginDTO idOrOther) throws SQLException {
 		// TODO Auto-generated method stub
 		return 0;
 	}

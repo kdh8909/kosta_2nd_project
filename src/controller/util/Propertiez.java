@@ -6,8 +6,9 @@ public class Propertiez {
 		//forward("controller.standby.ForwardControllerImpl"), 
 		//redirect("controller.standby.RedirectControllerImpl"), 
 		login("controller.aimpl.LoginControllerImpl"),
-		signup("controller.aimpl.SignUpControllerImpl");
-
+		signup("controller.aimpl.SignUpControllerImpl"),
+		resumeSelectAll("controller.aimpl.ResumeSelectAllControllerImpl");
+		
 		private String controller;
 
 		Controllers(String controller) {

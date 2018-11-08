@@ -51,7 +51,7 @@ a:hover {
 }
 </style>
 </head>
-<body>
+<body onload="window.location.href='controller?command=resumeSelectAll'">
 
 	<div class="outer-wrapper">
 		<!-- Header !-->

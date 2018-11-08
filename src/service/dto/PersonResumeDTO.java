@@ -120,5 +120,13 @@ public class PersonResumeDTO {
 	public void setPersonJobStatus(String personJobStatus) {
 		this.personJobStatus = personJobStatus;
 	}
+
+	@Override
+	public String toString() {
+		return "PersonResumeDTO [personId=" + personId + ", personName=" + personName + ", personOccupation="
+				+ personOccupation + ", personCareer=" + personCareer + ", personImg=" + personImg + ", personAge="
+				+ personAge + ", personSex=" + personSex + ", personBirth=" + personBirth + ", personEmail="
+				+ personEmail + ", personHopePlace=" + personHopePlace + ", personJobStatus=" + personJobStatus + "]";
+	}
 	
 }
