@@ -122,4 +122,10 @@ public class ApplicantServiceImpl implements ApplicantService {
 	         return result;
 	      }
 	   }
+
+	@Override
+	public List<ScrapCompanyDTO> scrapList() throws SQLException {
+		List<ScrapCompanyDTO> list = dao.scrapList();
+		return list;
+	}
 }

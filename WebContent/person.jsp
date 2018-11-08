@@ -165,6 +165,9 @@ a:hover {
 				<!-- List -->
 				<h4 class="space30">Recent Posts</h4>
 				<c:forEach items="${list}" var="itms">	
+				<form onclick="submit()" action="controller">
+				<input type="hidden" name="command" value="resumeSelectbypersonId">
+				<input type="hidden" name="personId" value='${itms.personId}'>
 				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
 							<div class="card-img">
@@ -198,6 +201,7 @@ a:hover {
 							</div>
 						</div>
 					</div>
+					</form>
 					</c:forEach>
 
 

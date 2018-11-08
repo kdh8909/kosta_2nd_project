@@ -44,4 +44,6 @@ public interface ApplicantDAO {
 	   
 	    // 개인이 회사 스크랩 취소
 	    public int scrapCompanyCancel(ScrapCompanyDTO scrapCompanyDTO) throws SQLException;
+
+		public List<ScrapCompanyDTO> scrapList() throws SQLException;
 }

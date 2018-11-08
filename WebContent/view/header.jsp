@@ -342,7 +342,7 @@ $(function(){
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">개인</a></li>
 							<li class="page-scroll"><a href="controller?command=companyRecruitSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
-							<li class="page-scroll"><a href="subscribe.jsp"
+							<li class="page-scroll"><a href="controller?command=scrapCompanyList"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
 							<li class="page-scroll"><a href="resume.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>

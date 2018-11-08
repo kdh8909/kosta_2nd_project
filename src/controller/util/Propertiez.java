@@ -16,17 +16,18 @@ public class Propertiez {
 		personCheckedMessage("controller.comImpl.PersonCheckedMessageControllerImpl"),
 		personCheckMessage("controller.comImpl.PersonCheckMessageControllerImpl"),
 		scrapCompanyCount("controller.comImpl.ScrapCompanyCountControllerImpl"),
-		scrapPersonCancel("controller.comImpl.ScrapPersonCancelControllerImpl"),
+		scrapPerson("controller.comImpl.ScrapPersonControllerImpl"),
 		sendMessageCtoP("controller.comImpl.SendMessageCtoPControllerImpl"),
 		updateViews("controller.comImpl.UpdateViewsControllerImpl"),
 		
 		companyCheckedMessage("controller.perImpl.CompanyCheckedMessageControllerImpl"),
 		companyCheckMessage("controller.perImpl.CompanyCheckMessageControllerImpl"),
-		scrapPerson("controller.perImpl.ScrapPersonControllerImpl"),
 		insertPersonResume("controller.perImpl.InsertPersonResumeControllerImpl"),
 		resumeSelectbypersonId("controller.perImpl.ResumeSelectbypersonIdControllerImpl"),
 		scrapCompanyCancel("controller.perImpl.ScrapCompanyCancelControllerImpl"),
 		scrapCompany("controller.perImpl.ScrapCompanyControllerImpl"),
+		scrapCompanyList("controller.perImpl.ScrapCompanyListControllerImpl"),
+		scrapPersonCancel("controller.perImpl.ScrapPersonCancelControllerImpl"),
 		sendMessagePtoC("controller.perImpl.SendMessagePtoCControllerImpl");
 
 		private String controller;

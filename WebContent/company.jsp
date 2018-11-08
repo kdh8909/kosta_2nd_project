@@ -167,10 +167,13 @@ a:hover {
 				<h4 class="space30">Recent Posts</h4>
 					<ul class="f-posts">
 					<c:forEach items="${list}" var="itms">
+					<form onclick="submit()" action="controller">
+					<input type="hidden" name="command" value="companyRecruitSelectByCompanyName">
+					<input type="hidden" name="companyId" value='${itms.companyId}'>
 						<li>
 							<img src="images/blog/1/1.jpg" class="img-responsive" alt=""/>
 							
-								<h4><a href="#">${itms.recruitNumber}(${itms.companyId})</a></h4>
+								<h4>${itms.recruitNumber}(${itms.companyId})</h4>
 								<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp; / &nbsp;</span><span>분야</span>
 								<h5 style="width: auto; height: 30px; overflow: hidden;">
 								간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기</h5>			
@@ -178,6 +181,7 @@ a:hover {
 								<a style="cursor: pointer;"><i class="far fa-envelope-open"></i>쪽지보내기</a>
 								<a style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a>
 						</li>
+					</form>
 					</c:forEach>
 					</ul>
 				</div>

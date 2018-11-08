@@ -276,4 +276,31 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	         }
 	         return result;
 	   }
+
+	@Override
+	public List<ScrapCompanyDTO> scrapList() throws SQLException {
+
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ScrapCompanyDTO> list = new ArrayList<>();
+		ScrapCompanyDTO scrapCompanyDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SCRAP_C_P_LIST;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				scrapCompanyDTO = new ScrapCompanyDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+				list.add(scrapCompanyDTO);
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
 }

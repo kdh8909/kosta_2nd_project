@@ -77,4 +77,7 @@ public interface SqlQuerys {
 
    // 기업이 개인 스크랩 취소 //
    String SCRAP_DELETE_P_C= "DELETE scrap_person WHERE company_scraper_id=? and person_target_id=? ";
+   
+   // 개인, 회사 스크랩 리스트
+   String SCRAP_C_P_LIST = "SELECT * FROM scrap_company";
 }

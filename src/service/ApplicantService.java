@@ -47,5 +47,8 @@ public interface ApplicantService {
    
     // 개인이 회사 스크랩 취소
     public int scrapCompanyCancel(ScrapCompanyDTO scrapCompanyDTO) throws SQLException;
+    
+    // 개인이 회사 스크랩 리스트
+    public List<ScrapCompanyDTO> scrapList() throws SQLException;
 
 }

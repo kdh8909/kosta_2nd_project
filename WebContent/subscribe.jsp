@@ -75,10 +75,12 @@
 				<h3 class="uppercase text-center">스크랩</h3>
 			</div>
 			<div class="panel-group" id="accordion-e1">
+			<c:forEach items="${list}" var="itms">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
+							${itms.scrapNo} ${itms.companyTargetId}
 							<h5>회사명</h5><h5>대표</h5><h5>업종</h5><h5>위치</h5><h5>설립일</h5><h5>홈페이지</h5>
 							<span class="fa fa-chevron-down"></span>
 							</a>
@@ -92,36 +94,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseTwo">
-							Curabitur et diam vitae dolor aliquet et in massa
-							<span class="fa fa-chevron-right"></span>
-							</a>
-						</h4>
-					</div>
-					<div id="collapseTwo" class="panel-collapse collapse">
-						<div class="panel-body">
-							<p>Nam ullamcorper imperdiet luctus. Vestibulum tincidunt malesuada mi, in posuere augue cursus nec. Morbi et vehicula risus, fermentum lacinia justo. Etiam tellus arcu, eleifend tristique enim rutrum iaculis risus, id tincidunt dui fringilla sed bibendum lorem. Quisque consequat rhoncus est vel tristique. Quisque arcu mauris, ullamcorper eget mi efficitur, condimentum ornare purus. Pellentesque at mauris tortor. Vivamus scelerisque enim ut massa porttitor pharetra. </p>
-						</div>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h4 class="panel-title">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseThree">
-							Proin faucibus sem sed dapibus dapibus
-							<span class="fa fa-chevron-right"></span>
-							</a>
-						</h4>
-					</div>
-					<div id="collapseThree" class="panel-collapse collapse">
-						<div class="panel-body">
-							<p>Nam ullamcorper imperdiet luctus. Vestibulum tincidunt malesuada mi, in posuere augue cursus nec. Morbi et vehicula risus, fermentum lacinia justo. Etiam tellus arcu, eleifend tristique enim rutrum iaculis risus, id tincidunt dui fringilla sed bibendum lorem. Quisque consequat rhoncus est vel tristique. Quisque arcu mauris, ullamcorper eget mi efficitur, condimentum ornare purus. Pellentesque at mauris tortor. Vivamus scelerisque enim ut massa porttitor pharetra. </p>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>

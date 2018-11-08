@@ -34,8 +34,9 @@ public class ResumeSelectAllControllerImpl implements Controller {
 			  list = asv.resumeSelectAll();
 			  System.out.println("ResumeSelectAllControllerImpl-execute-list: "+list);
 			  session.setAttribute("list", list); req.setAttribute("listNull", 1);
-		} catch (SQLException e) { mv.setPath("./errors/error.jsp"); 
-		   						   session.setAttribute("errMsg", e.toString()); 
+		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
+								   mv.setPath("./events/result.jsp");
+								   session.setAttribute("resultMsg", "리스트 검색에 실패하였습니다.."); 
 		   						   return mv; }
 		return mv;
 	}
