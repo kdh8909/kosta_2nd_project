@@ -35,6 +35,7 @@ public class LoginControllerImpl implements Controller {
 		      System.out.println("LoginControllerImpl-execute:"+result);
 			  if (result>0) { // 일치하면 session에 Id 저장 후
 				  session.setAttribute("userId", pId);
+				  session.setAttribute("perOrCom", perOrCom);
 				  //session.setAttribute("logDate", session.getCreationTime());
 				  mv.setPath("./index.jsp");// 로그인 페이지로 이동
 			  } else { mv.setPath("./events/result.jsp");

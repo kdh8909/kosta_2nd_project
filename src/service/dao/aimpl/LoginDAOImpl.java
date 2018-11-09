@@ -19,6 +19,7 @@ public class LoginDAOImpl {
 	public boolean userLogin(LoginDTO idAndPwd) throws SQLException {
 		String pc=idAndPwd.getPerOrCom();
 		String id=idAndPwd.getId(), pwd=idAndPwd.getPwd(), sql="";
+		System.out.println("LoginDAOImpl-userLogin: "+id+", "+pwd+", "+pc);
 	    if(pc.equals("Person")) sql=SqlQuerys.P_LOGIN;
 	    else if(pc.equals("Company")) sql=SqlQuerys.C_LOGIN;
 	    else throw new SQLException();

@@ -299,8 +299,14 @@ button.btn-check-login:hover {
 									</div>
 									<div class="top-login">
 										<a style="padding-top: 13px; color: black">
-											${sessionScope.userId}님 반갑습니다.</a> <a
-											style="padding-top: 13px; color: purple"> (개인)</a>
+											${sessionScope.userId}님 반갑습니다.</a> 
+										<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
+													<a style="padding-top: 13px; color: purple"> (개인)</a>
+												  </c:when>
+												  <c:otherwise>
+												  	<a style="padding-top: 13px; color: purple"> (기업)</a>
+												  </c:otherwise>
+										</c:choose>
 									</div>
 								</c:otherwise>
 							</c:choose>
@@ -320,7 +326,8 @@ button.btn-check-login:hover {
 						<a href="index.jsp" class="navbar-brand"><img
 							src="images/basic/logo.png" width="40" alt=""></a>
 					</div>
-
+				
+				<c:choose><c:when test="${not empty sessionScope.userId}">
 					<!-- CART / SEARCH -->
 					<div class="header-x pull-right">
 						<div class="s-cart">
@@ -368,6 +375,11 @@ button.btn-check-login:hover {
 							</div>
 						</div>
 					</div>
+					</c:when>
+					<c:otherwise>	
+					</c:otherwise>	
+				</c:choose>
+				
 					<div id="navbar-collapse-1"
 						class="navbar-collapse collapse navbar-right">
 						<ul class="nav navbar-nav">
@@ -379,12 +391,26 @@ button.btn-check-login:hover {
 							<li class="page-scroll"><a
 								href="controller?command=companyRecruitSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
+			  <c:choose><c:when test="${not empty sessionScope.userId}">
 							<li class="page-scroll"><a
 								href="controller?command=scrapCompanyList"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
+						
+				<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
 							<li class="page-scroll"><a href="resume.jsp"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>
-
+						  </c:when>
+						  <c:when test="${sessionScope.perOrCom=='Company'}">
+						  	<li class="page-scroll"><a href="companyinfo.jsp"
+								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">기업정보등록</a></li>
+						  </c:when>
+						  <c:otherwise>	
+						  </c:otherwise>	
+				</c:choose>		
+				</c:when>
+				<c:otherwise>	
+				</c:otherwise>	
+			  </c:choose>	
 						</ul>
 					</div>
 				</div>
@@ -410,8 +436,7 @@ button.btn-check-login:hover {
 
 					<form class="seminor-login-form" method="post" action="controller">
 						<input type="hidden" class="form-control" name="command"
-							value="login"> <input type="hidden" class="form-control"
-							name="perOrCom" value="Person">
+							value="login"> 
 						<div class="form-group">
 							<input type="text" class="form-control" name="userId" required
 								autocomplete="off"> <label
@@ -431,10 +456,10 @@ button.btn-check-login:hover {
 
 						<div class="btn-group" data-toggle="buttons" style="float: right;margin-bottom:20px">
 							<label class="btn btn-success active"> <input
-								type="radio" name="options" id="person" autocomplete="off"
-								checked="checked"> <span>개인회원</span>
+								type="radio" name="perOrCom" id="person" autocomplete="off"
+								checked="checked" value="Person"> <span>개인회원</span>
 							</label> <label class="btn btn-primary"> <input type="radio"
-								name="options" id="company" autocomplete="off"> <span>기업회원</span>
+								name="perOrCom" id="company" autocomplete="off" value="Company"> <span>기업회원</span>
 							</label>
 							<br>
 						</div>
@@ -503,10 +528,10 @@ button.btn-check-login:hover {
 
 						<div class="btn-group" data-toggle="buttons" style="float: right">
 							<label class="btn btn-success active"> <input
-								type="radio" name="options" id="person" autocomplete="off"
-								checked="checked"> <span>개인회원</span>
+								type="radio" name="signPerOrCom" id="person" autocomplete="off"
+								checked="checked" value="Person"> <span>개인회원</span>
 							</label> <label class="btn btn-primary"> <input type="radio"
-								name="options" id="company" autocomplete="off"> <span>기업회원</span>
+								name="signPerOrCom" id="company" autocomplete="off" value="Company"> <span>기업회원</span>
 							</label>
 						</div>
 

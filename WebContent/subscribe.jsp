@@ -89,7 +89,7 @@
 					<div id="collapseOne" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<div class="row">
-								<p>Nam ullamcorper imperdiet luctus. Vestibulum tincidunt malesuada mi, in posuere augue cursus nec. Morbi et vehicula risus, fermentum lacinia justo. Etiam tellus arcu, eleifend tristique enim rutrum iaculis risus, id tincidunt dui fringilla sed bibendum lorem. Quisque consequat rhoncus est vel tristique. Quisque arcu mauris, ullamcorper eget mi efficitur, condimentum ornare purus. Pellentesque at mauris tortor. Vivamus scelerisque enim ut massa porttitor pharetra. </p>
+								 
 							</div>
 						</div>
 					</div>
