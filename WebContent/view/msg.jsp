@@ -12,6 +12,7 @@
   <script>
   $( function() {
     $( "#accordion" ).accordion();
+		console.log("메인-msg");
   } );
   </script>
 </head>

@@ -17,6 +17,7 @@ public class Propertiez {
 		personCheckMessage("controller.comImpl.PersonCheckMessageControllerImpl"),
 		scrapCompanyCount("controller.comImpl.ScrapCompanyCountControllerImpl"),
 		scrapPerson("controller.comImpl.ScrapPersonControllerImpl"),
+		scrapPersonList("controller.comImpl.ScrapPersonListControllerImpl"),
 		sendMessageCtoP("controller.comImpl.SendMessageCtoPControllerImpl"),
 		updateViews("controller.comImpl.UpdateViewsControllerImpl"),
 		
@@ -28,8 +29,8 @@ public class Propertiez {
 		scrapCompany("controller.perImpl.ScrapCompanyControllerImpl"),
 		scrapCompanyList("controller.perImpl.ScrapCompanyListControllerImpl"),
 		scrapPersonCancel("controller.perImpl.ScrapPersonCancelControllerImpl"),
-		sendMessagePtoC("controller.perImpl.SendMessagePtoCControllerImpl");
-
+		scrapedCompanyView("controller.perImpl.ScrapedCompanyViewControllerImpl");
+		
 		private String controller;
 
 		Controllers(String controller) {

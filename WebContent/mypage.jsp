@@ -8,7 +8,7 @@
 <title>Insert Title</title>
 <script>
 	$(function() {
-		console.log("메인-acompany");
+		console.log("메인-shell");
 	});
 </script>
 </head>
@@ -47,7 +47,7 @@
 
 	<!-- INNER CONTENT	 -->
 	<div class="inner-content" style="padding-top:40px">
-		<div class="container" style="border:1px solid #ccc;width:700px">
+		<div class="container" style="border:1px solid #ccc;width:80%">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" style="padding:40px 0 0 0">
 					<h3 class="uppercase space30">이력서 작성</h3>

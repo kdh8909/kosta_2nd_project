@@ -4,15 +4,11 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  
   <context-param>
-  	<param-name></param-name>
-  	<param-value></param-value>
+    <param-name></param-name>
+    <param-value></param-value>
   </context-param>
-  
-  
-  
-    <servlet>
+  <servlet>
     <servlet-name>DispatcherServlet</servlet-name>
     <servlet-class>controller.util.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>

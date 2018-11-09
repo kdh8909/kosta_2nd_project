@@ -6,7 +6,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert Title</title>
-
+<script>
+	$(function() {
+		console.log("메인-resume");
+	});
+</script>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -245,7 +249,7 @@
 
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+<!-- 	<script src="js/jquery.js"></script> -->
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

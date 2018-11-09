@@ -3,10 +3,12 @@ package service.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyDTO;
+import service.dto.ScrapCompanyInfoDTO;
 
 public interface ApplicantDAO {
 
@@ -44,6 +46,13 @@ public interface ApplicantDAO {
 	   
 	    // 개인이 회사 스크랩 취소
 	    public int scrapCompanyCancel(ScrapCompanyDTO scrapCompanyDTO) throws SQLException;
-
+	    
+	    // 개인이 기업 스크랩 리스트
 		public List<ScrapCompanyDTO> scrapList() throws SQLException;
+		
+		// PtoC 메시지 리스트
+		public List<MessageBoxPCDTO> msgBoxPCDTOselectAll() throws SQLException;
+
+		// 개인이 스크랩한 회사정보 보기 (회사정보표출)
+	    public List<ScrapCompanyInfoDTO> scrapedCompanyView(String personScraperId) throws SQLException;
 }

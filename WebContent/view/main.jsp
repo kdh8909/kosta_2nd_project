@@ -4,6 +4,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert Title</title>
+<script>
+	$(function() {
+		console.log("메인");
+	});
+</script>
 </head>
 <body>
 <!-- SLIDER -->

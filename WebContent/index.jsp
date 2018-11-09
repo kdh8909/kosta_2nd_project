@@ -7,6 +7,11 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <link rel="shortcut icon" href="images/basic/favicon.png">
 <title>코스타 구인 | 구직 메인</title>
+<script>
+	$(function() {
+		console.log("메인-index");
+	});
+</script>
 </head>
 <body>
 
@@ -22,7 +27,7 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+<!-- 	<script src="js/jquery.js"></script> -->
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

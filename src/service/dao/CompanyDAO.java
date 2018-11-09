@@ -6,6 +6,7 @@ import java.util.List;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
+import service.dto.MessageBoxPCDTO;
 import service.dto.ScrapPersonDTO;
 
 public interface CompanyDAO {
@@ -42,4 +43,10 @@ public interface CompanyDAO {
 		   
 		    // 기업이 개인 스크랩 취소 - scrapPerson
 		    public int scrapPersonCancel(ScrapPersonDTO scrapPersonDTO) throws SQLException;
+		    
+		    // 기업이 개인 스크랩 리스트
+			public List<ScrapPersonDTO> scrapList() throws SQLException;
+			
+			// CtoP 메시지 리스트
+			public List<MessageBoxCPDTO> msgBoxCPDTOselectAll() throws SQLException;
 }

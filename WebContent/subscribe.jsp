@@ -80,8 +80,8 @@
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
-							${itms.scrapNo} ${itms.companyTargetId}
-							<h5>회사명</h5><h5>대표</h5><h5>업종</h5><h5>위치</h5><h5>설립일</h5><h5>홈페이지</h5>
+							<h5>회사명 : ${itms.companyName}</h5> <h5>분류 : ${itms.companyType}</h5>
+							<h5>전화번호 : ${itms.companyPhone}</h5><h5> 홈페이지 : ${itms.companyPage}</h5>
 							<span class="fa fa-chevron-down"></span>
 							</a>
 						</h4>
@@ -89,7 +89,7 @@
 					<div id="collapseOne" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<div class="row">
-								 
+								<p>해당회사별 채용공고 표출</p> 
 							</div>
 						</div>
 					</div>
@@ -98,7 +98,6 @@
 			</div>
 		</div>
 	</div>
-
 
 	<!-- FOOTER COPYRIGHT -->
 	<%@ include file="view/footer.jsp"%>

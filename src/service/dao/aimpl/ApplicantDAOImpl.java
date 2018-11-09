@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import service.dao.ApplicantDAO;
+import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyDTO;
+import service.dto.ScrapCompanyInfoDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
 
@@ -289,13 +291,68 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			String sql=SqlQuerys.SCRAP_C_P_LIST;
+			String sql=SqlQuerys.SCRAP_P_C_LIST;
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				scrapCompanyDTO = new ScrapCompanyDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
 				list.add(scrapCompanyDTO);
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+
+	@Override
+	public List<MessageBoxPCDTO> msgBoxPCDTOselectAll() throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<MessageBoxPCDTO> list = new ArrayList<>();
+		MessageBoxPCDTO messageBoxPCDTO = null;
+								
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.MESSAGE_P_C_LIST;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+									
+			while(rs.next()) {
+				messageBoxPCDTO = new MessageBoxPCDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+				list.add(messageBoxPCDTO);
+			}
+			} finally {
+								//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+
+	@Override
+	public List<ScrapCompanyInfoDTO> scrapedCompanyView(String personScraperId) throws SQLException {
+
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ScrapCompanyInfoDTO> list = new ArrayList<>();
+		ScrapCompanyInfoDTO scrapCompanyInfoDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SCRAP_C_P_LIST_COMPANY_INFO;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, personScraperId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				scrapCompanyInfoDTO = new ScrapCompanyInfoDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						, rs.getString(5));
+				list.add(scrapCompanyInfoDTO);
 			}
 		} finally {
 			//닫기

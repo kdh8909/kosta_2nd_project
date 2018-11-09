@@ -79,5 +79,17 @@ public interface SqlQuerys {
    String SCRAP_DELETE_P_C= "DELETE scrap_person WHERE company_scraper_id=? and person_target_id=? ";
    
    // 개인, 회사 스크랩 리스트
+   String SCRAP_P_C_LIST = "SELECT * FROM scrap_person";
+   
+   // 개인, 회사 메시지 리스트
+   String MESSAGE_P_C_LIST = "SELECT * FROM message_box_p_c";
+   
+   // 회사, 개인 스크랩 리스트
    String SCRAP_C_P_LIST = "SELECT * FROM scrap_company";
+   
+   // 회사, 개인 메시지 리스트
+   String MESSAGE_C_P_LIST = "SELECT * FROM message_box_c_p"; 
+   
+// 개인페이지에서 스크랩된 회사정보 표출
+   String SCRAP_C_P_LIST_COMPANY_INFO = "SELECT B.COMPANY_ID, B.COMPANY_NAME, B.COMPANY_TYPE, B.COMPANY_PHONE, B.COMPANY_PAGE , C.RECRUIT_TILTE, C.COMPANY_EMPLOYMENT_TYPE, C.COMPANY_SALARY, C.RECRUIT_DEADLINE, C.COMPANY_WORK_ADDR FROM SCRAP_COMPANY A, COMPANY_INFO B, COMPANY_RECRUIT C WHERE A.COMPANY_TARGET_ID = B.COMPANY_ID AND A.PERSON_SCRAPER_ID = ? AND B.COMPANY_ID = C.COMPANY_ID";
 }

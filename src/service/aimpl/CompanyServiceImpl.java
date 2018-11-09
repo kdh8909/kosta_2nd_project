@@ -12,6 +12,8 @@ import service.dao.aimpl.CompanyDAOImpl;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
+import service.dto.MessageBoxPCDTO;
+import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 
 public class CompanyServiceImpl implements CompanyService {
@@ -125,5 +127,17 @@ public class CompanyServiceImpl implements CompanyService {
 	         return result;
 	      }
 	   }
+
+	@Override
+	public List<ScrapPersonDTO> scrapList() throws SQLException {
+		List<ScrapPersonDTO> list = dao.scrapList();
+		return list;
+	}
+
+	@Override
+	public List<MessageBoxCPDTO> msgBoxCPDTOselectAll() throws SQLException {
+		List<MessageBoxCPDTO> list = dao.msgBoxCPDTOselectAll();
+		return list;
+	}
 
 }

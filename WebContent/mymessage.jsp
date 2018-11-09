@@ -8,7 +8,7 @@
 <title>Insert Title</title>
 <script>
 	$(function() {
-		console.log("메인-acompany");
+		console.log("메인-shell");
 	});
 </script>
 </head>

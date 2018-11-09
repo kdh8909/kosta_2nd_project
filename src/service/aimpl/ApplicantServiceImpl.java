@@ -8,10 +8,12 @@ import java.util.List;
 import service.ApplicantService;
 import service.dao.ApplicantDAO;
 import service.dao.aimpl.ApplicantDAOImpl;
+import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyDTO;
+import service.dto.ScrapCompanyInfoDTO;
 
 
 public class ApplicantServiceImpl implements ApplicantService {
@@ -126,6 +128,18 @@ public class ApplicantServiceImpl implements ApplicantService {
 	@Override
 	public List<ScrapCompanyDTO> scrapList() throws SQLException {
 		List<ScrapCompanyDTO> list = dao.scrapList();
+		return list;
+	}
+
+	@Override
+	public List<MessageBoxPCDTO> msgBoxPCDTOselectAll() throws SQLException {
+		List<MessageBoxPCDTO> list = dao.msgBoxPCDTOselectAll();
+		return list;
+	}
+
+	@Override
+	public List<ScrapCompanyInfoDTO> scrapedCompanyView(String personScraperId) throws SQLException {
+		List<ScrapCompanyInfoDTO> list = dao.scrapedCompanyView(personScraperId);
 		return list;
 	}
 }

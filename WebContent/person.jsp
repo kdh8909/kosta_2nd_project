@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert Title</title>
+<script>
+	$(function() {
+		console.log("메인-person");
+	});
+</script>
 <style>
 i {
 	color: #dd0000;
@@ -161,7 +166,6 @@ a:hover {
 					</div>
 				</aside>
 
-
 				<!-- List -->
 				<h4 class="space30">Recent Posts</h4>
 				<c:forEach items="${list}" var="itms">	
@@ -170,9 +174,9 @@ a:hover {
 				<input type="hidden" name="personId" value='${itms.personId}'>
 				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
-							<div class="card-img">
-								<img class="img-responsive"
-									src="http://imgnews.naver.net/image/5353/2018/03/26/0000317927_003_20180326110419981.jpg">
+							<div class="card-img" align="center">
+								<img class="img-responsive avatar img-thumbnail" src="img/${itms.personImg}" style="cursor: pointer" 
+									 width="150px" height="150px" onError="javascript:this.src='img/man-default.jpg'">
 							</div>
 							<div class="card-block">
 								<div class="card-title">
@@ -240,7 +244,7 @@ a:hover {
 
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+<!-- 	<script src="js/jquery.js"></script> -->
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

@@ -46,101 +46,95 @@
 		<div class="container" style="border:1px solid #ccc;width:700px">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" style="padding:40px 0 0 0">
-					<h3 class="uppercase space30">이력서 작성</h3>
+					<h3 class="uppercase space30">구직자 정보</h3>
 					<div class="space-top">
 						<form method="post" class="contact-form">
 
 							<div class="text-center" style="display: inline-block;">
 								<img id="thumbnail"
-									src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+									src="img/${dto.personImg}"
+									onError="javascript:this.src='img/man-default.jpg'"
+									width="150px" height="150px"
 									class="avatar img-circle img-thumbnail"
 									style="cursor: pointer" alt="avatar">
-									<h6 style="display:inline-block;">썸네일을 클릭하여 사진을 업로드해주세요.</h6>
-								<script>
-									$(function() {
-										$("#thumbnail").click(
-												function() {
-													$("input[type=file]").css(
-															"display",
-															"inline-block");
-												});
-									});
-								</script>
-								
+									
+							
 							</div>
 							<input type="file" class="text-center center-block file-upload"	style="display: none;">
-
-
+							
+							
 							<div class="row" style="padding-top:20px;">
 								<div class="form-group col-md-4 col-sm-4">
-									<label class="sr-only" for="name"></label> <input
+									<label class="sr-only" for="name"></label> 
+									<input
 										class="form-control input-lg" name="name" id="name"
-										placeholder="이름" required="" type="text">
+										placeholder="이름" required="" value=${dto.personName} readonly="readonly">
 								</div>
 								<div class="form-group col-md-8 col-sm-8">
 									<label class="sr-only" for="email"></label> <input
-										class="form-control input-lg" name="email" id="email"
-										placeholder="이메일" required="" type="email">
+										class="form-control input-lg" name="email" id="email"	
+										placeholder="이메일" required="" type="email" value=${dto.personEmail} readonly="readonly">
 								</div>
 							</div>
+							
 							<div class="row">
 								<div class="form-group col-md-4 col-sm-4">
 									<label class="sr-only" for="age"></label> <input
 										class="form-control input-lg" name="age" id="age"
-										placeholder="나이" required="" type="text">
+										placeholder="나이" required="" type="text" value=${dto.personAge} readonly="readonly">
 								</div>
-								<div class="form-group col-md-6 col-sm-6">
+								<div class="form-group col-md-4 col-sm-4">
 									<label class="sr-only" for="birth"></label> <input
 										class="form-control input-lg" name="birth" id="birth"
-										placeholder="생년월일    ex)19890907" required="" type="text">
+										placeholder="생년월일    ex)19890907" required="" type="text" value=${dto.personBirth} readonly="readonly">
 								</div>
-							</div>
 
-
-							<div class="row">
-								<div class="form-group col-md-5 col-sm-5">
-									<label class="sr-only" for="location"></label> <input
+								<div class="form-group col-md-4 col-sm-4">
+									<label class="sr-only" for="location"></label> 
+									<input
 										class="form-control input-lg" name="location" id="location"
-										placeholder="희망 근무 지역" required="" type="text">
+										placeholder="희망 근무 지역" required="" type="text" value=${dto.personHopePlace} readonly="readonly">
 								</div>
 							</div>
 
 
 							<div class="row">
-								<label class="sr-only" for="sex"></label> <select
-									class="form-control"
-									style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;">
-									<option>성별</option>
-									<option>남자</option>
-									<option>여자</option>
-								</select> <select class="form-control"
-									style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;">
-									<option>경력 선택</option>
-									<option>신입</option>
-									<option>경력</option>
-								</select> <select class="form-control"
-									style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;">
-									<option>구직 상태</option>
-									<option>구직중</option>
-									<option>재직중</option>
-								</select>
+								<div class="form-group col-md-4 col-sm-4">
+									<label class="sr-only" for="sex"></label> 
+									<input class="form-control input-lg" name="sex" id="sex"
+										type="text" value=${dto.personSex} readonly="readonly">
+								</div>
+
+								<div class="form-group col-md-4 col-sm-4">
+									<label class="sr-only" for="personCareer"></label> 
+									<input class="form-control input-lg" name="personCareer" id="personCareer" 
+										type="text" value=${dto.personCareer} readonly="readonly">
+								</div>
+
+								<div class="form-group col-md-4 col-sm-4">
+									<label class="sr-only" for="personJobStatus"></label> 
+									<input class="form-control input-lg" name="personJobStatus" id="personJobStatus" 
+										type="text" value=${dto.personJobStatus} readonly="readonly">
+								</div>
 							</div>
+
 							<div class="space20"></div>
 
 							<div class="row">
-								<div class="form-group col-md-12 col-sm-12">
+								<!-- <div class="form-group col-md-12 col-sm-12">
 									<input class="form-control input-lg" name="title" id="title"
 										placeholder="제목을 입력하세요." required="" type="text" style="resize:none;wrap:hard;">
-								</div>
+								</div> -->
 
 								<div class="form-group col-md-12 col-sm-12">
-									<textarea class="form-control" rows="10" name="content" id="content" placeholder="1000자 이내로 내용을 입력하세요." maxlength="1000" style="resize:none;wrap:hard;"></textarea>
+									<textarea class="form-control" rows="10" name="content" id="content" placeholder="1000자 이내로 경력 혹은 자기소개를 입력하세요." 
+													maxlength="1000" style="resize:none;wrap:hard;" readonly="readonly"></textarea>
 									<script type="text/javascript" language="javascript" src="./js/charcount.js"></script> 
 								</div>
 							</div>
 
 
-							<input class="button btn-md" value="전송" type="submit">
+							<!-- <input class="button btn-md" value="전송" type="submit"> -->
 						</form>
 						<div class="space40"></div>
 					</div>

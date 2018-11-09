@@ -7,6 +7,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="favicon" href="images/basic/favicon.png">
 <title>코스타 구인 | 구직 메인</title>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+<script>
+	$(function() {
+		console.log("헤더");
+	});
+</script>
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -52,16 +58,13 @@
 <link rel="stylesheet" href="css/color-scheme/default-blue.css"
 	type="text/css">
 
-
-
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script
 	src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery-ajaxtransport-xdomainrequest/1.0.2/jquery.xdomainrequest.min.js"></script>
 
-<script type="text/javascript" src="js/jquery.js"></script>
-
+<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
 
 <style>
 
@@ -292,7 +295,7 @@ button.btn-check-login:hover {
 								</c:when>
 								<c:otherwise>
 									<div class="top-login">
-										<a href="#" style="color: black">마이페이지</a>
+										<a href="mypage.jsp" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
 										<a style="color: black" id="logout">로그아웃</a>
@@ -328,8 +331,7 @@ button.btn-check-login:hover {
 					</div>
 				
 				<c:choose><c:when test="${not empty sessionScope.userId}">
-					<!-- CART / SEARCH -->
-					<div class="header-x pull-right">
+					<div class="header-x pull-right"><!-- onmouseover="location.href='controller?command=sendMessagePtoC'" -->
 						<div class="s-cart">
 							<div class="sc-trigger">
 								<i class="far fa-envelope"></i><span>3</span>
@@ -337,7 +339,7 @@ button.btn-check-login:hover {
 							<div class="cart-info">
 								<small><em class="highlight">3개의 </em>새로운 쪽지가 있습니다.</small> <br>
 								<br>
-								<table class="table table-hover">
+								<table class="table table-hover" id="Msg">
 									<thead>
 										<tr>
 											<th>번호</th>
@@ -346,40 +348,94 @@ button.btn-check-login:hover {
 											<th>보낸날짜</th>
 										</tr>
 									</thead>
-									<tbody>
-										<tr>
-											<th>1</th>
-											<th>권도훈</th>
-											<th>안녕하세요</th>
-											<th>11-04 14:12:40</th>
-										</tr>
-										<tr>
-											<th>2</th>
-											<th>김승현</th>
-											<th>연락주세요.</th>
-											<th>11-04 18:20:12</th>
-										</tr>
-										<tr>
-											<th>3</th>
-											<th>이승엽</th>
-											<th>반갑습니다.</th>
-											<th>11-05 11:02:42</th>
-										</tr>
-									</tbody>
-								</table>
+	
+					<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
+
+<script type="text/javascript">
+  $(document).ready(function(){ //alert("문서 준비 완료!")
+
+	    //전체 검색하기 $.ajax();
+        function selectAll(){
+        	$.ajax({ url: "../msgPtoCList" , //서버요청주소
+        		     type: "post", //요청방식(get, post)
+        		     dataType: "json" ,//서버로부터 받는 데이터타입(text, html, json, xml)
+        		     //data: "예정 없음~",//서버에게 보내는 parameter정보
+        		     success: function(result){
+        			 //alert(result)
+        			$("#Msg tr:gt(0)").remove();
+     		       
+    		        var str="";
+    		         $.each(result, function(index, item){
+    		        	 str+="<tr>";
+    		        	 str+="<td>"+item.messageFlag+"</td>";
+    		        	 str+="<td>"+item.companyReceiveId+"</td>";
+    		        	 str+="<td>"+item.messageContents+"</td>";
+    		        	 str+="<td>"+item.messageDate+"</td>";
+    		        	 str+="</tr>";
+    		         })
+    		         $("#Msg tr:eq(0)").after(str);
+    		         $("a").css("textDecoration", "none");
+        		} ,
+        		error: function(err){
+        			//alert(err+"=> 예외발생...");
+        		}
+        	});
+        }//전체검색
+     selectAll();
+  });
+</script>
+					</c:when>
+					<c:when test="${sessionScope.perOrCom=='Company'}">
+	
+<script type="text/javascript">
+$(document).ready(function(){ //alert("문서 준비 완료!")
+	
+        function selectAll(){
+        	$.ajax({ url: "../msgCtoPList" , //서버요청주소
+        		     type: "post", //요청방식(get, post)
+        		     dataType: "json" ,//서버로부터 받는 데이터타입(text, html, json, xml)
+        		     //data: "예정 없음~",//서버에게 보내는 parameter정보
+        		     success: function(result){
+        			 //alert(result)
+        			$("#Msg tr:gt(0)").remove();
+     		       
+    		        var str="";
+    		         $.each(result, function(index, item){
+    		        	 str+="<tr>";
+    		        	 str+="<td>"+item.messageFlag+"</td>";
+    		        	 str+="<td>"+item.personReceiveId+"</td>";
+    		        	 str+="<td>"+item.messageContents+"</td>";
+    		        	 str+="<td>"+item.messageDate+"</td>";
+    		        	 str+="</tr>";
+    		         })
+    		         $("#Msg tr:eq(0)").after(str);
+    		         $("a").css("textDecoration", "none");
+        		} ,
+        		error: function(err){
+        			//alert(err+"=> 예외발생...");
+        		}
+        	});
+        }//전체검색
+        selectAll();
+     });
+</script>
+				</c:when>
+				</c:choose>
+				
+						</table>
 								<div style="display: flex; justify-content: center;">
 									<div class="cart-btn">
-										<a href="#">쪽지함</a>
+										<a href="mymessage.jsp">쪽지함</a>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					</c:when>
-					<c:otherwise>	
-					</c:otherwise>	
-				</c:choose>
+					</div>		
 				
+			</c:when>
+		</c:choose>
+
+
 					<div id="navbar-collapse-1"
 						class="navbar-collapse collapse navbar-right">
 						<ul class="nav navbar-nav">
@@ -393,7 +449,7 @@ button.btn-check-login:hover {
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
 			  <c:choose><c:when test="${not empty sessionScope.userId}">
 							<li class="page-scroll"><a
-								href="controller?command=scrapCompanyList"
+								href="controller?command=scrapedCompanyView"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
 						
 				<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">

@@ -5,6 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert Title</title>
+<script>
+	$(function() {
+		console.log("메인-company");
+	});
+</script>
 <style>
 i {
 	color: #dd0000;
@@ -221,7 +226,7 @@ a:hover {
 
 
 	<!-- jQuery -->
-	<script src="js/jquery.js"></script>
+<!-- 	<script src="js/jquery.js"></script> -->
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

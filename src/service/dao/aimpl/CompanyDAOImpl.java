@@ -12,6 +12,8 @@ import service.dao.CompanyDAO;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
+import service.dto.MessageBoxPCDTO;
+import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
@@ -317,5 +319,57 @@ public class CompanyDAOImpl implements CompanyDAO {
 	         }
 	         return result;
 	   }
+
+	@Override
+	public List<ScrapPersonDTO> scrapList() throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ScrapPersonDTO> list = new ArrayList<>();
+		ScrapPersonDTO scrapPersonDTO = null;
+				
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SCRAP_C_P_LIST;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+					
+			while(rs.next()) {
+				scrapPersonDTO = new ScrapPersonDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+				list.add(scrapPersonDTO);
+			}
+		} finally {
+				//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+
+	@Override
+	public List<MessageBoxCPDTO> msgBoxCPDTOselectAll() throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<MessageBoxCPDTO> list = new ArrayList<>();
+		MessageBoxCPDTO messageBoxCPDTO = null;
+						
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.MESSAGE_C_P_LIST;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+							
+			while(rs.next()) {
+				messageBoxCPDTO = new MessageBoxCPDTO(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6));
+				list.add(messageBoxCPDTO);
+			}
+			} finally {
+						//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
 
 }
