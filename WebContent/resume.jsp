@@ -6,11 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert Title</title>
-<script>
-	$(function() {
-		console.log("메인-resume");
-	});
-</script>
+
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 
@@ -90,21 +86,20 @@
 			<div class="col-md-12" style="margin-bottom: 50px">
 				<div class="tab-style1">
 					<ul class="nav nav-tabs">
-						<li><a href="#tab1-1" data-toggle="tab"><i
-								class="fa fa-fire"></i>기본정보</a></li>
-						<li><a href="#tab1-2" data-toggle="tab"> <i
-								class="fas fa-pencil-alt"></i>경력사항
+						<li><a href="#tab1-1" data-toggle="tab"><i class="fas fa-user-alt"></i>기본정보</a></li>
+						<li><a href="#tab1-2" data-toggle="tab"><i class="fas fa-cubes"></i>경력사항
 						</a></li>
-						<li><a href="#tab1-3" data-toggle="tab"><i
-								class="fa fa-check"></i>자기소개서</a></li>
-						<li><a href="#tab1-4" data-toggle="tab"><i
-								class="fa fa-calendar"></i>완성본</a></li>
+						<li><a href="#tab1-3" data-toggle="tab"><i class="fas fa-pencil-alt"></i>자기소개서</a></li>
+						<li><a href="#tab1-4" data-toggle="tab"><i class="far fa-save"></i>최종 저장</a></li>
 					</ul>
 					<div class="tab-content">
-						<div class="tab-pane active" id="tab1-1">
+						<div class="tab-pane active" id="tab1-1" style="padding-left: 20%">
 							<div class="space-top">
 								<form method="post" class="contact-form">
-									<div class="text-center" style="display: inline-block;">
+									<span
+										style="display: inline-block; border: 1px solid #ccc; background-color: skyblue; color: white; border-radius: 10px; padding: 10px; margin-bottom: 20px;">기본정보</span>
+									<div>
+
 										<img id="thumbnail"
 											src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
 											class="avatar img-circle img-thumbnail"
@@ -132,7 +127,7 @@
 												class="form-control input-lg" name="name" id="name"
 												placeholder="이름" required="" type="text">
 										</div>
-										<div class="form-group col-md-8 col-sm-8">
+										<div class="form-group col-md-4 col-sm-4">
 											<label class="sr-only" for="email"></label> <input
 												class="form-control input-lg" name="email" id="email"
 												placeholder="이메일" required="" type="email">
@@ -144,7 +139,7 @@
 												class="form-control input-lg" name="age" id="age"
 												placeholder="나이" required="" type="text">
 										</div>
-										<div class="form-group col-md-6 col-sm-6">
+										<div class="form-group col-md-4 col-sm-4">
 											<label class="sr-only" for="birth"></label> <input
 												class="form-control input-lg" name="birth" id="birth"
 												placeholder="생년월일    ex)19890907" required="" type="text">
@@ -152,85 +147,118 @@
 									</div>
 									<div class="row">
 										<label class="sr-only" for="sex"></label> <select
-											class="form-control"
-											style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;">
+											class="form-control" 
+											style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;" name="sex">
 											<option>성별</option>
-											<option>남자</option>
-											<option>여자</option>
+											<option value="남자">남자</option>
+											<option value="여자">여자</option>
+										</select> <label class="sr-only" for="new_old"></label> <select
+											class="form-control"
+											style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;" name="new_old">
+											<option>경력 여부</option>
+											<option value="신입">신입</option>
+											<option value="경력">경력</option>
+										</select> <label class="sr-only" for="status"></label> 
+										<select	class="form-control" style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;" name="status">
+											<option>구직 여부</option>
+											<option value="구직중">구직중</option>
+											<option value="재직중">재직중</option>
 										</select>
+										<label class="sr-only" for="occupation"></label> 
+										<select	class="form-control" style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;" name="occupation">
+											<option>분야</option>
+											<option value="SW개발">SW개발</option>
+											<option value="HW개발">HW개발</option>
+											<option value="게임개발">게임개발</option>
+											<option value="디자인">디자인</option>
+											<option value="기획/PM">기획/PM</option>
+											<option value="마케팅">마케팅</option>
+											<option value="운영">운영</option>
+											<option value="경영지원">경영지원</option>
+											<option value="비즈니스">비즈니스</option>
+											<option value="투자">투자</option>
+										</select>
+										
 									</div>
 									<div class="space20"></div>
-									<input class="button btn-md" value="다음" type="button" data-toggle="tab" href="#tab1-2">
+									<input class="button btn-md" value="다음" type="button"
+										data-toggle="tab" href="#tab1-2" style="float: left;">
 									<input class="button btn-md" value="임시저장" type="submit">
-										
+
 								</form>
 							</div>
 
 
 						</div>
-						<div class="tab-pane" id="tab1-2">
+						<div class="tab-pane" id="tab1-2" style="padding-left:20%">
 							<div class="space-top">
 								<form method="post" class="contact-form">
-									<div class="space20"></div>
+									<span
+										style="display: inline-block; border: 1px solid #ccc; background-color: skyblue; color: white; border-radius: 10px; padding: 10px; margin-bottom: 20px;">경력사항</span>
 									<div class="row">
-										<div class="form-group col-md-12 col-sm-12">
-											<textarea class="form-control" rows="10" name="content"
-												id="content" placeholder="500자 이내로 경력사항을 입력하세요."
+										<div class="form-group col-md-10 col-sm-10">
+											<textarea class="form-control" rows="10" name="carrer_content"
+												id="carrer_content" placeholder="500자 이내로 경력사항을 입력하세요."
 												maxlength="500" style="resize: none; wrap: hard;"></textarea>
 											<script type="text/javascript" language="javascript"
 												src="./js/charcount.js"></script>
 										</div>
 									</div>
 									<input class="button btn-md" value="이전" type="button"
-										data-toggle="tab" href="#tab1-1"> <input
-										class="button btn-md" value="다음" type="button"
-										data-toggle="tab" href="#tab1-3"> <input
-										class="button btn-md" value="임시저장" type="submit" style="">
+										data-toggle="tab" href="#tab1-1" style="float: left;">
+									<input class="button btn-md" value="다음" type="button"
+										data-toggle="tab" href="#tab1-3" style="float: left;">
+									<input class="button btn-md" value="임시저장" type="submit">
 								</form>
-								<div class="space40"></div>
+
 							</div>
 						</div>
 
-						<div class="tab-pane" id="tab1-3">
+						<div class="tab-pane" id="tab1-3" style="padding-left:20%">
 							<div class="space-top">
 								<form method="post" class="contact-form">
-									<div class="space20"></div>
+									<span
+										style="display: inline-block; border: 1px solid #ccc; background-color: skyblue; color: white; border-radius: 10px; padding: 10px; margin-bottom: 20px;">자기소개서</span>
+
 									<div class="row">
-										<div class="form-group col-md-12 col-sm-12">
+										<div class="form-group col-md-10 col-sm-10">
 											<label class="sr-only" for="title"></label> <input
-												class="form-control input-lg" name="title" id="title"
+												class="form-control input-lg" name="intro_title" id="intro_title"
 												placeholder="제목을 입력하세요." required="" type="text">
 										</div>
-										<div class="form-group col-md-12 col-sm-12">
-											<textarea class="form-control" rows="10" name="content"
-												id="content" placeholder="1000자 이내로 자기소개를 작성하세요."
+										<div class="form-group col-md-10 col-sm-10">
+											<textarea class="form-control" rows="10" name="intro_content"
+												id="intro_content" placeholder="1000자 이내로 자기소개를 작성하세요."
 												maxlength="500" style="resize: none; wrap: hard;"></textarea>
 											<script type="text/javascript" language="javascript"
 												src="./js/charcount.js"></script>
 										</div>
 									</div>
 									<input class="button btn-md" value="이전" type="button"
-										data-toggle="tab" href="#tab1-2"> 
+										data-toggle="tab" href="#tab1-2" style="float: left;">
 									<input class="button btn-md" value="다음" type="button"
-										data-toggle="tab" href="#tab1-4"> <input
-										class="button btn-md" value="임시저장" type="submit">
+										data-toggle="tab" href="#tab1-4" style="float: left;">
+									<input class="button btn-md" value="임시저장" type="submit">
 								</form>
 							</div>
 						</div>
-						<div class="tab-pane" id="tab1-4">
+						<div class="tab-pane" id="tab1-4" style="padding-left:20%">
 
 
 							<div class="space-top">
 								<form method="post" class="contact-form">
-									<div class="text-center" style="display: inline-block;">
+									<span
+										style="display: inline-block; border: 1px solid #ccc; background-color: skyblue; color: white; border-radius: 10px; padding: 10px; margin-bottom: 20px;">최종
+										저장</span>
+									<div class="text-center">
 										<img id="thumbnail"
 											src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
 											class="avatar img-circle img-thumbnail"
 											style="cursor: pointer" alt="avatar">
 									</div>
-									
+
 									<input class="button btn-md" value="이전" type="button"
-										data-toggle="tab" href="#tab1-3"> 
+										data-toggle="tab" href="#tab1-3" style="float: left;">
 									<input class="button btn-md" value="저장하기" type="submit">
 								</form>
 							</div>
@@ -249,7 +277,7 @@
 
 
 	<!-- jQuery -->
-<!-- 	<script src="js/jquery.js"></script> -->
+	<script src="js/jquery.js"></script>
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>
