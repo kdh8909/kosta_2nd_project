@@ -167,16 +167,11 @@
 										<label class="sr-only" for="occupation"></label> 
 										<select	class="form-control" style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;" name="occupation">
 											<option>분야</option>
-											<option value="SW개발">SW개발</option>
-											<option value="HW개발">HW개발</option>
-											<option value="게임개발">게임개발</option>
-											<option value="디자인">디자인</option>
-											<option value="기획/PM">기획/PM</option>
-											<option value="마케팅">마케팅</option>
-											<option value="운영">운영</option>
-											<option value="경영지원">경영지원</option>
-											<option value="비즈니스">비즈니스</option>
-											<option value="투자">투자</option>
+											<option value="웹개발">웹개발</option>
+											<option value="응용프로그램개발">응용프로그램개발</option>
+											<option value="시스템개발">시스템개발</option>
+											<option value="인공지능(AI)/빅데이터">인공지능(AI)/빅데이터</option>
+											<option value="학생/무직">학생/무직</option>
 										</select>
 										
 									</div>
