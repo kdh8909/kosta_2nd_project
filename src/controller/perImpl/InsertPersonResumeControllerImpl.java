@@ -45,13 +45,17 @@ public class InsertPersonResumeControllerImpl implements Controller {
 		String personEmail = m.getParameter("personEmail");
 		String personHopePlace = m.getParameter("personHopePlace");
 		String personJobStatus = m.getParameter("personJobStatus");
+		String personExperience = m.getParameter("personExperience");
+		String personSelfIntroductionTitle = m.getParameter("personSelfIntroductionTitle");
+		String personSelfIntroduction = m.getParameter("personSelfIntroduction");
 		
 		
 		ModelAndView mv = new ModelAndView();
 		String url = "error/error.jsp";
 		
 		PersonResumeDTO personResumeDTO = new PersonResumeDTO(personId, personName, personOccupation, personCareer,
-				personImg, personAge, personSex, personBirth, personEmail, personHopePlace, personJobStatus);
+				personImg, personAge, personSex, personBirth, personEmail, personHopePlace, personJobStatus,
+				personExperience, personSelfIntroductionTitle, personSelfIntroduction);
 		
 		try {
 			

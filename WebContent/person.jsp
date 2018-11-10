@@ -175,21 +175,20 @@ a:hover {
 				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
 							<div class="card-img" align="center">
-								<img class="img-responsive avatar img-thumbnail" src="img/${itms.personImg}" style="cursor: pointer" 
+								<img class="img-responsive avatar img-thumbnail" src="save/person/${itms.personImg}" style="cursor: pointer" 
 									 width="150px" height="150px" onError="javascript:this.src='img/man-default.jpg'">
 							</div>
 							<div class="card-block">
 								<div class="card-title">
-									<h4>${itms.personId}(${itms.personName})</h4>
+									<h4>${itms.personName}</h4>
 								</div>
 								<div class="card-text">
-									<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp;
-										/ &nbsp;</span><span>분야</span>
+									<span>${itms.personCareer}</span><span>&nbsp; / &nbsp;</span><span>${itms.personHopePlace}</span><span>&nbsp;
+										/ &nbsp;</span><span>${itms.personOccupation}</span>
 								</div>
 								<div class="card-icons">
 									<h5 style="width: auto; height: 30px; overflow: hidden;">
-										간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
-										하기
+										[제목 : ${itms.personSelfIntroductionTitle}]
 										</h4>
 								</div>
 								<hr>

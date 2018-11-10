@@ -392,7 +392,7 @@ public class CompanyDAOImpl implements CompanyDAO {
 			while(rs.next()) {
 				companyInfoDTO = new CompanyInfoDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
 						, rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9)
-						, rs.getString(10), rs.getInt(11));
+						, rs.getString(10), rs.getInt(11), rs.getString(12));
 				list.add(companyInfoDTO);
 			}
 		} finally {

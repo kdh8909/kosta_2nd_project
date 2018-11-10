@@ -61,7 +61,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			while(rs.next()) {
 				personResumeDTO = new PersonResumeDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
 						                             ,rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8)
-						                             ,rs.getString(9), rs.getString(10), rs.getString(11));
+						                             ,rs.getString(9), rs.getString(10), rs.getString(11)
+						                             ,rs.getString(12), rs.getString(13), rs.getString(14));
 				list.add(personResumeDTO);
 			}
 		} finally {
@@ -139,7 +140,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			while(rs.next()) {
 				personResumeDTO = new PersonResumeDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
 						                             ,rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8)
-						                             ,rs.getString(9), rs.getString(10), rs.getString(11));
+						                             ,rs.getString(9), rs.getString(10), rs.getString(11)
+						                             ,rs.getString(12), rs.getString(13), rs.getString(14));
 			}
 		} finally {
 			//´Ý±â
