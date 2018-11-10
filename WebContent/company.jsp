@@ -165,39 +165,43 @@ a:hover {
 				<!-- List -->
 				<div class="col-md-9" style="padding: 5px 5px 5px 30px;">
 					<h4 class="space30">Company Posts</h4>
-					
+
 					<c:forEach items="${list}" var="itms">
-					
-					<div class="col-md-11"
-						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px;margin-bottom:20px">
-						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
-							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}"><img
-								src="save/company/"
-								style="width: 220px; height: 220px"></a>
+
+						<div class="col-md-11"
+							style="border: 1px solid #ccc; border-radius: 5px; padding: 0px; margin-bottom: 20px">
+							<div class="col-md-4" style="padding: 0px; overflow: hidden;">
+								<a
+									href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}"><img
+									src="save/company/" style="width: 220px; height: 220px"></a>
+							</div>
+
+							<div class="col-md-8"
+								style="margin-bottom: 20px; padding-top: 30px;">
+								<a
+									href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}">
+									<h3>${itms.companyName}</h3>
+								</a>
+								<ul style="list-style: none;">
+									<li style="float: left; padding-right: 10px"><h5>${itms.companyCategory}</h5></li>
+									<li style="float: left; padding-right: 10px"><h5>${itms.companyType}</h5></li>
+									<li style="float: left; padding-right: 10px"><h5>${itms.companyHeadAddr}</h5></li>
+									<li style="float: left; padding-right: 10px"><h5>${itms.companyPhone}</h5></li>
+								</ul>
+							</div>
+							<div class="col-md-8">
+								<ul>
+									<li><a
+										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+											<i class="far fa-envelope-open"></i>쪽지보내기
+									</a><a style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									<li></li>
+								</ul>
+							</div>
 						</div>
-						
-						<div class="col-md-8" style="margin-bottom:20px;padding-top:30px;">
-							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}">
-							<h3>${itms.companyName}</h3> </a>
-							<ul style="list-style: none;">
-								<li style="float: left; padding-right: 10px"><h5>${itms.companyCategory}</h5></li>
-								<li style="float: left; padding-right: 10px"><h5>${itms.companyType}</h5></li>
-								<li style="float: left; padding-right: 10px"><h5>${itms.companyHeadAddr}</h5></li>
-								<li style="float: left; padding-right: 10px"><h5>${itms.companyPhone}</h5></li>
-							</ul>
-						</div>
-						<div class="col-md-8">
-							<ul>
-								<li><a style="cursor: pointer;">
-								<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
-								<li><a
-									style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
-							</ul>
-						</div>
-					</div>
 					</c:forEach>
 
-<%-- 					<div class="col-md-11"
+					<%-- 					<div class="col-md-11"
 						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px">
 						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
 							<a href="#"><img
