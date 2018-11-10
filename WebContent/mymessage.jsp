@@ -82,11 +82,11 @@
 					<tr>
 						<td>1</td>
 						<td>PERSON01</td>
-						<td><a style="color: black" data-toggle="modal"
-							data-target="#send" data-dismiss="modal">에라 모르겠다</a></td>
+						<td><a style="color:black;"data-toggle="modal" data-target="#send"
+							data-dismiss="modal">에라 모르겠다</a></td>
 						<td>2018.11.10 15:01:25</td>
-						<td class="text-center"><a href="#"
-							class="btn btn-warning btn-xs">보내기</a></td>
+						<td class="text-center"><a class="btn btn-warning btn-xs"
+							data-toggle="modal" data-target="#send" data-dismiss="modal">보내기</a></td>
 						<td class="text-center"><a href="#"
 							class="btn btn-danger btn-xs">삭제</a></td>
 					</tr>
