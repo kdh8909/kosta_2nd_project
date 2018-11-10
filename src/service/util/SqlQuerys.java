@@ -7,10 +7,10 @@ public interface SqlQuerys {
    String C_JOIN  = "INSERT INTO company_login VALUES(?,?,?)";
 
    // 기업 아이디 중복체크
-   String C_SELECT_BY_SEARCH_ID = "SELECT * FROM company_login WHERE company_id = ?";
+   String C_SELECT_BY_SEARCH_ID = "SELECT * FROM company_login WHERE upper(company_id) = upper(?)";
 
    // 기업 로그인
-   String C_LOGIN = "SELECT * FROM company_login WHERE company_id = ? AND company_pwd = ?";
+   String C_LOGIN = "SELECT * FROM company_login WHERE upper(company_id) = UPPER(?) AND company_pwd = ?";
 
    // 모집공고추가
    String C_ADD_RECRUIT = "INSERT INTO COMPANY_recruit VALUES(RECRUIT_SEQ.NEXTVAL,?,?,?,?,?,?,?,?)";
@@ -28,10 +28,10 @@ public interface SqlQuerys {
    String P_JOIN = "INSERT INTO person_login VALUES(?,?,?)";
 
    // 개인 로그인
-   String P_LOGIN = "SELECT * FROM person_login WHERE person_id = ? AND person_pwd = ? ";
+   String P_LOGIN = "SELECT * FROM person_login WHERE UPPER(person_id) =  UPPER(?)  AND person_pwd = ? ";
 
    // 개인 아이디 중복체크
-   String P_SELECT_BY_SEARCH_ID = "SELECT * FROM person_login WHERE person_id = ? ";
+   String P_SELECT_BY_SEARCH_ID = "SELECT * FROM person_login WHERE upper(person_id) = upper(?)";
 
    // 개인 이력서 추가
    String P_ADD_RESUME = "INSERT INTO PERSON_RESUME VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";

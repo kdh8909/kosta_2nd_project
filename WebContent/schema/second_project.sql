@@ -5,9 +5,13 @@ ALTER USER pjt2 IDENTIFIED BY pjt2;
 ALTER USER pjt2 account unlock;
 GRANT CONNECT, RESOURCE TO pjt2;
 
-SELECT * FROM person_login WHERE PERSON_ID=?
+SELECT * FROM person_login
+
+SELECT * FROM company_login
 
 UPDATE PERSON_LOGIN SET PERSON_PWD = '1234', PERSON_PHONE = '010-4444-4444' WHERE PERSON_ID = 'PERSON05'
+
+SELECT * FROM person_login WHERE upper(person_id) =  UPPER('person01')  AND person_pwd = '4321'
 
 CONN pjt2/pjt2;
 DROP USER pjt2 CASCADE;
