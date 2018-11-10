@@ -445,7 +445,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 								href="controller?command=resumeSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">개인</a></li>
 							<li class="page-scroll"><a
-								href="controller?command=selectAllCompanyInfo"
+								href="controller?command=companyRecruitSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
 			  <c:choose><c:when test="${not empty sessionScope.userId}">
 							<li class="page-scroll"><a
@@ -521,7 +521,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 						</div>
 						
 						<div class="btn-check-log">
-							<button type="submit" class="btn-check-login">로그인</button>
+							<button type="submit" class="btn-check-login" style="border-radius:10px;">로그인</button>
 						</div>
 
 						<br>
@@ -594,7 +594,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 						<br>
 						<br>
 						<div class="btn-check-log">
-							<button type="submit" class="btn-check-login">회원가입</button>
+							<button type="submit" class="btn-check-login" style="border-radius:10px;">회원가입</button>
 						</div>
 
 					</form>
