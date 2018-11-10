@@ -28,10 +28,10 @@ public interface SqlQuerys {
    String P_JOIN = "INSERT INTO person_login VALUES(?,?,?)";
 
    // 개인 로그인
-   String P_LOGIN = "SELECT * FROM person_login WHERE person_id = ? AND person_pwd = ? ";
+   String P_LOGIN = "SELECT * FROM person_login WHERE person_id =  ?  AND person_pwd = ? ";
 
    // 개인 아이디 중복체크
-   String P_SELECT_BY_SEARCH_ID = "SELECT * FROM person_login WHERE person_id = ? ";
+   String P_SELECT_BY_SEARCH_ID = "SELECT * FROM person_login WHERE person_id = ?";
 
    // 개인 이력서 추가
    String P_ADD_RESUME = "INSERT INTO PERSON_RESUME VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
