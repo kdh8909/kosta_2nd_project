@@ -9,6 +9,7 @@ import java.util.List;
 
 import service.dao.ApplicantDAO;
 import service.dao.CompanyDAO;
+import service.dto.CompanyInfoDTO;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
@@ -367,6 +368,34 @@ public class CompanyDAOImpl implements CompanyDAO {
 			}
 			} finally {
 						//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+	}
+	
+	@Override
+	public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<CompanyInfoDTO> list = new ArrayList<>();
+		CompanyInfoDTO companyInfoDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SELECT_ALL_COMPANIES;
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				companyInfoDTO = new CompanyInfoDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						, rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9)
+						, rs.getString(10), rs.getInt(11));
+				list.add(companyInfoDTO);
+			}
+		} finally {
+			//닫기
 			DBUtil.dbClose(rs, ps, con);
 		}
 		return list;

@@ -6,11 +6,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert Title</title>
-<script>
-	$(function() {
-		console.log("메인-acompany");
-	});
-</script>
+
 </head>
 <body>
 
@@ -24,7 +20,7 @@
 				<div class="row">
 					<div class="col-md-12">
 						<h3>
-							<span>이력서</span>Presentation <br>your career!
+							<span>회사정보</span>Check<br>your Company!
 						</h3>
 					</div>
 				</div>
@@ -36,7 +32,8 @@
 					<div class="col-md-12">
 						<ul class="bcrumbs">
 							<li><a href="#"><i class="fa fa-home"></i> 홈</a></li>
-							<li><a href="#">이력서작성</a></li>
+							<li><a href="#">구직공고</a></li>
+							<li><a href="#">회사정보</a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -50,11 +47,11 @@
 		<div class="container" style="border:1px solid #ccc;width:700px">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2" style="padding:40px 0 0 0">
-					<h3 class="uppercase space30">이력서 작성</h3>
+					<h3 class="uppercase space30">${companyName}</h3>
 					<div class="space-top">
-						<form method="post" class="contact-form">
+<!-- 						<form method="post" class="contact-form"> -->
 
-							<div class="text-center" style="display: inline-block;">
+<!-- 							<div class="text-center" style="display: inline-block;">
 								<img id="thumbnail"
 									src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
 									class="avatar img-circle img-thumbnail"
@@ -71,8 +68,8 @@
 									});
 								</script>
 								
-							</div>
-							<input type="file" class="text-center center-block file-upload"	style="display: none;">
+							</div> -->
+<!-- 							<input type="file" class="text-center center-block file-upload"	style="display: none;">
 
 
 							<div class="row" style="padding-top:20px;">
@@ -145,8 +142,30 @@
 
 
 							<input class="button btn-md" value="전송" type="submit">
-						</form>
-						<div class="space40"></div>
+						</form> -->
+						
+	  <div class="inner-content" style="padding-top:30px;">
+      <div class="container">
+         <div class="row" style="margin-bottom:30px;">
+            <h3 class="uppercase text-center">스크랩</h3>
+         </div>
+         <div class="panel-group" id="accordion-e1">
+         <c:forEach items="${list}" var="itms">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h4 class="panel-title">
+                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1">
+                     <h5>회사명 : ${itms.companyCareer}</h5> <h5>분류 : ${itms.companyEmploymentType}</h5>
+                     <h5>전화번호 : ${itms.companyEducation}</h5><h5> 홈페이지 : ${itms.companySalary}</h5>
+                     <span class="fa fa-chevron-down"></span>
+                     </a>
+                  </h4>
+               </div>
+            </div>
+            </c:forEach>
+         </div>
+      </div>
+   
 					</div>
 				</div>
 			</div>

@@ -3,6 +3,7 @@ package service.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import service.dto.CompanyInfoDTO;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
@@ -49,4 +50,7 @@ public interface CompanyDAO {
 			
 			// CtoP 메시지 리스트
 			public List<MessageBoxCPDTO> msgBoxCPDTOselectAll() throws SQLException;
+			
+		    // 전체기업정보 표출
+		    public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException;
 }

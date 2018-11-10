@@ -5,11 +5,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert Title</title>
-<script>
-	$(function() {
-		console.log("메인-company");
-	});
-</script>
 <style>
 i {
 	color: #dd0000;
@@ -57,7 +52,7 @@ a:hover {
 </style>
 </head>
 <body>
-<!-- <body onload="window.location.href='controller?command=resumeSelectAll'"> -->
+	<!-- <body onload="window.location.href='controller?command=resumeSelectAll'"> -->
 
 	<div class="outer-wrapper">
 		<!-- Header !-->
@@ -168,57 +163,104 @@ a:hover {
 
 
 				<!-- List -->
-				<div class="col-md-9" style="padding: 5px 5px 5px 5px;">
-				<h4 class="space30">Recent Posts</h4>
-					<ul class="f-posts">
+				<div class="col-md-9" style="padding: 5px 5px 5px 30px;">
+					<h4 class="space30">Company Posts</h4>
+					
 					<c:forEach items="${list}" var="itms">
-					<form onclick="submit()" action="controller">
-					<input type="hidden" name="command" value="companyRecruitSelectByCompanyName">
-					<input type="hidden" name="companyId" value='${itms.companyId}'>
-						<li>
-							<img src="images/blog/1/1.jpg" class="img-responsive" alt=""/>
-							
-								<h4>${itms.recruitNumber}(${itms.companyId})</h4>
-								<span>신입</span><span>&nbsp; / &nbsp;</span><span>경기</span><span>&nbsp; / &nbsp;</span><span>분야</span>
+					
+					<div class="col-md-11"
+						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px;margin-bottom:20px">
+						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
+							<a href="#"><img
+								src="https://ncc-phinf.pstatic.net/20140428_40/13986431939845C2qH_JPEG/1-1.jpg?type=w646"
+								style="width: 220px; height: 220px"></a>
+						</div>
+						
+						<div class="col-md-8" style="margin-bottom:20px;">
+							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}">
+							<h3>${itms.companyName}</h3> </a>
+							<ul style="list-style: none;">
+								<li style="float: left; padding-right: 10px"><h4>${itms.companyCategory}</h4></li><br>
+								<li style="float: left; padding-right: 10px"><h5>${itms.companyType}&nbsp;/&nbsp;
+								${itms.companyHeadAddr}&nbsp;/&nbsp;
+								${itms.companyPhone}&nbsp;/&nbsp;${itms.companyPage}</h5></li>
+							</ul>
+						</div>
+						<div class="col-md-8">
+							<div class="card-icons">
 								<h5 style="width: auto; height: 30px; overflow: hidden;">
-								간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기</h5>			
-								<i class="fa fa-comments"></i> 5 Comments
-								<a style="cursor: pointer;"><i class="far fa-envelope-open"></i>쪽지보내기</a>
-								<a style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a>
-						</li>
-					</form>
-					</c:forEach>
-					</ul>
-				</div>
-
-
-					<div class="sorter" style="margin: auto;left:-15px;">
-						<div class="col-md-12">
-							<ul class="shop_pn">
-								<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-								<li><a class="active" href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
-								<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+									간단한 회사소개
+									</h4>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<ul>
+								<li><a style="cursor: pointer;">
+								<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
+								<li><a
+									style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
 							</ul>
 						</div>
 					</div>
+					</c:forEach>
+
+<%-- 					<div class="col-md-11"
+						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px">
+						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
+							<a href="#"><img
+								src="https://ncc-phinf.pstatic.net/20140428_40/13986431939845C2qH_JPEG/1-1.jpg?type=w646"
+								style="width: 220px; height: 220px"></a>
+						</div>
+						<div class="col-md-8" style="margin-bottom:20px;">
+							<a href="#"><h3>${itms.companyName}</h3> </a>
+							<ul style="list-style: none;">
+								<li style="float: left; padding-right: 10px">Companyceo</li>
+								<li style="float: left; padding-right: 10px">CompanyType</li>
+								<li style="float: left;">CompanyHeadAddr</li>
+							</ul>
+						</div>
+						<div class="col-md-8">
+							<div class="card-icons">
+								<h5 style="width: auto; height: 30px; overflow: hidden;">
+									간단한 자기소개 2줄짜리 넘어가면 hover시 보이게 하기 간단한 자기소개 2줄짜리 넘어가면 hover시 보이게
+									하기
+									</h4>
+							</div>
+						</div>
+						<div class="col-md-8">
+							<ul>
+								<li><a style="cursor: pointer;">
+								<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
+								<li><a
+									style="cursor: pointer;"><i class="far fa-heart"></i>스크랩</a></i></li>
+							</ul>
+						</div>
+					</div> --%>
 
 
 
-					<!-- List End -->
+				</div>
+
+				<div class="sorter" style="margin: auto; left: -15px;">
+					<div class="col-md-12">
+						<ul class="shop_pn">
+							<li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+							<li><a class="active" href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+						</ul>
+					</div>
+				</div>
+
+
+
+				<!-- List End -->
 			</div>
 		</div>
-
-
 	</div>
-
-
-
-
-
 
 	<!-- FOOTER COPYRIGHT -->
 	<%@ include file="view/footer.jsp"%>
@@ -226,7 +268,7 @@ a:hover {
 
 
 	<!-- jQuery -->
-<!-- 	<script src="js/jquery.js"></script> -->
+	<script src="js/jquery.js"></script>
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

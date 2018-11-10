@@ -9,6 +9,7 @@ import service.dao.ApplicantDAO;
 import service.dao.CompanyDAO;
 import service.dao.aimpl.ApplicantDAOImpl;
 import service.dao.aimpl.CompanyDAOImpl;
+import service.dto.CompanyInfoDTO;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
@@ -137,6 +138,12 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public List<MessageBoxCPDTO> msgBoxCPDTOselectAll() throws SQLException {
 		List<MessageBoxCPDTO> list = dao.msgBoxCPDTOselectAll();
+		return list;
+	}
+	
+	@Override
+	public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException {
+		List<CompanyInfoDTO> list = dao.selectAllCompanyInfo();
 		return list;
 	}
 

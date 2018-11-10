@@ -445,7 +445,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 								href="controller?command=resumeSelectAll"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">개인</a></li>
 							<li class="page-scroll"><a
-								href="controller?command=companyRecruitSelectAll"
+								href="controller?command=selectAllCompanyInfo"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">회사</a></li>
 			  <c:choose><c:when test="${not empty sessionScope.userId}">
 							<li class="page-scroll"><a

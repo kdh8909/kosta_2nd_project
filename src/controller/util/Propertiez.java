@@ -20,6 +20,7 @@ public class Propertiez {
 		scrapPersonList("controller.comImpl.ScrapPersonListControllerImpl"),
 		sendMessageCtoP("controller.comImpl.SendMessageCtoPControllerImpl"),
 		updateViews("controller.comImpl.UpdateViewsControllerImpl"),
+		selectAllCompanyInfo("controller.comImpl.SelectAllCompanyInfoControllerImpl"),
 		
 		companyCheckedMessage("controller.perImpl.CompanyCheckedMessageControllerImpl"),
 		companyCheckMessage("controller.perImpl.CompanyCheckMessageControllerImpl"),
