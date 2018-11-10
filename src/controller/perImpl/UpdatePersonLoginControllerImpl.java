@@ -14,12 +14,16 @@ import javax.servlet.http.HttpSession;
 import controller.Controller;
 import controller.util.ModelAndView;
 import service.ApplicantService;
+import service.CompanyService;
 import service.aimpl.ApplicantServiceImpl;
+import service.aimpl.CompanyServiceImpl;
+import service.dto.CompanyLoginDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.ScrapCompanyInfoDTO;
 
 public class UpdatePersonLoginControllerImpl implements Controller {
 	ApplicantService asv = ApplicantServiceImpl.getInstance();
+	CompanyService csv = CompanyServiceImpl.getInstance();
 
 	@Override
 	public ModelAndView execute(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
@@ -30,18 +34,42 @@ public class UpdatePersonLoginControllerImpl implements Controller {
 		HttpSession session = req.getSession();
 		
 		String personId = (String) session.getAttribute("userId");
+		String perOrCom = (String) session.getAttribute("perOrCom");
 		String personPwd = req.getParameter("personPwd");
 		String personPhone = req.getParameter("personPhone");
-		
-		PersonLoginDTO personLoginDTO = new PersonLoginDTO(personId, personPwd, personPhone, "Person");
+	
+		System.out.println(personId);
+		System.out.println(perOrCom);
+		System.out.println(personPwd);
+		System.out.println(personPhone);
+
 		
 		ModelAndView mv = new ModelAndView();
 
 		try { mv.setPath("./mypage.jsp");
-		asv.updatePersonLogin(personLoginDTO);
 		
-		  session.setAttribute("personPwd", personPwd);
-		  session.setAttribute("personPhone", personPhone);
+		  if(perOrCom.equals("Person")) {
+			  
+			  PersonLoginDTO personLoginDTO = new PersonLoginDTO(personId, personPwd, personPhone, perOrCom);
+			  
+			  asv.updatePersonLogin(personLoginDTO);
+			  
+			  session.setAttribute("personPwd", personPwd);
+			  session.setAttribute("personPhone", personPhone);
+			  
+		  } else if(perOrCom.equals("Company")) {
+			  
+			  CompanyLoginDTO companyLoginDTO = new CompanyLoginDTO(personId, personPwd, personPhone, perOrCom);
+
+			  csv.updateCompanyLogin(companyLoginDTO);
+			  
+			  System.out.println(companyLoginDTO);
+			  
+			  
+			  session.setAttribute("personPwd", personPwd);
+			  session.setAttribute("personPhone", personPhone);	
+		  }
+		
 
 		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
 								   mv.setPath("./events/result.jsp");

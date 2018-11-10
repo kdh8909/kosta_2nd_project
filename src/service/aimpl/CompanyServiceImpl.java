@@ -14,6 +14,7 @@ import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
+import service.dto.PersonLoginDTO;
 import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 
@@ -145,6 +146,22 @@ public class CompanyServiceImpl implements CompanyService {
 	public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException {
 		List<CompanyInfoDTO> list = dao.selectAllCompanyInfo();
 		return list;
+	}
+
+	@Override
+	public CompanyLoginDTO selectCompanyMypage(String userId) throws SQLException {
+		CompanyLoginDTO companyLoginDTO = dao.selectCompanyMypage(userId);
+		return companyLoginDTO;
+	}
+
+	@Override
+	public int updateCompanyLogin(CompanyLoginDTO companyLoginDTO) throws SQLException {
+		int result = dao.updateCompanyLogin(companyLoginDTO);
+		if(result==0) {
+			throw new SQLException("기업의 PW 및 전화번호 수정이 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
 	}
 
 }

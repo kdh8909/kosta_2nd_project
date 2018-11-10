@@ -14,6 +14,7 @@ import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
+import service.dto.PersonLoginDTO;
 import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 import service.util.DBUtil;
@@ -399,6 +400,57 @@ public class CompanyDAOImpl implements CompanyDAO {
 			DBUtil.dbClose(rs, ps, con);
 		}
 		return list;
+	}
+
+	@Override
+	public CompanyLoginDTO selectCompanyMypage(String userId) throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		CompanyLoginDTO companyLoginDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SELECT_COMPANY_MYPAGE;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				companyLoginDTO = new CompanyLoginDTO(rs.getString(1), rs.getString(2), rs.getString(3), "Company");
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return companyLoginDTO;
+	}
+
+	@Override
+	public int updateCompanyLogin(CompanyLoginDTO companyLoginDTO) throws SQLException {
+
+		
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      int result = 0;
+	      String sql = SqlQuerys.UPDATE_COMPANY_LOGIN;
+	      
+	      try {
+	         con = DBUtil.getConnection();
+	         ps = con.prepareStatement(sql);
+	         
+	         ps.setString(1, companyLoginDTO.getCompanyPwd());
+	         ps.setString(2, companyLoginDTO.getCompanyNumber());
+	         ps.setString(3, companyLoginDTO.getCompanyId());
+
+	         result = ps.executeUpdate();
+
+	      } finally {
+	         //닫기
+	         DBUtil.dbClose(ps, con);
+	      }
+	      return result;
 	}
 
 }

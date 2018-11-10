@@ -36,4 +36,14 @@ public class CompanyLoginDTO extends LoginDTO {
 	public String getPerOrCom() {
 		return perOrCom;
 	}
+
+	@Override
+	public String toString() {
+		return "CompanyLoginDTO [id=" + id + ", pwd=" + pwd + ", companyNumber=" + companyNumber + ", perOrCom="
+				+ perOrCom + "]";
+	}
+	
+	
+	
+	
 }

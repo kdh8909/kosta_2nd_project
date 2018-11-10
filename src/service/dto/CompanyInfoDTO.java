@@ -99,5 +99,7 @@ public class CompanyInfoDTO {
 	public void setCompanyViews(int companyViews) {
 		this.companyViews = companyViews;
 	}
+	
+	
 
 }

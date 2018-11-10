@@ -58,9 +58,12 @@ public interface ApplicantService {
 	// 개인이 스크랩한 회사정보 보기 (회사정보표출)
     public List<ScrapCompanyInfoDTO> scrapedCompanyView(String personScraperId) throws SQLException;
     
-    // 개인 PW 및 전화번호수정하기
+    // 개인 PW 및 전화번호 수정하기
     public int updatePersonLogin(PersonLoginDTO personLoginDTO) throws SQLException;
     
+    // 개인 PW 및 전화번호 가져오기
     public PersonLoginDTO selectPersonMypage(String userId) throws SQLException;
+    
+    
 
 }

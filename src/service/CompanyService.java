@@ -8,6 +8,7 @@ import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
+import service.dto.PersonLoginDTO;
 import service.dto.ScrapPersonDTO;
 
 public interface CompanyService {
@@ -53,5 +54,11 @@ public interface CompanyService {
 		
 	    // 전체기업정보 표출
 	    public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException;
+	    
+	    // 기업 PW 및 전화번호 가져오기
+	    public CompanyLoginDTO selectCompanyMypage(String userId) throws SQLException;
+	    
+	    // 기업 PW 및 전화번호 수정하기
+	    public int updateCompanyLogin(CompanyLoginDTO companyLoginDTO) throws SQLException;
 	
 }

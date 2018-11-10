@@ -101,7 +101,7 @@
 											<div class="space-top">
 												<div>
 													<img id="thumbnail"
-														src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+														src="save/person/${dto.personImg}"
 														class="avatar img-circle img-thumbnail"
 														style="cursor: pointer" alt="avatar">
 													<h6 style="display: inline-block;">썸네일을 클릭하여 사진을
@@ -128,25 +128,25 @@
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="name"></label> <input
 															class="form-control input-lg" name="personId" id="name"
-															placeholder="이름" required="" type="text">
+															placeholder="이름" required="" type="text" value=${dto.personName}>
 													</div>
 
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="email"></label> <input
 															class="form-control input-lg" name="email" id="email"
-															placeholder="이메일" required="" type="email">
+															placeholder="이메일" required="" type="email" value=${dto.personEmail}>
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="age"></label> <input
 															class="form-control input-lg" name="age" id="age"
-															placeholder="나이" required="" type="text">
+															placeholder="나이" required="" type="text" value=${dto.personAge}>
 													</div>
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="birth"></label> <input
 															class="form-control input-lg" name="birth" id="birth"
-															placeholder="생년월일    ex)19890907" required="" type="text">
+															placeholder="생년월일    ex)19890907" required="" type="text" value=${dto.personBirth}>
 													</div>
 												</div>
 												<div class="row">
@@ -155,32 +155,32 @@
 														style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="sex">
 														<option>성별</option>
-														<option value="남자">남자</option>
-														<option value="여자">여자</option>
+														<option value="남자" selected=${dto.personSex}>남자</option>
+														<option value="여자" selected=${dto.personSex}>여자</option>
 													</select> <label class="sr-only" for="new_old"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="new_old">
 														<option>경력 여부</option>
-														<option value="신입">신입</option>
-														<option value="경력">경력</option>
+														<option value="신입" selected=${dto.personCareer}>신입</option>
+														<option value="경력" selected=${dto.personCareer}>경력</option>
 													</select> <label class="sr-only" for="status"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="status">
 														<option>구직 여부</option>
-														<option value="구직중">구직중</option>
-														<option value="재직중">재직중</option>
+														<option value="0" selected=${dto.personJobStatus}>구직중</option>
+														<option value="1" selected=${dto.personJobStatus}>재직중</option>
 													</select> <label class="sr-only" for="occupation"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="occupation">
 														<option>분야</option>
-														<option value="웹개발">웹개발</option>
-														<option value="응용프로그램개발">응용프로그램개발</option>
-														<option value="시스템개발">시스템개발</option>
-														<option value="인공지능(AI)/빅데이터">인공지능(AI)/빅데이터</option>
-														<option value="학생/무직">학생/무직</option>
+														<option value="웹개발" selected=${dto.personOccupation}>웹개발</option>
+														<option value="응용프로그램개발" selected=${dto.personOccupation}>응용프로그램개발</option>
+														<option value="시스템개발" selected=${dto.personOccupation}>시스템개발</option>
+														<option value="인공지능(AI)/빅데이터" selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
+														<option value="학생/무직" selected=${dto.personOccupation}>학생/무직</option>
 													</select>
 
 												</div>

@@ -17,6 +17,8 @@ CONN pjt2/pjt2;
 DROP USER pjt2 CASCADE;
 ------------------------------------------------ 테이블드랍
 
+UPDATE COMPANY_LOGIN SET COMPANY_PWD = '1234', COMPANY_NUMBER = '87654321' WHERE COMPANY_ID = 'COMPANY01'
+
 DROP TABLE message_box_c_p
 DROP TABLE message_box_p_c
 DROP TABLE COMPANY_RECRUIT

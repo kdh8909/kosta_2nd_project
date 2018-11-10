@@ -101,5 +101,11 @@ public interface SqlQuerys {
   
   //개인 PW 및 전화번호 표출
   String SELECT_PERSON_MYPAGE = "SELECT * FROM person_login WHERE PERSON_ID=?";
+  
+  //기업 PW 및 전화번호 표출
+  String SELECT_COMPANY_MYPAGE = "SELECT * FROM company_login WHERE COMPANY_ID=?";
+  
+//개인 PW 및 전화번호수정하기
+ String UPDATE_COMPANY_LOGIN =  "UPDATE COMPANY_LOGIN SET COMPANY_PWD = ?, COMPANY_NUMBER = ? WHERE COMPANY_ID = ?";
 
 }

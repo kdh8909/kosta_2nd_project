@@ -53,4 +53,10 @@ public interface CompanyDAO {
 			
 		    // 전체기업정보 표출
 		    public List<CompanyInfoDTO> selectAllCompanyInfo() throws SQLException;
+		    
+		    // 기업 PW 및 전화번호 가져오기
+		    public CompanyLoginDTO selectCompanyMypage(String userId) throws SQLException;
+		    
+		    // 기업 PW 및 전화번호 수정하기
+		    public int updateCompanyLogin(CompanyLoginDTO companyLoginDTO) throws SQLException;
 }

@@ -27,10 +27,13 @@ public class SelectPersonResumeByPersonIdControllerImpl implements Controller {
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
 		PersonResumeDTO dto = new PersonResumeDTO();
-		String personId = req.getParameter("personId");
+		
+		String personId = (String) session.getAttribute("userId");
+		String perOrCom = (String) session.getAttribute("perOrCom");
 		try { mv.setPath("resume.jsp");
 			  dto = asv.resumeSelectbypersonId(personId);	  
-			  session.setAttribute("dto", dto); 
+			  session.setAttribute("dto", dto);
+			  System.out.println(dto);
 		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
 								   mv.setPath("./events/result.jsp");
 								   session.setAttribute("resultMsg", "대상 검색에 실패하였습니다.."); 
