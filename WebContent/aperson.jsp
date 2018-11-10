@@ -52,7 +52,7 @@
 
 							<div class="text-center" style="display: inline-block;">
 								<img id="thumbnail"
-									src="img/${dto.personImg}"
+									src="save/person/${dto.personImg}"
 									onError="javascript:this.src='img/man-default.jpg'"
 									width="150px" height="150px"
 									class="avatar img-circle img-thumbnail"

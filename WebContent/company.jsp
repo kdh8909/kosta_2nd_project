@@ -171,27 +171,20 @@ a:hover {
 					<div class="col-md-11"
 						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px;margin-bottom:20px">
 						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
-							<a href="#"><img
-								src="https://ncc-phinf.pstatic.net/20140428_40/13986431939845C2qH_JPEG/1-1.jpg?type=w646"
+							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}"><img
+								src="save/company/${dto.companyImg}"
 								style="width: 220px; height: 220px"></a>
 						</div>
 						
-						<div class="col-md-8" style="margin-bottom:20px;">
+						<div class="col-md-8" style="margin-bottom:20px;padding-top:30px;">
 							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}">
 							<h3>${itms.companyName}</h3> </a>
 							<ul style="list-style: none;">
-								<li style="float: left; padding-right: 10px"><h4>${itms.companyCategory}</h4></li><br>
-								<li style="float: left; padding-right: 10px"><h5>${itms.companyType}&nbsp;/&nbsp;
-								${itms.companyHeadAddr}&nbsp;/&nbsp;
-								${itms.companyPhone}&nbsp;/&nbsp;${itms.companyPage}</h5></li>
+								<li style="float: left; padding-right: 10px"><h5>${itms.companyCategory}</h5></li>
+								<li style="float: left; padding-right: 10px"><h5>${itms.companyType}</h5></li>
+								<li style="float: left; padding-right: 10px"><h5>${itms.companyHeadAddr}</h5></li>
+								<li style="float: left; padding-right: 10px"><h5>${itms.companyPhone}</h5></li>
 							</ul>
-						</div>
-						<div class="col-md-8">
-							<div class="card-icons">
-								<h5 style="width: auto; height: 30px; overflow: hidden;">
-									간단한 회사소개
-									</h4>
-							</div>
 						</div>
 						<div class="col-md-8">
 							<ul>
