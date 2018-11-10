@@ -295,7 +295,7 @@ button.btn-check-login:hover {
 								</c:when>
 								<c:otherwise>
 									<div class="top-login">
-<!-- 여기 mypage.jsp -->										<a href="controller?command=selectPersonMypage" style="color: black">마이페이지</a>
+       							<a href="controller?command=selectPersonMypage" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
 										<a style="color: black" id="logout">로그아웃</a>
@@ -453,7 +453,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">스크랩</a></li>
 						
 				<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
-							<li class="page-scroll"><a href="resume.jsp"
+<!-- 여기 -->							<li class="page-scroll"><a href="controller?command=selectPersonResumeByPersonId"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>
 						  </c:when>
 						  <c:when test="${sessionScope.perOrCom=='Company'}">
