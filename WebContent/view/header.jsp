@@ -454,11 +454,11 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 						
 				<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
 <!-- 여기 -->							<li class="page-scroll"><a href="controller?command=selectPersonResumeByPersonId"
-								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서작성</a></li>
+								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서관리</a></li>
 						  </c:when>
 						  <c:when test="${sessionScope.perOrCom=='Company'}">
 						  	<li class="page-scroll"><a href="companyinfo.jsp"
-								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">기업정보등록</a></li>
+								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">기업정보관리</a></li>
 						  </c:when>
 						  <c:otherwise>	
 						  </c:otherwise>	
