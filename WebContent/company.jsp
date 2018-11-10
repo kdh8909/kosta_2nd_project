@@ -172,7 +172,7 @@ a:hover {
 						style="border: 1px solid #ccc; border-radius: 5px; padding: 0px;margin-bottom:20px">
 						<div class="col-md-4" style="padding: 0px; overflow: hidden;">
 							<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}"><img
-								src="save/company/${dto.companyImg}"
+								src="save/company/"
 								style="width: 220px; height: 220px"></a>
 						</div>
 						
