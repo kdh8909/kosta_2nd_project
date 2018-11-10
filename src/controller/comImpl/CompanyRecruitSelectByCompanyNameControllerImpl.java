@@ -27,11 +27,13 @@ public class CompanyRecruitSelectByCompanyNameControllerImpl implements Controll
 		  PrintWriter out = rep.getWriter();
 		  HttpSession session = req.getSession();
 		  ModelAndView mv = new ModelAndView();
-		  String companyName= req.getParameter("companyId");
-		  System.out.println("CompanyRecruitSelectByCompanyImpl-execute-companyName: "+companyName);
+		  String companyName= req.getParameter("companyName");
+		  session.setAttribute("companyName", companyName);
+//		  System.out.println("???? "+companyName);
+//		  System.out.println("CompanyRecruitSelectByCompanyImpl-execute-companyName: "+companyName);
 		  List<CompanyRecruitDTO> list = new ArrayList<>();
 		  try { mv.setPath("./acompany.jsp");
-				list = asv.companyRecruitSelectAll();	
+				list = asv.companyRecruitSelectByCompanyName(companyName);	
 				session.setAttribute("list", list); 
 		  } catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
 			   						 mv.setPath("./events/result.jsp");
