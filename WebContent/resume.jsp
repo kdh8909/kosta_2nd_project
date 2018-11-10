@@ -45,7 +45,7 @@
 
 </head>
 <body>
-		<!-- Header !-->
+	<!-- Header !-->
 	<%@ include file="view/header.jsp"%>
 
 	<!-- PAGE HEADER -->
@@ -75,15 +75,15 @@
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 	<div class="container" style="padding-bottom: 50px;">
 		<h3 class="uppercase text-center" style="padding: 30px">이력서 관리</h3>
 
 
 		<div class="tab-content">
-			<div >
-								<div class="container" style="width: 90%;">
+			<div>
+				<div class="container" style="width: 90%;">
 					<form method="post" action="#">
 						<div class="panel-group" id="accordion-e1">
 							<div class="panel panel-default">
@@ -100,13 +100,18 @@
 										<div class="row">
 											<div class="space-top">
 												<div>
-													<img id="thumbnail"
-														src="save/person/${dto.personImg}"
+													<img id="thumbnail" src="save/person/${dto.personImg}"
 														class="avatar img-circle img-thumbnail"
-														style="cursor: pointer" alt="avatar">
-													<h6 style="display: inline-block;">썸네일을 클릭하여 사진을
-														업로드해주세요.</h6>
+														style="width: 200px; height: 200px; cursor: pointer; margin: 15px;"
+														alt="avatar" data-toggle="tooltip" data-placement="top"
+														title="클릭하여 사진을 업로드하세요.">
+
 													<script>
+														$(function() {
+															$("#thumbnail")
+																	.tooltip()
+														})
+
 														$(function() {
 															$("#thumbnail")
 																	.click(
@@ -128,25 +133,29 @@
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="name"></label> <input
 															class="form-control input-lg" name="personId" id="name"
-															placeholder="이름" required="" type="text" value=${dto.personName}>
+															placeholder="이름" required="" type="text"
+															value=${dto.personName}>
 													</div>
 
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="email"></label> <input
 															class="form-control input-lg" name="email" id="email"
-															placeholder="이메일" required="" type="email" value=${dto.personEmail}>
+															placeholder="이메일" required="" type="email"
+															value=${dto.personEmail}>
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="age"></label> <input
 															class="form-control input-lg" name="age" id="age"
-															placeholder="나이" required="" type="text" value=${dto.personAge}>
+															placeholder="나이" required="" type="text"
+															value=${dto.personAge}>
 													</div>
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="birth"></label> <input
 															class="form-control input-lg" name="birth" id="birth"
-															placeholder="생년월일    ex)19890907" required="" type="text" value=${dto.personBirth}>
+															placeholder="생년월일    ex)19890907" required="" type="text"
+															value=${dto.personBirth}>
 													</div>
 												</div>
 												<div class="row">
@@ -179,7 +188,8 @@
 														<option value="웹개발" selected=${dto.personOccupation}>웹개발</option>
 														<option value="응용프로그램개발" selected=${dto.personOccupation}>응용프로그램개발</option>
 														<option value="시스템개발" selected=${dto.personOccupation}>시스템개발</option>
-														<option value="인공지능(AI)/빅데이터" selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
+														<option value="인공지능(AI)/빅데이터"
+															selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
 														<option value="학생/무직" selected=${dto.personOccupation}>학생/무직</option>
 													</select>
 
@@ -254,7 +264,7 @@
 						<div class="row">
 							<input class="button btn-md" value="등록하기" type="submit"
 								style="margin: 20px auto;">
-															<!-- <input class="button btn-md" value="등록하기" type="submit"
+							<!-- <input class="button btn-md" value="등록하기" type="submit"
 								style="margin: 20px auto;"> -->
 						</div>
 					</form>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -78,18 +79,21 @@
 							<th class="text-center" style="width: 5%">삭제</th>
 						</tr>
 					</thead>
+					
+				<c:forEach items="${list}" var="itms">
 
 					<tr>
 						<td>1</td>
-						<td>PERSON01</td>
+						<td>${itms.companySendId}</td>
 						<td><a style="color:black;"data-toggle="modal" data-target="#send"
-							data-dismiss="modal">에라 모르겠다</a></td>
-						<td>2018.11.10 15:01:25</td>
+							data-dismiss="modal">${itms.messageContents}</a></td>
+						<td>${itms.messageDate}</td>
 						<td class="text-center"><a class="btn btn-warning btn-xs"
 							data-toggle="modal" data-target="#send" data-dismiss="modal">보내기</a></td>
 						<td class="text-center"><a href="#"
 							class="btn btn-danger btn-xs">삭제</a></td>
 					</tr>
+				</c:forEach>
 
 
 				</table>
