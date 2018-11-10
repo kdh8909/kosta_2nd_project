@@ -360,4 +360,58 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 		}
 		return list;
 	}
+
+	@Override
+	public int updatePersonLogin(PersonLoginDTO personLoginDTO) throws SQLException {
+		
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      int result = 0;
+	      String sql = SqlQuerys.UPDATE_PERSON_LOGIN;
+	      
+	      try {
+	         con = DBUtil.getConnection();
+	         ps = con.prepareStatement(sql);
+	         
+	         ps.setString(1, personLoginDTO.getPersonPwd());
+	         ps.setString(2, personLoginDTO.getPersonPhone());
+	         ps.setString(3, personLoginDTO.getPersonId());
+
+	         result = ps.executeUpdate();
+
+	      } finally {
+	         //닫기
+	         DBUtil.dbClose(ps, con);
+	      }
+	      return result;
+		
+		
+	}
+
+	@Override
+	public PersonLoginDTO selectPersonMypage(String userId) throws SQLException {
+
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		PersonLoginDTO personLoginDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SELECT_PERSON_MYPAGE;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				personLoginDTO = new PersonLoginDTO(rs.getString(1), rs.getString(2), rs.getString(3), "Person");
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return personLoginDTO;
+	}
 }

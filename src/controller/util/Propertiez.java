@@ -30,7 +30,9 @@ public class Propertiez {
 		scrapCompany("controller.perImpl.ScrapCompanyControllerImpl"),
 		scrapCompanyList("controller.perImpl.ScrapCompanyListControllerImpl"),
 		scrapPersonCancel("controller.perImpl.ScrapPersonCancelControllerImpl"),
-		scrapedCompanyView("controller.perImpl.ScrapedCompanyViewControllerImpl");
+		scrapedCompanyView("controller.perImpl.ScrapedCompanyViewControllerImpl"),
+		updatePersonLogin("controller.perImpl.UpdatePersonLoginControllerImpl"),
+		selectPersonMypage("controller.perImpl.SelectPersonMypageControllerImpl");
 		
 		private String controller;
 

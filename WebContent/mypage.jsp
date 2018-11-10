@@ -63,7 +63,7 @@
 
       <div class="tab-content">
          <div id="menu1" class="tab-pane fade in active">
-            <form method="post" action="#">
+            <form method="post" action="controller?command=updatePersonLogin">
                <div class="row" style="padding-top: 20px; padding-left: 42%">
                   <div class="row">
                      <div class="form-group col-md-4 col-sm-4">
@@ -71,18 +71,19 @@
                            <h4>ID</h4>
                         </div>
                         <label class="sr-only" for="id"></label> <input
-                           class="form-control input-lg" name="id" id="id"
-                           value="PERSON01" type="text" disabled="disabled">
+                           class="form-control input-lg" name="personId" id="id"
+                           value=${userId} } type="text" disabled="disabled">
                      </div>
                   </div>
+               
                   <div class="row">
                      <div class="form-group col-md-4 col-sm-4">
                         <div class="text-center" style="float: left">
                            <h4>Password</h4>
                         </div>
                         <label class="sr-only" for="password"></label> <input
-                           class="form-control input-lg" name="password" id="password"
-                           value="4321" type="password">
+                           class="form-control input-lg" name="personPwd" id="password"
+                           value=${personPwd} type="password">
                      </div>
                   </div>
                   <div class="row">
@@ -91,8 +92,8 @@
                            <h4>전화번호</h4>
                         </div>
                         <label class="sr-only" for="phone"></label> <input
-                           class="form-control input-lg" name="phone" id="phone"
-                           value="010-1234-1234" type="text">
+                           class="form-control input-lg" name="personPhone" id="phone"
+                           value=${personPhone} type="text">
                      </div>
                   </div>
                </div>
@@ -148,7 +149,7 @@
 
                                        <div class="form-group col-md-4 col-sm-4">
                                           <label class="sr-only" for="name"></label> <input
-                                             class="form-control input-lg" name="name" id="name"
+                                             class="form-control input-lg" name="personId" id="name"
                                              placeholder="이름" required="" type="text">
                                        </div>
 

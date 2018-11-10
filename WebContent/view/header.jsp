@@ -295,7 +295,7 @@ button.btn-check-login:hover {
 								</c:when>
 								<c:otherwise>
 									<div class="top-login">
-										<a href="mypage.jsp" style="color: black">마이페이지</a>
+<!-- 여기 mypage.jsp -->										<a href="controller?command=selectPersonMypage" style="color: black">마이페이지</a>
 									</div>
 									<div class="top-login">
 										<a style="color: black" id="logout">로그아웃</a>

@@ -142,4 +142,22 @@ public class ApplicantServiceImpl implements ApplicantService {
 		List<ScrapCompanyInfoDTO> list = dao.scrapedCompanyView(personScraperId);
 		return list;
 	}
+
+	@Override
+	public int updatePersonLogin(PersonLoginDTO personLoginDTO) throws SQLException {
+		int result = dao.updatePersonLogin(personLoginDTO);
+		if(result==0) {
+			throw new SQLException("개인의 PW 및 전화번호 수정이 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
+	}
+
+	@Override
+	public PersonLoginDTO selectPersonMypage(String userId) throws SQLException {
+
+		PersonLoginDTO personLoginDTO = dao.selectPersonMypage(userId);
+		return personLoginDTO;
+		
+	}
 }
