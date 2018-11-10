@@ -1,3 +1,12 @@
+
+
+INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'내용내용내용2323', 0, 'COMPANY01', 'PERSON01');
+INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'내용내용내용2323', 0, 'COMPANY01', 'PERSON01');
+INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'내용내용내용123', 0, 'COMPANY01', 'PERSON01');
+INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,'내용내용내용321', 0, 'COMPANY01', 'PERSON01');
+
+select * From MESSAGE_BOX_C_P
+
 ------------------------------------------------ 새계정추가
 CONN system/admin;
 CREATE USER pjt2 IDENTIFIED BY pjt2;

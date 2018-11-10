@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.Controller;
 import controller.util.ModelAndView;
@@ -23,17 +24,25 @@ public class PersonCheckMessageControllerImpl implements Controller {
 		rep.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		
+		HttpSession session = req.getSession();
+		
+		System.out.println("xxxxx");
+		
 		List<MessageBoxCPDTO> list = null;
 		
-		String personReceiveId = req.getParameter("personReceiveId");
+//		String personReceiveId = req.getParameter("personReceiveId");
+		
+		String personReceiveId = (String) session.getAttribute("userId");
+		String perOrCom = (String) session.getAttribute("perOrCom");
 		
 		ModelAndView mv = new ModelAndView();
 		String url = "error/error.jsp";
 
 		try {
 			list = asv.personCheckMessage(personReceiveId);
-			url = "NewFile.html";
+			url = "mymessage.jsp";
 			req.setAttribute("list", list);
+			System.out.println(list);
 			
 		} catch (SQLException e) {
 			e.printStackTrace();  //콘솔에 출력

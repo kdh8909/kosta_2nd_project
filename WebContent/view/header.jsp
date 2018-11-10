@@ -425,7 +425,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 						</table>
 								<div style="display: flex; justify-content: center;">
 									<div class="cart-btn">
-										<a href="mymessage.jsp">쪽지함</a>
+										<a href="controller?command=personCheckMessage">쪽지함</a>
 									</div>
 								</div>
 							</div>
