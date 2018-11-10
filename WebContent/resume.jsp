@@ -254,6 +254,8 @@
 						<div class="row">
 							<input class="button btn-md" value="등록하기" type="submit"
 								style="margin: 20px auto;">
+															<!-- <input class="button btn-md" value="등록하기" type="submit"
+								style="margin: 20px auto;"> -->
 						</div>
 					</form>
 				</div>
