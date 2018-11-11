@@ -131,6 +131,9 @@
 												<div class="row" style="padding-top: 20px;">
 
 													<div class="form-group col-md-4 col-sm-4">
+													<div class="text-center" style="float: left">
+                          								<h4>이름</h4>
+                      								</div>
 														<label class="sr-only" for="name"></label> <input
 															class="form-control input-lg" name="personName" id="name"
 															placeholder="이름" required="" type="text"
@@ -138,6 +141,9 @@
 													</div>
 
 													<div class="form-group col-md-4 col-sm-4">
+													<div class="text-center" style="float: left">
+                          								<h4>이메일</h4>
+                      								</div>
 														<label class="sr-only" for="email"></label> <input
 															class="form-control input-lg" name="personEmail" id="email"
 															placeholder="이메일" required="" type="email"
@@ -146,12 +152,18 @@
 												</div>
 												<div class="row">
 													<div class="form-group col-md-4 col-sm-4">
+													<div class="text-center" style="float: left">
+                          								<h4>나이</h4>
+                      								</div>
 														<label class="sr-only" for="age"></label> <input
 															class="form-control input-lg" name="personAge" id="age"
 															placeholder="나이" required="" type="text"
 															value=${dto.personAge}>
 													</div>
 													<div class="form-group col-md-4 col-sm-4">
+													<div class="text-center" style="float: left">
+                          								<h4>생년월일</h4>
+                      								</div>
 														<label class="sr-only" for="birth"></label> <input
 															class="form-control input-lg" name="personBirth" id="birth"
 															placeholder="생년월일    ex)19890907" required="" type="text"
@@ -159,6 +171,10 @@
 													</div>
 												</div>
 												<div class="row">
+													<div class="form-group col-md-2 col-sm-2">
+													<div class="text-center" style="float: left">
+                          								<h4>성별</h4>
+                      								</div>
 													<label class="sr-only" for="sex"></label> <select
 														class="form-control"
 														style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;"
@@ -166,21 +182,42 @@
 														<option>성별</option>
 														<option value="남자" selected=${dto.personSex}>남자</option>
 														<option value="여자" selected=${dto.personSex}>여자</option>
-													</select> <label class="sr-only" for="new_old"></label> <select
+													</select> 
+													</div>
+													
+													<div class="form-group col-md-2 col-sm-2">
+													<div class="text-center" style="float: left">
+                          								<h4>경력 여부</h4>
+                      								</div>
+													<label class="sr-only" for="new_old"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personCareer">
 														<option>경력 여부</option>
 														<option value="신입" selected=${dto.personCareer}>신입</option>
 														<option value="경력" selected=${dto.personCareer}>경력</option>
-													</select> <label class="sr-only" for="status"></label> <select
+													</select> 
+													</div>
+													
+													<div class="form-group col-md-2 col-sm-2">
+													<div class="text-center" style="float: left">
+                          								<h4>구직 여부</h4>
+                      								</div>
+													<label class="sr-only" for="status"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personJobStatus">
 														<option>구직 여부</option>
 														<option value="0" selected=${dto.personJobStatus}>구직중</option>
 														<option value="1" selected=${dto.personJobStatus}>재직중</option>
-													</select> <label class="sr-only" for="occupation"></label> <select
+													</select> 
+													</div>
+													
+													<div class="form-group col-md-2 col-sm-2">
+													<div class="text-center" style="float: left">
+                          								<h4>분야</h4>
+                      								</div>
+													<label class="sr-only" for="occupation"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personOccupation">
@@ -192,6 +229,7 @@
 															selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
 														<option value="학생/무직" selected=${dto.personOccupation}>학생/무직</option>
 													</select>
+													</div>
 
 												</div>
 												<div class="space20"></div>
