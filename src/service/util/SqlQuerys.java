@@ -46,7 +46,7 @@ public interface SqlQuerys {
    String SEND_MESSAGE_C_P = "INSERT INTO MESSAGE_BOX_C_P VALUES(message_box_c_p_seq.nextval,SYSDATE,?, 0, ?, ?)";
 
    // 기업 -> 개인 메시지 조회
-   String SELECT_MESSAGE_C_P = "SELECT * FROM MESSAGE_BOX_C_P WHERE person_receive_id= ?";
+   String SELECT_MESSAGE_C_P = "SELECT A.*, B.COMPANY_NAME FROM MESSAGE_BOX_C_P A, COMPANY_INFO B WHERE A.person_receive_id= ? AND A.COMPANY_SEND_ID = B.COMPANY_ID";
 
    // 기업 > 개인 메시지 확인시 업데이트 (읽었음표시)
    String CHECK_MESSAGE_C_P= "UPDATE MESSAGE_BOX_C_P SET message_flag = '1' WHERE message_no = ?";
@@ -55,7 +55,7 @@ public interface SqlQuerys {
    String SEND_MESSAGE_P_C = "INSERT INTO message_box_p_c VALUES(message_box_p_c_seq.nextval,SYSDATE,?, 0, ?, ?)";
 
    // 개인 -> 기업 메시지 조회
-   String SELECT_MESSAGE_P_C = "SELECT * FROM message_box_p_c WHERE company_receive_id = ?";
+   String SELECT_MESSAGE_P_C = "SELECT A.*, B.PERSON_NAME FROM message_box_p_c A, PERSON_RESUME B WHERE A.company_receive_id = ? AND A.PERSON_SEND_ID = B.PERSON_ID";
 
    // 개인 > 기업 메시지 확인시 업데이트 (읽었음표시)
    String CHECK_MESSAGE_P_C ="UPDATE message_box_p_c SET message_flag = '1' WHERE message_no = ?";

@@ -156,8 +156,8 @@ public class CompanyDAOImpl implements CompanyDAO {
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, messageBoxCPDTO.getMessageContents());
-			ps.setString(2, messageBoxCPDTO.getCompanySendId());
-			ps.setString(3, messageBoxCPDTO.getPersonReceiveId());
+			ps.setString(2, messageBoxCPDTO.getSendId());
+			ps.setString(3, messageBoxCPDTO.getReceiveId());
 			
 			result = ps.executeUpdate();
 
@@ -189,7 +189,7 @@ public class CompanyDAOImpl implements CompanyDAO {
 			
 			while(rs.next()) {
 				messageBoxCPDTO = new MessageBoxCPDTO(rs.getInt(1), rs.getString(2), rs.getString(3)
-						               ,rs.getInt(4), rs.getString(5), rs.getString(6));
+						               ,rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7));
 				list.add(messageBoxCPDTO);
 			}
 			

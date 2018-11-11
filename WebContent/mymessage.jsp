@@ -59,9 +59,7 @@
 			</div>
 		</div>
 	</div>
-
-
-
+	
 	<!-- INNER CONTENT	 -->
 	<div class="inner-content" style="padding-top: 40px">
 		<div class="container" style="border: 1px solid #ccc; width: 1000px">
@@ -80,11 +78,11 @@
 						</tr>
 					</thead>
 					
-				<c:forEach items="${list}" var="itms">
+				<c:forEach items="${message}" var="itms">
 
 					<tr>
 						<td>1</td>
-						<td>${itms.companySendId}</td>
+						<td>${itms.sendName}</td>
 						<td><a style="color:black;"data-toggle="modal" data-target="#send"
 							data-dismiss="modal">${itms.messageContents}</a></td>
 						<td>${itms.messageDate}</td>

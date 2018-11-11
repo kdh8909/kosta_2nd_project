@@ -168,8 +168,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, messageBoxPCDTO.getMessageContents());
-			ps.setString(2, messageBoxPCDTO.getPersonSendId());
-			ps.setString(3, messageBoxPCDTO.getCompanyReceiveId());
+			ps.setString(2, messageBoxPCDTO.getSendId());
+			ps.setString(3, messageBoxPCDTO.getReceiveId());
 			
 			result = ps.executeUpdate();
 
@@ -201,7 +201,7 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			
 			while(rs.next()) {
 				messageBoxPCDTO = new MessageBoxPCDTO(rs.getInt(1), rs.getString(2), rs.getString(3)
-						               ,rs.getInt(4), rs.getString(5), rs.getString(6));
+						               ,rs.getInt(4), rs.getString(5), rs.getString(6), rs.getString(7));
 				list.add(messageBoxPCDTO);
 			}
 			
