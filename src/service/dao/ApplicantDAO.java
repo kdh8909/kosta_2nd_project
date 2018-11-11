@@ -60,4 +60,10 @@ public interface ApplicantDAO {
 	    public int updatePersonLogin(PersonLoginDTO personLoginDTO) throws SQLException;
 	    
 	    public PersonLoginDTO selectPersonMypage(String userId) throws SQLException;
+	    
+	    // 개인 이력서 작성되어있는지 안되어있는지 확인
+	    public boolean checkPersonResumeExists(String userId) throws SQLException;
+	    
+	    // 개인 이력서 수정
+	    public int updatePersonResume(PersonResumeDTO personResumeDTO) throws SQLException;
 }

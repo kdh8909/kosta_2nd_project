@@ -73,20 +73,22 @@ CREATE TABLE person_login
 
 DROP TABLE person_resume
 
+SELECT * FROM person_resume
+
 CREATE TABLE person_resume
 (
    person_id             VARCHAR2(20) NOT NULL PRIMARY KEY references person_login(person_id) on delete cascade,
-    person_name           VARCHAR2(30) NOT NULL ,
-    person_occupation     VARCHAR2(30) NOT NULL ,
+   person_name           VARCHAR2(30) NOT NULL ,
+   person_occupation     VARCHAR2(30) NOT NULL ,
    person_career         VARCHAR2(4000) NOT NULL ,
    person_img            VARCHAR2(30) NOT NULL ,
    person_age            NUMBER(3)  NULL ,
    person_sex            VARCHAR2(10) NOT NULL ,
    person_birth          VARCHAR2(30) NOT NULL ,
    person_email          VARCHAR2(50) NOT NULL ,
-   person_hope_place     VARCHAR2(100) NOT NULL ,
+   person_hope_place     VARCHAR2(100) NULL ,
    person_job_status     VARCHAR2(50) NOT NULL ,
-   person_experience	VARCHAR2(1000) NOT NULL ,
+   person_experience	VARCHAR2(1000) NULL ,
    person_self_introduction_title 		VARCHAR2(300) NOT NULL ,
    person_self_introduction		VARCHAR2(1000) NOT NULL
 );
@@ -183,11 +185,11 @@ INSERT INTO PERSON_LOGIN VALUES ('PERSON03','4321', '010-4444-1555');
 INSERT INTO PERSON_LOGIN VALUES ('PERSON04','4321', '010-7777-8888');
 INSERT INTO PERSON_LOGIN VALUES ('PERSON05','4321', '010-4444-8884');
 
-INSERT INTO PERSON_RESUME VALUES ('PERSON01', '장희정', '웹개발', '신입', 'woman.png', 6, '여자', '36800', '11@naver.com', '서울', '0', '경력없음', '준비된 JAVA 개발자', '준비 잘됨 블라블라');
-INSERT INTO PERSON_RESUME VALUES ('PERSON02', '장희장', '시스템개발', '경력', 'man.png', '7', '남자', '36852', '22@naver.com', '경기도', '0', '경력5년됨', '시스템 맡겨만 주십시오','맡겨만 줘 블라블라');
-INSERT INTO PERSON_RESUME VALUES ('PERSON03', '장희청', '응용프로그램개발', '경력', 'girl.png', '8', '여자', '40897', '33@naver.com', '부산', '1', '경력10년됨', '10년의 저력을 보여드립니다', '블라블라블라');
-INSERT INTO PERSON_RESUME VALUES ('PERSON04', '장희충', '웹개발', '신입', 'human.png', '9', '남자', '41053', '44@naver.com', '제주도', '1', '경력없음', '돌하르방 같은 웹개발자', '제주도 어쩌구저쩌구');
-INSERT INTO PERSON_RESUME VALUES ('PERSON05', '장희칭', '인공지능(AI)', '경력', 'boy.png', '10', '남자', '40891', '55@naver.com', '광주', '1', '경력20년됨', '20년된 알파고 같은 개발자', '블라블라');
+INSERT INTO PERSON_RESUME VALUES ('PERSON01', '장희정', '웹개발', '신입', 'PERSON01.jpg', 6, '여자', '36800', '11@naver.com', '서울', '0', '경력없음', '준비된 JAVA 개발자', '준비 잘됨 블라블라');
+INSERT INTO PERSON_RESUME VALUES ('PERSON02', '장희장', '시스템개발', '경력', 'PERSON02.jpg', '7', '남자', '36852', '22@naver.com', '경기도', '0', '경력5년됨', '시스템 맡겨만 주십시오','맡겨만 줘 블라블라');
+INSERT INTO PERSON_RESUME VALUES ('PERSON03', '장희청', '응용프로그램개발', '경력', 'PERSON03.jpg', '8', '여자', '40897', '33@naver.com', '부산', '1', '경력10년됨', '10년의 저력을 보여드립니다', '블라블라블라');
+INSERT INTO PERSON_RESUME VALUES ('PERSON04', '장희충', '웹개발', '신입', 'PERSON04.jpg', '9', '남자', '41053', '44@naver.com', '제주도', '1', '경력없음', '돌하르방 같은 웹개발자', '제주도 어쩌구저쩌구');
+INSERT INTO PERSON_RESUME VALUES ('PERSON05', '장희칭', '인공지능(AI)', '경력', 'PERSON05.jpg', '10', '남자', '40891', '55@naver.com', '광주', '1', '경력20년됨', '20년된 알파고 같은 개발자', '블라블라');
 
 INSERT INTO MESSAGE_BOX_C_P VALUES (MESSAGE_BOX_C_P_SEQ.NEXTVAL, SYSDATE, '안녕하세염', '0', 'COMPANY01', 'PERSON03');
 INSERT INTO MESSAGE_BOX_C_P VALUES (MESSAGE_BOX_C_P_SEQ.NEXTVAL, SYSDATE, '메롱', '0', 'COMPANY02', 'PERSON04');

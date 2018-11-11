@@ -33,7 +33,8 @@ public class Propertiez {
 		scrapedCompanyView("controller.perImpl.ScrapedCompanyViewControllerImpl"),
 		updatePersonLogin("controller.perImpl.UpdatePersonLoginControllerImpl"),
 		selectPersonMypage("controller.perImpl.SelectPersonMypageControllerImpl"),
-		selectPersonResumeByPersonId("controller.perImpl.SelectPersonResumeByPersonIdControllerImpl");
+		selectPersonResumeByPersonId("controller.perImpl.SelectPersonResumeByPersonIdControllerImpl"),
+		updatePersonResume("controller.perImpl.UpdatePersonResumeControllerImpl");
 		
 		private String controller;
 

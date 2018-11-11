@@ -160,4 +160,20 @@ public class ApplicantServiceImpl implements ApplicantService {
 		return personLoginDTO;
 		
 	}
+
+	@Override
+	public boolean checkPersonResumeExists(String userId) throws SQLException {
+		boolean result = dao.checkPersonResumeExists(userId);
+		return result;
+	}
+
+	@Override
+	public int updatePersonResume(PersonResumeDTO personResumeDTO) throws SQLException {
+		int result = dao.updatePersonResume(personResumeDTO);
+		if(result==0) {
+			throw new SQLException("개인의 이력서 수정이 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
+	}
 }

@@ -34,7 +34,7 @@ public interface SqlQuerys {
    String P_SELECT_BY_SEARCH_ID = "SELECT * FROM person_login WHERE person_id = ?";
 
    // 개인 이력서 추가
-   String P_ADD_RESUME = "INSERT INTO PERSON_RESUME VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+   String P_ADD_RESUME = "INSERT INTO PERSON_RESUME VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
    // 개인 이력서 조회 (전체)
    String P_SELECT_RESUME_ALL = "SELECT * FROM PERSON_RESUME";
@@ -107,5 +107,11 @@ public interface SqlQuerys {
   
 //개인 PW 및 전화번호수정하기
  String UPDATE_COMPANY_LOGIN =  "UPDATE COMPANY_LOGIN SET COMPANY_PWD = ?, COMPANY_NUMBER = ? WHERE COMPANY_ID = ?";
+ 
+ //개인 이력서 작성되었는지 조회
+ String CHECK_PERSON_RESUME_EXISTS = "SELECT * FROM person_resume WHERE PERSON_ID = ?";
+ 
+ // 개인 이력서 업데이트
+ String P_UPDATE_RESUME = "UPDATE PERSON_RESUME SET person_name=?, person_occupation=?, person_career=?, person_img=?, person_age=?, person_sex=?, person_birth=?, person_email=?, person_hope_place=?, person_job_status=?, person_experience=?, person_self_introduction_title=?, person_self_introduction=? WHERE person_id=?";
 
 }

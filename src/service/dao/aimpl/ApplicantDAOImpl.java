@@ -110,6 +110,9 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			ps.setString(9, personResumeDTO.getPersonEmail());
 			ps.setString(10, personResumeDTO.getPersonHopePlace());
 			ps.setString(11, personResumeDTO.getPersonJobStatus());
+			ps.setString(12, personResumeDTO.getPersonExperience());
+			ps.setString(13, personResumeDTO.getPersonSelfIntroductionTitle());
+			ps.setString(14, personResumeDTO.getPersonSelfIntroduction());
 
 			result = ps.executeUpdate();
 
@@ -415,5 +418,66 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 			DBUtil.dbClose(rs, ps, con);
 		}
 		return personLoginDTO;
+	}
+
+	@Override
+	public boolean checkPersonResumeExists(String userId) throws SQLException {
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		boolean result = false;
+
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.CHECK_PERSON_RESUME_EXISTS;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			rs = ps.executeQuery();
+			
+			result = rs.next();
+			
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return result;
+	}
+
+	@Override
+	public int updatePersonResume(PersonResumeDTO personResumeDTO) throws SQLException {
+		
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      int result = 0;
+	      String sql = SqlQuerys.P_UPDATE_RESUME;
+	      
+	      try {
+	         con = DBUtil.getConnection();
+	         ps = con.prepareStatement(sql);
+	         
+	         ps.setString(1, personResumeDTO.getPersonId());
+	         ps.setString(2, personResumeDTO.getPersonName());
+	         ps.setString(3, personResumeDTO.getPersonOccupation());
+	         ps.setString(4, personResumeDTO.getPersonCareer());
+	         ps.setInt(5, personResumeDTO.getPersonAge());
+	         ps.setString(6, personResumeDTO.getPersonSex());
+	         ps.setString(7, personResumeDTO.getPersonBirth());
+	         ps.setString(8, personResumeDTO.getPersonEmail());
+	         ps.setString(9, personResumeDTO.getPersonHopePlace());
+	         ps.setString(10, personResumeDTO.getPersonJobStatus());
+	         ps.setString(11, personResumeDTO.getPersonExperience());
+	         ps.setString(12, personResumeDTO.getPersonSelfIntroductionTitle());
+	         ps.setString(13, personResumeDTO.getPersonSelfIntroduction());
+	         ps.setString(14, personResumeDTO.getPersonId());
+	         
+	         result = ps.executeUpdate();
+
+	      } finally {
+	         //닫기
+	         DBUtil.dbClose(ps, con);
+	      }
+	      return result;
 	}
 }

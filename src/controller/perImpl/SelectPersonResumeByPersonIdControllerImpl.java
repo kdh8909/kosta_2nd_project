@@ -30,9 +30,18 @@ public class SelectPersonResumeByPersonIdControllerImpl implements Controller {
 		
 		String personId = (String) session.getAttribute("userId");
 		String perOrCom = (String) session.getAttribute("perOrCom");
-		try { mv.setPath("resume.jsp");
-			  dto = asv.resumeSelectbypersonId(personId);	  
-			  session.setAttribute("dto", dto);
+		try {
+			
+			boolean result = asv.checkPersonResumeExists(personId);
+			
+			if(result==true) { //작성한 이력서 존재
+				mv.setPath("resume2.jsp");
+				dto = asv.resumeSelectbypersonId(personId);
+				  session.setAttribute("dto", dto);
+				  System.out.println(dto);				
+			} else { //작성한 이력서 미존재
+				mv.setPath("resume.jsp");
+			}
 			  System.out.println(dto);
 		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
 								   mv.setPath("./events/result.jsp");

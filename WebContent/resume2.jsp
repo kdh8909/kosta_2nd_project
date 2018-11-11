@@ -84,7 +84,7 @@
 		<div class="tab-content">
 			<div>
 				<div class="container" style="width: 90%;">
-					<form method="post" action="controller?command=insertPersonResume" enctype="multipart/form-data">
+					<form method="post" action="controller?command=updatePersonResume" enctype="multipart/form-data">
 						<div class="panel-group" id="accordion-e1">
 							<div class="panel panel-default">
 								<div class="panel-heading">
@@ -100,7 +100,7 @@
 										<div class="row">
 											<div class="space-top">
 												<div>
-<!-- 기본이미지로주소설정필요 -->					<img id="thumbnail" src="save/person/${dto.personImg}"
+													<img id="thumbnail" src="save/person/${dto.personImg}"
 														class="avatar img-circle img-thumbnail"
 														style="width: 200px; height: 200px; cursor: pointer; margin: 15px;"
 														alt="avatar" data-toggle="tooltip" data-placement="top"
@@ -154,7 +154,7 @@
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="birth"></label> <input
 															class="form-control input-lg" name="personBirth" id="birth"
-															placeholder="생년월일    ex)1989-09-07" required="" type="text"
+															placeholder="생년월일    ex)19890907" required="" type="text"
 															value=${dto.personBirth}>
 													</div>
 												</div>
@@ -164,22 +164,22 @@
 														style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personSex">
 														<option>성별</option>
-														<option value="남자" >남자</option>
-														<option value="여자" >여자</option>
+														<option value="남자" selected=${dto.personSex}>남자</option>
+														<option value="여자" selected=${dto.personSex}>여자</option>
 													</select> <label class="sr-only" for="new_old"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personCareer">
 														<option>경력 여부</option>
-														<option value="신입" >신입</option>
-														<option value="경력" >경력</option>
+														<option value="신입" selected=${dto.personCareer}>신입</option>
+														<option value="경력" selected=${dto.personCareer}>경력</option>
 													</select> <label class="sr-only" for="status"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personJobStatus">
 														<option>구직 여부</option>
-														<option value="0" >구직중</option>
-														<option value="1" >재직중</option>
+														<option value="0" selected=${dto.personJobStatus}>구직중</option>
+														<option value="1" selected=${dto.personJobStatus}>재직중</option>
 													</select> <label class="sr-only" for="occupation"></label> <select
 														class="form-control"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
@@ -219,7 +219,7 @@
 												<textarea class="form-control" rows="10"
 													name="personExperience" id="carrer_content"
 													placeholder="500자 이내로 경력사항을 입력하세요." maxlength="500"
-													style="resize: none; wrap: hard;"></textarea>
+													style="resize: none; wrap: hard;">${dto.personExperience}</textarea>
 												<script type="text/javascript" language="javascript"
 													src="./js/charcount.js"></script>
 											</div>
@@ -227,6 +227,10 @@
 										</div>
 									</div>
 								</div>
+								
+<!-- 	private String personExperience;
+	private String personSelfIntroductionTitle;
+	private String personSelfIntroduction; -->
 
 
 								<div class="panel-heading">
@@ -244,13 +248,13 @@
 												<label class="sr-only" for="title"></label> <input
 													class="form-control input-lg" name="personSelfIntroductionTitle"
 													id="intro_title" placeholder="제목을 입력하세요." required=""
-													type="text">
+													type="text" value=${dto.personSelfIntroductionTitle}>
 											</div>
 											<div class="form-group col-md-10 col-sm-10">
 												<textarea class="form-control" rows="10"
 													name="personSelfIntroduction" id="intro_content"
 													placeholder="1000자 이내로 자기소개를 작성하세요." maxlength="500"
-													style="resize: none; wrap: hard;"></textarea>
+													style="resize: none; wrap: hard;">${dto.personSelfIntroduction}</textarea>
 												<script type="text/javascript" language="javascript"
 													src="./js/charcount.js"></script>
 											</div>
@@ -262,7 +266,7 @@
 
 						</div>
 						<div class="row">
-							<input class="button btn-md" value="등록하기" type="submit"
+							<input class="button btn-md" value="수정하기" type="submit"
 								style="margin: 20px auto;">
 							<!-- <input class="button btn-md" value="등록하기" type="submit"
 								style="margin: 20px auto;"> -->
