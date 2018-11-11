@@ -176,4 +176,14 @@ public class ApplicantServiceImpl implements ApplicantService {
 			return result;
 		}
 	}
+
+	@Override
+	public int personDeleteMessage(String messageNo) throws SQLException {
+		int result = dao.personDeleteMessage(messageNo);
+		if(result==0) {
+			throw new SQLException("개인의 받은메시지 삭제가 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
+	}
 }

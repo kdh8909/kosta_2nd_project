@@ -59,4 +59,7 @@ public interface CompanyDAO {
 		    
 		    // 기업 PW 및 전화번호 수정하기
 		    public int updateCompanyLogin(CompanyLoginDTO companyLoginDTO) throws SQLException;
+		    
+		    // 기업 받은 메시지 삭제
+		    public int companyDeleteMessage(String messageNo) throws SQLException;
 }

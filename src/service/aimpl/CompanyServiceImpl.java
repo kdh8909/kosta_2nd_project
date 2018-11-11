@@ -164,4 +164,14 @@ public class CompanyServiceImpl implements CompanyService {
 		}
 	}
 
+	@Override
+	public int companyDeleteMessage(String messageNo) throws SQLException {
+		int result = dao.companyDeleteMessage(messageNo);
+		if(result==0) {
+			throw new SQLException("기업의 받은메시지 삭제가 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
+	}
+
 }

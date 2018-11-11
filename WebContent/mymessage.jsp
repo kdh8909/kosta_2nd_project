@@ -78,17 +78,17 @@
 						</tr>
 					</thead>
 					
-				<c:forEach items="${message}" var="itms">
+				<c:forEach items="${message}" var="itms" varStatus="state">
 
 					<tr>
-						<td>1</td>
+						<td>${state.count }</td>
 						<td>${itms.sendName}</td>
 						<td><a style="color:black;"data-toggle="modal" data-target="#send"
 							data-dismiss="modal">${itms.messageContents}</a></td>
 						<td>${itms.messageDate}</td>
 						<td class="text-center"><a class="btn btn-warning btn-xs"
 							data-toggle="modal" data-target="#send" data-dismiss="modal">보내기</a></td>
-						<td class="text-center"><a href="#"
+						<td class="text-center"><a href="controller?command=deleteMessage&messageNo=${itms.messageNo}"
 							class="btn btn-danger btn-xs">삭제</a></td>
 					</tr>
 				</c:forEach>

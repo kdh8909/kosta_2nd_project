@@ -113,5 +113,12 @@ public interface SqlQuerys {
  
  // 개인 이력서 업데이트
  String P_UPDATE_RESUME = "UPDATE PERSON_RESUME SET person_name=?, person_occupation=?, person_career=?, person_img=?, person_age=?, person_sex=?, person_birth=?, person_email=?, person_hope_place=?, person_job_status=?, person_experience=?, person_self_introduction_title=?, person_self_introduction=? WHERE person_id=?";
-
+ 
+ //받은쪽지 삭제하기(기업)
+ String COMPANY_DELETE_MESSAGE="DELETE MESSAGE_BOX_P_C WHERE MESSAGE_NO=?";
+ 
+ //받은쪽지 삭제하기(개인)
+ String PERSON_DELETE_MESSAGE="DELETE MESSAGE_BOX_C_P WHERE MESSAGE_NO=?";
+ 
+ 
 }

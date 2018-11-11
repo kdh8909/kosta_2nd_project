@@ -480,4 +480,27 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	      }
 	      return result;
 	}
+
+	@Override
+	public int personDeleteMessage(String messageNo) throws SQLException {
+		
+	      Connection con = null;
+	         PreparedStatement ps = null;
+	         int result = 0;
+	         String sql=SqlQuerys.PERSON_DELETE_MESSAGE;
+	         
+	         try {
+	            con = DBUtil.getConnection();
+	            ps = con.prepareStatement(sql);
+	            
+	            ps.setString(1,messageNo);
+	            
+	            result = ps.executeUpdate();
+	   
+	         } finally {
+	            //´Ý±â
+	            DBUtil.dbClose(ps, con);
+	         }
+	         return result;
+	}
 }

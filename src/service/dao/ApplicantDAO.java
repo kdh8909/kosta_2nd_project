@@ -66,4 +66,7 @@ public interface ApplicantDAO {
 	    
 	    // 개인 이력서 수정
 	    public int updatePersonResume(PersonResumeDTO personResumeDTO) throws SQLException;
+	    
+	    // 개인 받은 메시지 삭제
+	    public int personDeleteMessage(String messageNo) throws SQLException;
 }
