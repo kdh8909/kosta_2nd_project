@@ -31,6 +31,7 @@ public class Propertiez {
 		scrapCompanyList("controller.perImpl.ScrapCompanyListControllerImpl"),
 		scrapPersonCancel("controller.perImpl.ScrapPersonCancelControllerImpl"),
 		scrapedCompanyView("controller.perImpl.ScrapedCompanyViewControllerImpl"),
+		sendMessagePtoC("controller.perImpl.SendMessagePtoCControllerImpl"),
 		updatePersonLogin("controller.perImpl.UpdatePersonLoginControllerImpl"),
 		selectPersonMypage("controller.perImpl.SelectPersonMypageControllerImpl"),
 		selectPersonResumeByPersonId("controller.perImpl.SelectPersonResumeByPersonIdControllerImpl"),

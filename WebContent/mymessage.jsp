@@ -89,15 +89,9 @@
 						<td class="text-center"><a class="btn btn-warning btn-xs"
 							data-toggle="modal" data-target="#send" data-dismiss="modal">보내기</a></td>
 						<td class="text-center"><a href="controller?command=deleteMessage&messageNo=${itms.messageNo}"
-							class="btn btn-danger btn-xs">삭제</a></td>
-					</tr>
-				</c:forEach>
-
-
-				</table>
-
-
-				<!-- Modal -->
+							class="btn btn-danger btn-xs">삭제</a>
+							
+											<!-- Modal -->
 				<div class="modal fade" id="send" tabindex="-1" role="dialog"
 					aria-labelledby="send" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document"
@@ -108,9 +102,9 @@
 									<div class="col-sm-4 col-md-4">
 										<div class="panel panel-default">
 											<div class="panel-body">
-												<h4>쪽지보내기</h4>
-												<form action="" method="post">
-													<textarea class="form-control counted" name="message"
+												<h4>쪽지보내기 (TO: ${itms.sendName})</h4>
+												<form action="controller?command=sendMessagePtoC&sendId=${itms.sendId}" method="post">
+													<textarea class="form-control counted" name="messageContents"
 														placeholder="메세지를 입력하세요." rows="5"
 														style="margin-bottom: 10px; resize: none; wrap: hard;"
 														maxlength="50"></textarea>
@@ -126,12 +120,50 @@
 						</div>
 					</div>
 				</div>
+							
+
+						</td>
+					</tr>
+				</c:forEach>
+
+				</table>
+
+<%-- 				<!-- Modal -->
+				<div class="modal fade" id="send" tabindex="-1" role="dialog"
+					aria-labelledby="send" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document"
+						style="width: 400px; margin-top: 300px;">
+						<div class="modal-content">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-4 col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body">
+												<h4>쪽지보내기 (TO: ${itms.sendName})</h4>
+												<form action="controller?command=sendMessagePtoC&sendId=${itms.sendId}" method="post">
+													<textarea class="form-control counted" name="messageContents"
+														placeholder="메세지를 입력하세요." rows="5"
+														style="margin-bottom: 10px; resize: none; wrap: hard;"
+														maxlength="50"></textarea>
+													<script type="text/javascript" language="javascript"
+														src="./js/charcount.js"></script>
+													<button class="btn btn-info" type="submit">쪽지보내기</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> --%>
+				
+				
+				
 			</div>
 		</div>
 	</div>
-
-
-
+	
 	<!-- FOOTER COPYRIGHT -->
 	<%@ include file="view/footer.jsp"%>
 

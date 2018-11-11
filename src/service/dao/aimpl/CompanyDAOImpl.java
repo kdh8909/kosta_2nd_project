@@ -149,7 +149,7 @@ public class CompanyDAOImpl implements CompanyDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int result = 0;
-		String sql = SqlQuerys.SEND_MESSAGE_P_C;
+		String sql = SqlQuerys.SEND_MESSAGE_C_P;
 		
 		try {
 			con = DBUtil.getConnection();
