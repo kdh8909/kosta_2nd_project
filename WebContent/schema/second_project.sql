@@ -11,15 +11,15 @@ DROP USER pjt2 CASCADE;
 
 ------------------------------------------------ 테이블드랍
 
-DROP TABLE company_login
-DROP TABLE COMPANY_RECRUIT
-DROP TABLE company_info
-DROP TABLE person_login
-DROP TABLE person_resume
-DROP TABLE message_box_c_p
-DROP TABLE message_box_p_c
-DROP TABLE scrap_company
-DROP TABLE scrap_person
+DROP TABLE company_login;
+DROP TABLE COMPANY_RECRUIT;
+DROP TABLE company_info;
+DROP TABLE person_login;
+DROP TABLE person_resume;
+DROP TABLE message_box_c_p;
+DROP TABLE message_box_p_c;
+DROP TABLE scrap_company;
+DROP TABLE scrap_person;
 
 ------------------------------------------------ 테이블생성
 
@@ -124,6 +124,15 @@ CREATE TABLE scrap_person
    
 );
 
+
+------------------------------------------------ 시퀀스드랍
+
+drop sequence message_box_c_p_seq
+drop sequence message_box_p_c_seq
+drop sequence scrap_company_seq
+drop sequence scrap_person_seq
+drop sequence recruit_seq
+
 ------------------------------------------------ 시퀀스생성
 
 create sequence message_box_c_p_seq
@@ -131,20 +140,24 @@ start with 1
 increment by 1
 nocache;
 
+
 create sequence message_box_p_c_seq
 start with 1
 increment by 1
 nocache;
+
 
 create sequence scrap_company_seq
 start with 1
 increment by 1
 nocache;
 
+
 create sequence scrap_person_seq
 start with 1
 increment by 1
 nocache;
+
 
 create sequence recruit_seq
 start with 1
@@ -297,7 +310,3 @@ INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY02',
 INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY02', 'PERSON03');
 INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY03', 'PERSON04');
 INSERT INTO SCRAP_PERSON VALUES (SCRAP_PERSON_SEQ.NEXTVAL, SYSDATE, 'COMPANY03', 'PERSON01');
-
-
-
-
