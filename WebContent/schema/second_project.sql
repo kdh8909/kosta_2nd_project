@@ -1,10 +1,4 @@
-SELECT * FROM MESSAGE_BOX_C_P
 
-DELETE MESSAGE_BOX_C_P WHERE MESSAGE_NO=?
-
-SELECT * FROM MESSAGE_BOX_P_C
-
-DELETE MESSAGE_BOX_P_C WHERE MESSAGE_NO=?
 
 <<<<<<< HEAD
 ------------------------------------------------ 새계정추가
