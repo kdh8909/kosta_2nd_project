@@ -50,15 +50,12 @@
 			<div class="row">
 				<div class="col-md-12 col-md-12" style="padding: 40px 0 0 0;">
 					<img id="thumbnail"
-						src="https://pbs.twimg.com/profile_images/459505368234606592/nuxaaQoo_400x400.jpeg"
+						src="save/company/${list.companyImg}"
 						class="avatar img-circle img-thumbnail"
 						style="width: 200px; height: 200px; margin: 15px;display:block;float:left" alt="avatar"
 						data-toggle="tooltip" data-placement="top">
 				</div>
 			</div>
-			
-			
-			
 			
 		</div>
 		
@@ -66,7 +63,7 @@
 			<div class="text-center">
 				<%-- save/company/${companyImg} --%>
 				<div class="col-md-12 col-md-12" style="padding:0;">
-					<h2 style="padding-bottom:20px;">${companyName}</h2>
+					<h2 style="padding-bottom:20px;">${list.companyName}</h2>
 
 				</div>
 			</div>
@@ -76,36 +73,36 @@
 				<table style="width:50%;height:200px;">
 					<tr>
 					<td style="color:#8c8c8c;">카테고리</td>
-					<td style="color:#3399ff;">응용프로그램개발</td>
+					<td style="color:#3399ff;">${list.companyCategory}</td>
 					<td style="color:#8c8c8c;">설립일</td>
-					<td style="color:#3399ff;">1999.05</td>
+					<td style="color:#3399ff;">${list.companyEstblish}</td>
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">대표</td>
-					<td style="color:#3399ff;">권도훈</td>
+					<td style="color:#3399ff;">${list.companyCeo}</td>
 					<td style="color:#8c8c8c;">직원수</td>
-					<td style="color:#3399ff;">320명</td>
+					<td style="color:#3399ff;">${list.companyEmployees}명</td>
 					
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">규모</td>
-					<td style="color:#3399ff;">중견</td>
+					<td style="color:#3399ff;">${list.companyType}</td>
 					<td style="color:#8c8c8c;">홈페이지</td>
-					<td style="color:#3399ff;">http://edu.kosta.or.kr</td>
+					<td style="color:#3399ff;">${list.companyPage}</td>
 					
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">주소</td>
-					<td style="color:#3399ff;">경기도 성남시 분당구 대왕판교로 670</td>
+					<td style="color:#3399ff;">${list.companyHeadAddr}</td>
 					<td style="color:#8c8c8c;">연락처</td>
-					<td style="color:#3399ff;">02-157-7777</td>
+					<td style="color:#3399ff;">${list.companyPhone}</td>
 					</tr>
 				</table>		
 			</div>
 		</div>
 		
 		<div class="container">
-		<a href="company_recruit.jsp">채용공고 보러가기</a>
+		<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${list.companyName}">채용공고 보러가기</a>
 			
 		</div>
 	</div>

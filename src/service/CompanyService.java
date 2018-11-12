@@ -67,4 +67,8 @@ public interface CompanyService {
 	    //회사가 스크랩한 개인 보기
 	    public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException;
 	    
+	    
+	    //회사ID별 회사정보표출
+	    public CompanyInfoDTO selectCompanyInfoByCompanyId(String companyId) throws SQLException;
+	    
 }

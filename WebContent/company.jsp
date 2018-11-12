@@ -172,14 +172,14 @@ a:hover {
 							style="border: 1px solid #ccc; border-radius: 5px; padding: 0px; margin-bottom: 20px">
 							<div class="col-md-4" style="padding: 0px; overflow: hidden;">
 								<a
-									href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}"><img
+									href="controller?command=selectCompanyInfoByCompanyId&companyId=${itms.companyId}"><img
 									src="save/company/" style="width: 220px; height: 220px"></a>
 							</div>
 
 							<div class="col-md-8"
 								style="margin-bottom: 20px; padding-top: 30px;">
 								<a
-									href="controller?command=companyRecruitSelectByCompanyName&companyName=${itms.companyName}">
+									href="controller?command=selectCompanyInfoByCompanyId&companyId=${itms.companyId}">
 									<h3>${itms.companyName}</h3>
 								</a>
 								<ul style="list-style: none;">

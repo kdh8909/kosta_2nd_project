@@ -32,7 +32,7 @@ public class CompanyRecruitSelectByCompanyNameControllerImpl implements Controll
 //		  System.out.println("???? "+companyName);
 //		  System.out.println("CompanyRecruitSelectByCompanyImpl-execute-companyName: "+companyName);
 		  List<CompanyRecruitDTO> list = new ArrayList<>();
-		  try { mv.setPath("./acompany.jsp");
+		  try { mv.setPath("./company_recruit.jsp");
 				list = asv.companyRecruitSelectByCompanyName(companyName);	
 				session.setAttribute("list", list); 
 		  } catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 

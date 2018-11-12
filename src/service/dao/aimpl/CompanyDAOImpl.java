@@ -509,4 +509,36 @@ public class CompanyDAOImpl implements CompanyDAO {
 		
 	}
 
+	@Override
+	public CompanyInfoDTO selectCompanyInfoByCompanyId(String companyId) throws SQLException {
+
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		CompanyInfoDTO companyInfoDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SELECT_COMPANY_INFO_BY_COMPANY_ID;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, companyId);
+			rs = ps.executeQuery();
+
+			
+			while(rs.next()) {
+				companyInfoDTO = new CompanyInfoDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						,rs.getString(5),rs.getString(6),rs.getInt(7),rs.getString(8),rs.getString(9),rs.getString(10)
+						,rs.getInt(11),rs.getString(12));
+			}
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return companyInfoDTO;
+		
+		
+		
+	}
+
 }

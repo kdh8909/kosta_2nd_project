@@ -123,5 +123,8 @@ public interface SqlQuerys {
  //받은쪽지 삭제하기(개인)
  String PERSON_DELETE_MESSAGE="DELETE MESSAGE_BOX_C_P WHERE MESSAGE_NO=?";
  
+ //기업id별 기업정보 가져오기
+ String SELECT_COMPANY_INFO_BY_COMPANY_ID = "SELECT * FROM COMPANY_INFO WHERE COMPANY_ID = ?";
+ 
  
 }

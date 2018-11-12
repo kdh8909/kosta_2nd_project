@@ -180,4 +180,10 @@ public class CompanyServiceImpl implements CompanyService {
 		return list;
 	}
 
+	@Override
+	public CompanyInfoDTO selectCompanyInfoByCompanyId(String companyId) throws SQLException {
+		CompanyInfoDTO companyInfoDTO = dao.selectCompanyInfoByCompanyId(companyId);
+		return companyInfoDTO;
+	}
+
 }

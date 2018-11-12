@@ -79,7 +79,7 @@
 		<c:choose>
 		<c:when test="${perOrCom=='Company'}">
 		
-					<c:forEach items="${list}" var="itms">
+				<c:forEach items="${list}" var="itms">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
@@ -104,7 +104,7 @@
 			
 		<c:otherwise>
 		
-							<c:forEach items="${list}" var="itms">
+				<c:forEach items="${list}" var="itms">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
