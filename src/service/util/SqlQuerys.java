@@ -126,5 +126,10 @@ public interface SqlQuerys {
  //기업id별 기업정보 가져오기
  String SELECT_COMPANY_INFO_BY_COMPANY_ID = "SELECT * FROM COMPANY_INFO WHERE COMPANY_ID = ?";
  
+ //기업 정보 작성되었는지 조회
+ String CHECK_COMPANY_INFO_EXISTS = "SELECT * FROM COMPANY_INFO WHERE COMPANY_ID = ?";
+ 
+ //기업정보 업데이트하기 
+ String C_UPDATE_INFO = "UPDATE company_info SET company_category=?, company_ceo=?, company_name=?, company_head_addr=?, company_type=?,company_employees=?, company_phone=?, company_estblish=?, company_page=?, company_img=? WHERE COMPANY_ID = ?";
  
 }

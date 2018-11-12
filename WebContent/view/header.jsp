@@ -457,7 +457,7 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">이력서관리</a></li>
 						  </c:when>
 						  <c:when test="${sessionScope.perOrCom=='Company'}">
-						  	<li class="page-scroll"><a href="companyinfo.jsp"
+						  	<li class="page-scroll"><a href="controller?command=selectCompanyInfobyComId"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">기업정보관리</a></li>
 						  </c:when>
 						  <c:otherwise>	

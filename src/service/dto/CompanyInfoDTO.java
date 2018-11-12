@@ -134,6 +134,20 @@ public class CompanyInfoDTO {
 	public void setCompanyImg(String companyImg) {
 		this.companyImg = companyImg;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "CompanyInfoDTO [companyId=" + companyId + ", companyCategory=" + companyCategory + ", companyCeo="
+				+ companyCeo + ", companyName=" + companyName + ", companyHeadAddr=" + companyHeadAddr
+				+ ", companyType=" + companyType + ", companyEmployees=" + companyEmployees + ", companyPhone="
+				+ companyPhone + ", companyEstblish=" + companyEstblish + ", companyPage=" + companyPage
+				+ ", companyViews=" + companyViews + ", companyImg=" + companyImg + "]";
+	}
+	
+	
+	
 	
 	
 

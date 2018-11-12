@@ -9,6 +9,7 @@ import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import service.dto.ScrapPersonDTO;
 
 public interface CompanyService {
@@ -70,5 +71,11 @@ public interface CompanyService {
 	    
 	    //회사ID별 회사정보표출
 	    public CompanyInfoDTO selectCompanyInfoByCompanyId(String companyId) throws SQLException;
+	    
+	    //회사 정보입력되어있는지 조회
+	    public boolean checkCompanyInfoExists(String companyId) throws SQLException;
+	    
+	    // 회사 정보 수정
+	    public int updateCompanyInfo(CompanyInfoDTO companyInfoDTO) throws SQLException;
 	    
 }

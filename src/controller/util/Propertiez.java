@@ -21,6 +21,8 @@ public class Propertiez {
 		sendMessageCtoP("controller.comImpl.SendMessageCtoPControllerImpl"),
 		updateViews("controller.comImpl.UpdateViewsControllerImpl"),
 		selectAllCompanyInfo("controller.comImpl.SelectAllCompanyInfoControllerImpl"),
+		selectCompanyInfobyComId("controller.comImpl.SelectCompanyInfobyComIdControllerImpl"),
+		updateCompanyInfo("controller.comImpl.UpdateCompanyInfoControllerImpl"),
 		
 		companyCheckedMessage("controller.perImpl.CompanyCheckedMessageControllerImpl"),
 		companyCheckMessage("controller.perImpl.CompanyCheckMessageControllerImpl"),

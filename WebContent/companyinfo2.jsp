@@ -87,7 +87,7 @@
 		<div class="tab-content">
 			<div>
 				<div class="container" style="width: 90%;padding-top:50px;">
-					<form method="post" action="controller?command=updateCompanyResume"
+					<form method="post" action="controller?command=updateCompanyInfo"
 						enctype="multipart/form-data">
 						<div class="panel-group" id="accordion-e1">
 							<div class="panel panel-default">
@@ -104,7 +104,8 @@
 										<div class="row">
 											<div class="space-top">
 												<div>
-													<img id="thumbnail" src="save/person/${dto.personImg}"
+												
+													<img id="thumbnail" src="save/company/${dto.companyImg}"
 														class="avatar img-circle img-thumbnail"
 														style="width: 200px; height: 200px; cursor: pointer; margin: 15px;"
 														alt="avatar" data-toggle="tooltip" data-placement="top"
@@ -208,11 +209,7 @@
 															value=${dto.companyPhone}>
 													</div>
 												</div>
-												
-												
-												
-												
-												
+
 												<div class="row">
 													<div class="form-group col-md-3 col-sm-3">
 														<div class="text-center" style="float: left">
@@ -228,7 +225,7 @@
 															<option value="중소기업" selected=${dto.companyType}>중소기업</option>
 															<option value="외국계" selected=${dto.companyType}>외국계</option>
 														</select>
-													</div>
+													</div>										
 
 													<div class="form-group col-md-4 col-sm-4">
 														<div class="text-center" style="float: left">
@@ -243,7 +240,7 @@
 															<option value="금융업" selected=${dto.companyCategory}>금융업</option>
 															<option value="유통업" selected=${dto.companyCategory}>유통업</option>
 															<option value="서비스업" selected=${dto.companyCategory}>서비스업</option>
-															<option value="기업" selected=${dto.companyCategory}>기타</option>
+															<option value="기타" selected=${dto.companyCategory}>기타</option>
 														</select>
 													</div>
 
@@ -261,9 +258,9 @@
 
 						</div>
 						<div class="row">
-							<input class="button btn-md" value="등록하기" type="submit"
+							<input class="button btn-md" value="수정하기" type="submit"
 								style="margin: 20px auto;">
-							<!-- <input class="button btn-md" value="수정하기" type="submit"
+							<!-- <input class="button btn-md" value="등록하기" type="submit"
 								style="margin: 20px auto;"> -->
 						</div>
 					</form>

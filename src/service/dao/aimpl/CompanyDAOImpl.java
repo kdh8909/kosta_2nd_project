@@ -541,4 +541,67 @@ public class CompanyDAOImpl implements CompanyDAO {
 		
 	}
 
+	@Override
+	public boolean checkCompanyInfoExists(String companyId) throws SQLException {
+		
+		//필요한 변수 선언
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		boolean result = false;
+
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.CHECK_COMPANY_INFO_EXISTS;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, companyId);
+			rs = ps.executeQuery();
+			
+			result = rs.next();
+			
+		} finally {
+			//닫기
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return result;
+		
+		
+	}
+
+	@Override
+	public int updateCompanyInfo(CompanyInfoDTO companyInfoDTO) throws SQLException {
+		
+	      Connection con = null;
+	      PreparedStatement ps = null;
+	      int result = 0;
+	      String sql = SqlQuerys.C_UPDATE_INFO;
+	      
+	      try {
+	         con = DBUtil.getConnection();
+	         ps = con.prepareStatement(sql);
+	         
+	         ps.setString(1, companyInfoDTO.getCompanyCategory());
+	         ps.setString(2, companyInfoDTO.getCompanyCeo());
+	         ps.setString(3, companyInfoDTO.getCompanyName());
+	         ps.setString(4, companyInfoDTO.getCompanyHeadAddr());
+	         ps.setString(5, companyInfoDTO.getCompanyType());
+	         ps.setInt(6, companyInfoDTO.getCompanyEmployees());
+	         ps.setString(7, companyInfoDTO.getCompanyPhone());
+	         ps.setString(8, companyInfoDTO.getCompanyEstblish());
+	         ps.setString(9, companyInfoDTO.getCompanyPage());
+	         ps.setString(10, companyInfoDTO.getCompanyImg());
+	         ps.setString(11, companyInfoDTO.getCompanyId());
+
+	         
+	         result = ps.executeUpdate();
+
+	      } finally {
+	         //닫기
+	         DBUtil.dbClose(ps, con);
+	      }
+	      return result;
+
+	}
+
 }

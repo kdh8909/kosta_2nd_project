@@ -186,4 +186,22 @@ public class CompanyServiceImpl implements CompanyService {
 		return companyInfoDTO;
 	}
 
+	@Override
+	public boolean checkCompanyInfoExists(String companyId) throws SQLException {
+		boolean result = dao.checkCompanyInfoExists(companyId);
+		return result;
+	}
+
+	@Override
+	public int updateCompanyInfo(CompanyInfoDTO companyInfoDTO) throws SQLException {
+
+		int result = dao.updateCompanyInfo(companyInfoDTO);
+		if(result==0) {
+			throw new SQLException("기업의 정보 수정이 정상적으로 수행되지 않았습니다.");
+		} else {
+			return result;
+		}
+		
+	}
+
 }

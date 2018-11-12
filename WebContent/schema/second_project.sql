@@ -1,4 +1,4 @@
-
+SELECT * FROM COMPANY_INFO
 
 SELECT B.PERSON_ID, A.* FROM SCRAP_PERSON A, PERSON_RESUME B WHERE A.PERSON_TARGET_ID = B.PERSON_ID AND A.COMPANY_SCRAPER_ID = ?
 <<<<<<< HEAD
@@ -48,6 +48,13 @@ CREATE TABLE COMPANY_RECRUIT
 );
 
 DROP TABLE company_info
+
+UPDATE PERSON_RESUME SET person_name=?, person_occupation=?, person_career=?, person_img=?
+, person_age=?, person_sex=?, person_birth=?, person_email=?, person_hope_place=?
+, person_job_status=?, person_experience=?, person_self_introduction_title=?, person_self_introduction=? 
+WHERE person_id=?
+
+UPDATE company_info SET company_category=?, company_ceo=?, company_name=?, company_head_addr=?, company_type=?,company_employees=?, company_phone=?, company_estblish=?, company_page=?, company_img=? WHERE COMPANY_ID = ?   
 
 CREATE TABLE company_info
 (
