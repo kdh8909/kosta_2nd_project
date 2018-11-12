@@ -89,12 +89,12 @@
 										placeholder="생년월일    ex)19890907" required="" type="text" value=${dto.personBirth} readonly="readonly">
 								</div>
 
-								<div class="form-group col-md-4 col-sm-4">
+<!-- 								<div class="form-group col-md-4 col-sm-4">
 									<label class="sr-only" for="location"></label> 
 									<input
 										class="form-control input-lg" name="location" id="location"
 										placeholder="희망 근무 지역" required="" type="text" value=${dto.personHopePlace} readonly="readonly">
-								</div>
+								</div> -->
 							</div>
 
 
@@ -112,9 +112,19 @@
 								</div>
 
 								<div class="form-group col-md-4 col-sm-4">
-									<label class="sr-only" for="personJobStatus"></label> 
+									<label class="sr-only" for="personJobStatus"></label>
+									
+									<c:choose>
+									<c:when test="${dto.personJobStatus==0}">
 									<input class="form-control input-lg" name="personJobStatus" id="personJobStatus" 
-										type="text" value=${dto.personJobStatus} readonly="readonly">
+										type="text" value="구직중" readonly="readonly">
+									</c:when>
+									
+									<c:otherwise>
+									<input class="form-control input-lg" name="personJobStatus" id="personJobStatus" 
+										type="text" value="재직중" readonly="readonly">									
+									</c:otherwise>
+									</c:choose>										
 								</div>
 							</div>
 
@@ -125,12 +135,15 @@
 									<input class="form-control input-lg" name="title" id="title"
 										placeholder="제목을 입력하세요." required="" type="text" style="resize:none;wrap:hard;">
 								</div> -->
+								
+								<!-- 여기 경력사항 / 자기소개제목 추가필요 -->
 
 								<div class="form-group col-md-12 col-sm-12">
-									<textarea class="form-control" rows="10" name="content" id="content" placeholder="1000자 이내로 경력 혹은 자기소개를 입력하세요." 
-													maxlength="1000" style="resize:none;wrap:hard;" readonly="readonly"></textarea>
+									<textarea class="form-control" rows="10" name="content" id="content" placeholder="자기소개를 입력하세요." 
+													maxlength="1000" style="resize:none;wrap:hard;" readonly="readonly">${dto.personSelfIntroduction}</textarea>
 									<script type="text/javascript" language="javascript" src="./js/charcount.js"></script> 
 								</div>
+								
 							</div>
 
 
