@@ -22,17 +22,21 @@ public class ScrapPersonControllerImpl implements Controller {
 	@Override
 	public ModelAndView execute(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
 
-		rep.setContentType("text/html;charset=UTF-8");
+		  rep.setContentType("text/html;charset=UTF-8");
 	      req.setCharacterEncoding("UTF-8");
+	      
+	      System.out.println("ScrapPersonControllerImpl 호출됨");
 	      
 	      HttpSession session = req.getSession();
 	      
-	      String companyScraperId = (String) session.getAttribute("userId");
-	      String personTargetId = req.getParameter("personTargetId");
-
-	      ScrapPersonDTO spDTO = new ScrapPersonDTO(null, null, companyScraperId, personTargetId);
+	      String scraperId = (String) session.getAttribute("userId");
+	      String targetId = req.getParameter("targetId");
 	      
-	      System.out.println("ScrapPersonControllerImpl 호출됨");
+	      System.out.println("scraperId : " + scraperId);
+	      System.out.println("targetId : " + targetId);
+
+	      ScrapPersonDTO scrapPersonDTO = new ScrapPersonDTO(null, null, scraperId, targetId);
+
 	      
 	      ModelAndView mv = new ModelAndView();
 	      String url = "errors/error.jsp";
@@ -40,7 +44,7 @@ public class ScrapPersonControllerImpl implements Controller {
 	      try {
 	         // 이동할 화면 설정
 	         url = "./person.jsp";
-	         asv.scrapPerson(spDTO);
+	         asv.scrapPerson(scrapPersonDTO);
 	         
 	      } catch (SQLException e) {
 	         e.printStackTrace();  //콘솔에 출력

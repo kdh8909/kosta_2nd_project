@@ -18,7 +18,7 @@ import service.aimpl.CompanyServiceImpl;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 
-public class SendMessagePtoCControllerImpl implements Controller {
+public class SendMessagePtoCReControllerImpl implements Controller {
 	ApplicantService asv = ApplicantServiceImpl.getInstance();
 	CompanyService csv = CompanyServiceImpl.getInstance();
 

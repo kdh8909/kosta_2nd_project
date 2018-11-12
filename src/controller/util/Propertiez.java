@@ -36,7 +36,8 @@ public class Propertiez {
 		selectPersonMypage("controller.perImpl.SelectPersonMypageControllerImpl"),
 		selectPersonResumeByPersonId("controller.perImpl.SelectPersonResumeByPersonIdControllerImpl"),
 		updatePersonResume("controller.perImpl.UpdatePersonResumeControllerImpl"),
-		deleteMessage("controller.perImpl.DeleteMessageControllerImpl");
+		deleteMessage("controller.perImpl.DeleteMessageControllerImpl"),
+		sendMessage("controller.perImpl.SendMessagePtoCReControllerImpl");
 		
 		private String controller;
 

@@ -168,35 +168,34 @@ a:hover {
 								<input type="hidden" name="command" value="resumeSelectbypersonId">
 								<input type="hidden" name="personId" value='${itms.personId}'>
 								<div class="card-title">
-									<h4>${itms.personId}(${itms.personName})</h4>
+									<h4>${itms.personName}</h4>
 								</div>
+								</form>
 								<div class="card-text">
-									<span>${itms.personCareer}</span><span>&nbsp; / &nbsp;</span><span>${itms.personHopePlace }</span><span>&nbsp;
-										/ &nbsp;</span><span>${itms.personOccupation }</span>
+									<span>${itms.personCareer}</span><span>&nbsp; / &nbsp;</span><span>${itms.personOccupation }</span>
 								</div>
 								<div class="card-icons">
 									<h5 style="width: auto; height: 30px; overflow: hidden;">
 										${itms.personSelfIntroductionTitle}
 										</h5>
 								</div>
-								<hr>
-								</form>
-								
-								<div class="card-footer">
-								
+								<hr>								
 								<c:choose>
 									<c:when test="${perOrCom=='Company'}">
+									<div class="card-footer">
 									<ul class="list-inline">
 										<li>
 										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
 										<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
 										
 										<li class="pull-right">
-										<a href="controller?command=scrapPerson" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<a href="controller?command=scrapPerson&targetId=${itms.personId}" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
 										<i class="far fa-heart"></i>스크랩</a></li>
 									</ul>
+									</div>
 									</c:when>
 									<c:otherwise> <!-- 개인이 로그인했을때는 다른개인에게 쪽지보내기/스크랩불가 -->
+									<div class="card-footer">
 									<ul class="list-inline">
 										<li>
 										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
@@ -205,11 +204,11 @@ a:hover {
 										<li class="pull-right">
 										<a href="#"	style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
 										<i class="far fa-heart"></i>스크랩</a></li>
-									</ul>									
+									</ul>
+									</div>								
 									</c:otherwise>
 									</c:choose>
-									
-								</div>
+								
 							</div>
 						</div>	
 					</div>

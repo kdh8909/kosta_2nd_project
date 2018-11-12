@@ -103,7 +103,7 @@
 										<div class="panel panel-default">
 											<div class="panel-body">
 												<h4>쪽지보내기 (TO: ${itms.sendName})</h4>
-												<form action="controller?command=sendMessagePtoC&sendId=${itms.sendId}" method="post">
+												<form action="controller?command=sendMessage&sendId=${itms.sendId}" method="post">
 													<textarea class="form-control counted" name="messageContents"
 														placeholder="메세지를 입력하세요." rows="5"
 														style="margin-bottom: 10px; resize: none; wrap: hard;"
