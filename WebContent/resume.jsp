@@ -100,7 +100,7 @@
 										<div class="row">
 											<div class="space-top">
 												<div>
-<!-- 기본이미지로주소설정필요 -->					<img id="thumbnail" src="save/person/${dto.personImg}"
+<!-- 기본이미지로주소설정필요 -->					<img id="thumbnail" src="https://pbs.twimg.com/profile_images/459505368234606592/nuxaaQoo_400x400.jpeg"
 														class="avatar img-circle img-thumbnail"
 														style="width: 200px; height: 200px; cursor: pointer; margin: 15px;"
 														alt="avatar" data-toggle="tooltip" data-placement="top"

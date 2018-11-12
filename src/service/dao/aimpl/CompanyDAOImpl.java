@@ -16,6 +16,7 @@ import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
 import service.dto.ScrapCompanyDTO;
+import service.dto.ScrapCompanyInfoDTO;
 import service.dto.ScrapPersonDTO;
 import service.util.DBUtil;
 import service.util.SqlQuerys;
@@ -286,8 +287,8 @@ public class CompanyDAOImpl implements CompanyDAO {
 	         con = DBUtil.getConnection();
 	         ps = con.prepareStatement(sql);
 	         
-	         ps.setString(1, scrapPersonDTO.getCompanyScraperId());
-	         ps.setString(2, scrapPersonDTO.getPersonTargetId());
+	         ps.setString(1, scrapPersonDTO.getScraperId());
+	         ps.setString(2, scrapPersonDTO.getTargetId());
 
 	         result = ps.executeUpdate();
 
@@ -310,8 +311,8 @@ public class CompanyDAOImpl implements CompanyDAO {
 	            con = DBUtil.getConnection();
 	            ps = con.prepareStatement(sql);
 	            
-	            ps.setString(1, scrapPersonDTO.getCompanyScraperId());
-	            ps.setString(2, scrapPersonDTO.getPersonTargetId());
+	            ps.setString(1, scrapPersonDTO.getScraperId());
+	            ps.setString(2, scrapPersonDTO.getTargetId());
 	            
 	            result = ps.executeUpdate();
 	   
@@ -473,6 +474,39 @@ public class CompanyDAOImpl implements CompanyDAO {
 	            DBUtil.dbClose(ps, con);
 	         }
 	         return result;
+	}
+
+	@Override
+	public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException {
+
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<ScrapPersonDTO> list = new ArrayList<>();
+		ScrapPersonDTO scrapPersonDTO = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			String sql=SqlQuerys.SCRAP_P_C_LIST_PERSON_RESUME;
+			ps = con.prepareStatement(sql);
+			ps.setString(1, companyScraperId);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				scrapPersonDTO = new ScrapPersonDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						, rs.getString(5));
+				list.add(scrapPersonDTO);
+			}
+		} finally {
+			//´Ý±â
+			DBUtil.dbClose(rs, ps, con);
+		}
+		return list;
+		
+		
+		
+		
 	}
 
 }

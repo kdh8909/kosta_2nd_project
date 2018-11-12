@@ -174,4 +174,10 @@ public class CompanyServiceImpl implements CompanyService {
 		}
 	}
 
+	@Override
+	public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException {
+		List<ScrapPersonDTO> list = dao.scrapedPersonView(companyScraperId);
+		return list;
+	}
+
 }

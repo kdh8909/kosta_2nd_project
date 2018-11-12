@@ -14,25 +14,58 @@ import javax.servlet.http.HttpSession;
 import controller.Controller;
 import controller.util.ModelAndView;
 import service.ApplicantService;
+import service.CompanyService;
 import service.aimpl.ApplicantServiceImpl;
+import service.aimpl.CompanyServiceImpl;
 import service.dto.ScrapCompanyInfoDTO;
+import service.dto.ScrapPersonDTO;
 
 public class ScrapedCompanyViewControllerImpl implements Controller {
 	ApplicantService asv = ApplicantServiceImpl.getInstance();
+	CompanyService csv = CompanyServiceImpl.getInstance();
 
 	@Override
 	public ModelAndView execute(HttpServletRequest req, HttpServletResponse rep) throws ServletException, IOException {
 		rep.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
-		PrintWriter out = rep.getWriter();
+
 		HttpSession session = req.getSession();
-		String personScraperId = (String) session.getAttribute("userId");
-		System.out.println(personScraperId);
+				
+		String perOrCom = (String) session.getAttribute("perOrCom");
+
 		ModelAndView mv = new ModelAndView();
-		List<ScrapCompanyInfoDTO> list = new ArrayList<>();
+		
+		
 		try { mv.setPath("./subscribe.jsp");
+		
+		if(perOrCom.equals("Person")) {
+			List<ScrapCompanyInfoDTO> list = new ArrayList<>();
+			
+			String personScraperId = (String) session.getAttribute("userId");
+			System.out.println(personScraperId);
+	
+			
 			  list = asv.scrapedCompanyView(personScraperId);
-			  session.setAttribute("list", list); 
+			  session.setAttribute("list", list);
+			  
+				
+				System.out.println(list);
+			
+		} else if (perOrCom.equals("Company")) {
+			
+			String companyScraperId = (String) session.getAttribute("userId");
+			System.out.println(companyScraperId);
+			
+			List<ScrapPersonDTO> list = new ArrayList<>();
+			
+			list = csv.scrapedPersonView(companyScraperId);
+			session.setAttribute("list", list);
+			
+			System.out.println(list);
+			
+		}
+	
+		
 		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
 								   mv.setPath("./events/result.jsp");
 								   session.setAttribute("resultMsg", "리스트 검색에 실패하였습니다.."); 

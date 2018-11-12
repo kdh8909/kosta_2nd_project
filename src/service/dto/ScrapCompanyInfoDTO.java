@@ -48,4 +48,14 @@ public class ScrapCompanyInfoDTO {
 		this.companyPage = companyPage;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "ScrapCompanyInfoDTO [companyId=" + companyId + ", companyName=" + companyName + ", companyType="
+				+ companyType + ", companyPhone=" + companyPhone + ", companyPage=" + companyPage + "]";
+	}
+	
+	
+	
+	
 }

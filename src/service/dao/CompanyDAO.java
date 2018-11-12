@@ -62,4 +62,7 @@ public interface CompanyDAO {
 		    
 		    // 기업 받은 메시지 삭제
 		    public int companyDeleteMessage(String messageNo) throws SQLException;
+		    
+		    //회사가 스크랩한 개인 보기
+		    public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException;
 }

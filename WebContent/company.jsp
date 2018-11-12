@@ -191,11 +191,27 @@ a:hover {
 							</div>
 							<div class="col-md-8">
 								<ul>
-									<li><a
-										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
-											<i class="far fa-envelope-open"></i>쪽지보내기
-									</a><a style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
-									<li></li>
+								
+									<c:choose>
+									<c:when test="${perOrCom=='Company'}">
+									
+									</c:when>
+									
+									<c:otherwise>								
+									<li>
+									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+									<i class="far fa-envelope-open"></i>쪽지보내기
+									</a>
+									<a href = "controller?command=scrapCompany&companyTargetId=${itms.companyId}" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+									<i class="far fa-heart"></i>스크랩
+									</a>
+									
+									</c:otherwise>
+									</c:choose>
+									
+									
+									<!-- </i></li> -->
+									<!-- <li></li> -->
 								</ul>
 							</div>
 						</div>

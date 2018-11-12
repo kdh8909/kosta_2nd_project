@@ -75,7 +75,36 @@
 				<h3 class="uppercase text-center">스크랩</h3>
 			</div>
 			<div class="panel-group" id="accordion-e1">
-			<c:forEach items="${list}" var="itms">
+			
+		<c:choose>
+		<c:when test="${perOrCom=='Company'}">
+		
+					<c:forEach items="${list}" var="itms">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
+							<h5>성명 : ${itms.name}</h5>
+							<span class="fa fa-chevron-down"></span>
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<div class="row">
+								<p>스크랩된 개인 표출할 내용 없는디</p> 
+							</div>
+						</div>
+					</div>
+				</div>
+				</c:forEach>
+		
+							
+		</c:when>			
+			
+		<c:otherwise>
+		
+							<c:forEach items="${list}" var="itms">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
@@ -95,6 +124,13 @@
 					</div>
 				</div>
 				</c:forEach>
+		
+		
+		</c:otherwise>
+		</c:choose>	
+				
+		
+					
 			</div>
 		</div>
 	</div>
