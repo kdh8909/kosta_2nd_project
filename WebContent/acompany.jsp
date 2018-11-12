@@ -97,13 +97,11 @@
 					<td style="color:#8c8c8c;">연락처</td>
 					<td style="color:#3399ff;">${list.companyPhone}</td>
 					</tr>
+					<tr>
+					<td colspan="4"><a href="controller?command=companyRecruitSelectByCompanyName&companyName=${list.companyName}" style="float:right;">채용공고 보러가기</a></td>
+					</tr>
 				</table>		
 			</div>
-		</div>
-		
-		<div class="container">
-		<a href="controller?command=companyRecruitSelectByCompanyName&companyName=${list.companyName}">채용공고 보러가기</a>
-			
 		</div>
 	</div>
 
