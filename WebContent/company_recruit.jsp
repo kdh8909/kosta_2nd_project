@@ -56,15 +56,14 @@
 		</div>
 		
 		
-		
-		<!-- --------------------------------------------------------------------for문 시작------------ -->
+		<c:forEach items="${list}" var="itms">
 		<div class="container">
 			<div class="row" style="width:50%;">
 			<div class="container">
 			<div class="row" style="display: flex; justify-content: center;">
 				<table id="recruit_table" style="width:50%;border:1px solid #ccc;;border-radius:10px;">
 					<tr>
-					<td colspan="3"><h3>매장부분 바리스타 채용</h3></td>
+					<td colspan="3"><h3>${itms.recruitTilte}</h3></td>
 					<td>
 					<ul class="list-inline">
 						<li class="pull-right">
@@ -80,27 +79,27 @@
 				
 					<tr>
 					<td style="color:#8c8c8c;padding:0;">모집번호</td>
-					<td style="color:#3399ff;padding:0;">RECRUIT_NUMBER</td>
+					<td style="color:#3399ff;padding:0;">${itms.recruitNumber}</td>
 					<td style="color:#8c8c8c;padding:0;">지역</td>
-					<td style="color:#3399ff;padding:0;">COMPANY_WORK_ADDR</td>
+					<td style="color:#3399ff;padding:0;">${itms.companyWorkAddr}</td>
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">고용형태</td>
-					<td style="color:#3399ff;">COMPANY_EMPLOYMENT_TYPE</td>
+					<td style="color:#3399ff;">${itms.companyEmploymentType}</td>
 					<td style="color:#8c8c8c;">급여</td>
-					<td style="color:#3399ff;">COMPANY_SALARY</td>
+					<td style="color:#3399ff;">${itms.companySalary}만원</td>
 					
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">분야</td>
-					<td style="color:#3399ff;">COMPANY_CAREER</td>
+					<td style="color:#3399ff;">${itms.companyCareer}</td>
 					<td style="color:#8c8c8c;">학력</td>
-					<td style="color:#3399ff;">COMPANY_EDUCATION</td>
+					<td style="color:#3399ff;">${itms.companyEducation}</td>
 					
 					</tr>
 					<tr>
 					<td style="color:#8c8c8c;">마감일</td>
-					<td style="color:#3399ff;">RECRUIT_DEADLINE</td>
+					<td style="color:#3399ff;">${itms.recruitDeadline}</td>
 					<td style="color:#8c8c8c;"></td>
 					<td style="color:#3399ff;"></td>
 					</tr>
@@ -112,7 +111,7 @@
 		<div class="space30"></div>
 		
 		
-		<!-- --------------------------------------------------------------------for문 끝------------ -->
+		</c:forEach>
 
 
 

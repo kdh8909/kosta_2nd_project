@@ -173,7 +173,7 @@ a:hover {
 							<div class="col-md-4" style="padding: 0px; overflow: hidden;">
 								<a
 									href="controller?command=selectCompanyInfoByCompanyId&companyId=${itms.companyId}"><img
-									src="save/company/" style="width: 220px; height: 220px"></a>
+									src="save/company/${itms.companyImg}" style="width: 220px; height: 220px"></a>
 							</div>
 
 							<div class="col-md-8"

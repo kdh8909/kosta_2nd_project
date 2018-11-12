@@ -65,7 +65,8 @@ public class UpdatePersonResumeControllerImpl implements Controller {
 			
 			asv.updatePersonResume(personResumeDTO);
 			
-			session.setAttribute("dto", personResumeDTO);
+			PersonResumeDTO dto = asv.resumeSelectbypersonId(personId);
+			session.setAttribute("dto", dto);
 			
 			// 이동할 화면 설정
 			url = "resume2.jsp";

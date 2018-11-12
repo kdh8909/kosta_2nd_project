@@ -75,9 +75,9 @@ public class UpdateCompanyInfoControllerImpl implements Controller {
 			
 			csv.updateCompanyInfo(companyInfoDTO);
 			
-			session.setAttribute("dto", companyInfoDTO);
+			CompanyInfoDTO dto = csv.selectCompanyInfoByCompanyId(companyId);
 			
-			System.out.println(companyInfoDTO);
+			session.setAttribute("dto", dto);
 			
 			// 이동할 화면 설정
 			url = "companyinfo2.jsp";
