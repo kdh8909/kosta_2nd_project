@@ -170,7 +170,6 @@ a:hover {
 								<div class="card-title">
 									<h4>${itms.personName}</h4>
 								</div>
-								</form>
 								<div class="card-text">
 									<span>${itms.personCareer}</span><span>&nbsp; / &nbsp;</span><span>${itms.personOccupation }</span>
 								</div>
@@ -179,6 +178,7 @@ a:hover {
 										${itms.personSelfIntroductionTitle}
 										</h5>
 								</div>
+								</form>
 								<hr>								
 								<c:choose>
 									<c:when test="${perOrCom=='Company'}">
