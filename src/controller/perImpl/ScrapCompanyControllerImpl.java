@@ -35,8 +35,7 @@ public class ScrapCompanyControllerImpl implements Controller {
 	       
 	      String personScraperId = (String) session.getAttribute("userId");
 	      String companyTargetId = req.getParameter("companyTargetId");
-	      
-	      System.out.println(companyTargetId);
+
 
 	      ScrapCompanyDTO scrapCompanyDTO = new ScrapCompanyDTO(null, null, personScraperId, companyTargetId);      
 	      

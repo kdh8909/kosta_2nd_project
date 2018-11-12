@@ -181,14 +181,34 @@ a:hover {
 								</div>
 								<hr>
 								</form>
+								
 								<div class="card-footer">
+								
+								<c:choose>
+									<c:when test="${perOrCom=='Company'}">
 									<ul class="list-inline">
-										<li><a style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;"><i
-												class="far fa-envelope-open"></i>쪽지보내기</a></li>
-										<li class="pull-right"><a
-											style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;"><i class="far fa-heart"></i>스크랩</a></li>
-
+										<li>
+										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
+										
+										<li class="pull-right">
+										<a href="controller?command=scrapPerson" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<i class="far fa-heart"></i>스크랩</a></li>
 									</ul>
+									</c:when>
+									<c:otherwise> <!-- 개인이 로그인했을때는 다른개인에게 쪽지보내기/스크랩불가 -->
+									<ul class="list-inline">
+										<li>
+										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<i	class="far fa-envelope-open"></i>쪽지보내기</a></li>
+										
+										<li class="pull-right">
+										<a href="#"	style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<i class="far fa-heart"></i>스크랩</a></li>
+									</ul>									
+									</c:otherwise>
+									</c:choose>
+									
 								</div>
 							</div>
 						</div>	

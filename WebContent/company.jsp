@@ -193,7 +193,15 @@ a:hover {
 								<ul>
 								
 									<c:choose>
-									<c:when test="${perOrCom=='Company'}">
+									<c:when test="${perOrCom=='Company'}"> <!-- 회사가 로그인했을때는 다른회사에게 쪽지보내기/스크랩불가 -->
+																		<li>
+									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+									<i class="far fa-envelope-open"></i>쪽지보내기
+									</a>
+									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+									<i class="far fa-heart"></i>스크랩
+									</a>
+									</li>
 									
 									</c:when>
 									
@@ -205,7 +213,7 @@ a:hover {
 									<a href = "controller?command=scrapCompany&companyTargetId=${itms.companyId}" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
 									<i class="far fa-heart"></i>스크랩
 									</a>
-									
+									</li>
 									</c:otherwise>
 									</c:choose>
 									

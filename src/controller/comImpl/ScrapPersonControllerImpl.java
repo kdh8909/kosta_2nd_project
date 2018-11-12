@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import controller.Controller;
 import controller.util.ModelAndView;
@@ -24,17 +25,21 @@ public class ScrapPersonControllerImpl implements Controller {
 		rep.setContentType("text/html;charset=UTF-8");
 	      req.setCharacterEncoding("UTF-8");
 	      
-	      String companyScraperId = req.getParameter("companyScraperId");
+	      HttpSession session = req.getSession();
+	      
+	      String companyScraperId = (String) session.getAttribute("userId");
 	      String personTargetId = req.getParameter("personTargetId");
 
-	      ScrapPersonDTO spDTO = new ScrapPersonDTO(null, null, companyScraperId, personTargetId);      
+	      ScrapPersonDTO spDTO = new ScrapPersonDTO(null, null, companyScraperId, personTargetId);
+	      
+	      System.out.println("ScrapPersonControllerImpl 호출됨");
 	      
 	      ModelAndView mv = new ModelAndView();
-	      String url = "";
+	      String url = "errors/error.jsp";
 	      
 	      try {
 	         // 이동할 화면 설정
-	         url = "NewFile.html";
+	         url = "./person.jsp";
 	         asv.scrapPerson(spDTO);
 	         
 	      } catch (SQLException e) {
