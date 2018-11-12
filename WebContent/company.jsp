@@ -103,11 +103,11 @@ a:hover {
 					<div class="side-widget space50">
 						<h4>분류</h4>
 						<ul class="list-unstyled cat-list">
-							<li><a href="#">경영/기획</a> <i class="icon-plus2"></i></li>
-							<li><a href="#">사무</a> <i class="icon-plus2"></i></li>
-							<li><a href="#">IT</a> <i class="icon-plus2"></i></li>
-							<li><a href="#">영업</a> <i class="icon-plus2"></i></li>
-							<li><a href="#">서비스</a> <i class="icon-plus2"></i></li>
+							<li><a href="#">웹개발</a> <i class="icon-plus2"></i></li>
+							<li><a href="#">응용프로그램개발</a> <i class="icon-plus2"></i></li>
+							<li><a href="#">시스템개발</a> <i class="icon-plus2"></i></li>
+							<li><a href="#">인공지능(AI)/빅데이터</a> <i class="icon-plus2"></i></li>
+							<li><a href="#">학생/무직</a> <i class="icon-plus2"></i></li>
 						</ul>
 					</div>
 					<div class="side-widget space50">
@@ -191,35 +191,11 @@ a:hover {
 							</div>
 							<div class="col-md-8">
 								<ul>
-								
-									<c:choose>
-									<c:when test="${perOrCom=='Company'}"> <!-- 회사가 로그인했을때는 다른회사에게 쪽지보내기/스크랩불가 -->
-																		<li>
-									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
-									<i class="far fa-envelope-open"></i>쪽지보내기
-									</a>
-									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
-									<i class="far fa-heart"></i>스크랩
-									</a>
-									</li>
-									
-									</c:when>
-									
-									<c:otherwise>								
-									<li>
-									<a href = "#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
-									<i class="far fa-envelope-open"></i>쪽지보내기
-									</a>
-									<a href = "controller?command=scrapCompany&companyTargetId=${itms.companyId}" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
-									<i class="far fa-heart"></i>스크랩
-									</a>
-									</li>
-									</c:otherwise>
-									</c:choose>
-									
-									
-									<!-- </i></li> -->
-									<!-- <li></li> -->
+									<li><a
+										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+											<i class="far fa-envelope-open"></i>쪽지보내기
+									</a><a style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									<li></li>
 								</ul>
 							</div>
 						</div>

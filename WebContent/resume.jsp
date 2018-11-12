@@ -132,7 +132,7 @@
 													<div class="form-group col-md-4 col-sm-4">
 														<label class="sr-only" for="name"></label> <input
 															class="form-control input-lg" name="personName" id="name"
-															placeholder="이름ㅎㅇ" required="" type="text"
+															placeholder="이름" required="" type="text"
 															value=${dto.personName}>
 													</div>
 

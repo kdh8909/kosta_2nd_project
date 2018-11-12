@@ -6,7 +6,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert Title</title>
-
 </head>
 <body>
 
@@ -43,15 +42,71 @@
 	</div>
 
 	<!-- INNER CONTENT	 -->
+	
 	<div class="inner-content" style="padding-top: 40px">
-		<div class="container" style="border: 1px solid #ccc;">
+	
+		<div class="container" style="display: flex; justify-content: center;">
+
 			<div class="row">
-				<div class="col-md-8 col-md-8" style="padding: 40px 0 0 0">
-					<h3 class="uppercase space30">${companyName}</h3>
-					<div class="space-top"></div>
-					
+				<div class="col-md-12 col-md-12" style="padding: 40px 0 0 0;">
+					<img id="thumbnail"
+						src="https://pbs.twimg.com/profile_images/459505368234606592/nuxaaQoo_400x400.jpeg"
+						class="avatar img-circle img-thumbnail"
+						style="width: 200px; height: 200px; margin: 15px;display:block;float:left" alt="avatar"
+						data-toggle="tooltip" data-placement="top">
 				</div>
 			</div>
+			
+			
+			
+			
+		</div>
+		
+		<div class="container">
+			<div class="text-center">
+				<%-- save/company/${companyImg} --%>
+				<div class="col-md-12 col-md-12" style="padding:0;">
+					<h2 style="padding-bottom:20px;">${companyName}</h2>
+
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row" style="display: flex; justify-content: center;">
+				<table style="width:50%;height:200px;">
+					<tr>
+					<td style="color:#8c8c8c;">카테고리</td>
+					<td style="color:#3399ff;">응용프로그램개발</td>
+					<td style="color:#8c8c8c;">설립일</td>
+					<td style="color:#3399ff;">1999.05</td>
+					</tr>
+					<tr>
+					<td style="color:#8c8c8c;">대표</td>
+					<td style="color:#3399ff;">권도훈</td>
+					<td style="color:#8c8c8c;">직원수</td>
+					<td style="color:#3399ff;">320명</td>
+					
+					</tr>
+					<tr>
+					<td style="color:#8c8c8c;">규모</td>
+					<td style="color:#3399ff;">중견</td>
+					<td style="color:#8c8c8c;">홈페이지</td>
+					<td style="color:#3399ff;">http://edu.kosta.or.kr</td>
+					
+					</tr>
+					<tr>
+					<td style="color:#8c8c8c;">주소</td>
+					<td style="color:#3399ff;">경기도 성남시 분당구 대왕판교로 670</td>
+					<td style="color:#8c8c8c;">연락처</td>
+					<td style="color:#3399ff;">02-157-7777</td>
+					</tr>
+				</table>		
+			</div>
+		</div>
+		
+		<div class="container">
+		<a href="company_recruit.jsp">채용공고 보러가기</a>
+			
 		</div>
 	</div>
 
