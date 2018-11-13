@@ -1,6 +1,7 @@
 package service.aimpl;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import service.ApplicantService;
@@ -15,6 +16,7 @@ import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 
@@ -175,8 +177,9 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException {
-		List<ScrapPersonDTO> list = dao.scrapedPersonView(companyScraperId);
+	public List<PersonResumeDTO> scrapedPersonView(String companyScraperId) throws SQLException {
+		List<PersonResumeDTO> list = new ArrayList<PersonResumeDTO>();
+		list = dao.scrapedPersonView(companyScraperId);
 		return list;
 	}
 
