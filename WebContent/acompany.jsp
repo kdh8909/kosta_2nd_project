@@ -88,7 +88,7 @@
 					<td style="color:#8c8c8c;">규모</td>
 					<td style="color:#3399ff;">${list.companyType}</td>
 					<td style="color:#8c8c8c;">홈페이지</td>
-					<td style="color:#3399ff;">${list.companyPage}</td>
+					<td style="color:#3399ff;"><a href="${list.companyPage}">${list.companyPage}</a></td>
 					
 					</tr>
 					<tr>
