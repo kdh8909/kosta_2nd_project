@@ -187,9 +187,8 @@
 														<option value="웹개발" selected=${dto.personOccupation}>웹개발</option>
 														<option value="응용프로그램개발" selected=${dto.personOccupation}>응용프로그램개발</option>
 														<option value="시스템개발" selected=${dto.personOccupation}>시스템개발</option>
-														<option value="인공지능(AI)/빅데이터"
-															selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
-														<option value="학생/무직" selected=${dto.personOccupation}>학생/무직</option>
+														<option value="인공지능(AI)" selected=${dto.personOccupation}>인공지능(AI)</option>
+														<option value="빅데이터" selected=${dto.personOccupation}>빅데이터</option>
 													</select>
 
 												</div>
