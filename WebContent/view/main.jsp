@@ -263,13 +263,13 @@
 					<div id="home-team" class="owl-carousel owl-theme">
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/1.jpg" class="img-responsive" alt="" id="so0">
+								<img src="images/team/seonghyeon.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so0">
 								<div class="team-inner">
 									<ul class="team-social">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so1"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so2"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so3"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so4"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook" id="so1"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so2"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so3"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so4"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -278,13 +278,13 @@
 						</div>
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/2.jpg" class="img-responsive" alt="" id="so7">
+								<img src="images/team/seungyeob.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so7">
 								<div class="team-inner">
 									<ul class="team-social" id="so2">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so8"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so10"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so9"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so11"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook" id="so8"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so10"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so9"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so11"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -293,13 +293,13 @@
 						</div>
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/3.jpg" class="img-responsive" alt="" id="so14">
+								<img src="images/team/seunghyun.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so14">
 								<div class="team-inner">
 									<ul class="team-social">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so15"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so16"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so17"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so18"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook" id="so15"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so16"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so17"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so18"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -308,13 +308,13 @@
 						</div>
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/4.jpg" class="img-responsive" alt="" id="so21">
+								<img src="images/team/dohun.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so21">
 								<div class="team-inner">
 									<ul class="team-social">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so22"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so23"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so24"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so25"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook" id="so22"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so23"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so24"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so25"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -323,33 +323,33 @@
 						</div>
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/5.jpg" class="img-responsive" alt="" id="so28">
+								<img src="images/team/jihyun.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so28">
 								<div class="team-inner">
 									<ul class="team-social">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so29"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so30"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so31"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so32"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook" id="so29"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so30"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so31"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so32"></i></a></li>
 									</ul>
 								</div>
 							</div>
-							<h2 id="so33">PM & 개발</h2>
-							<span id="so34">박지현</span>	
+							<h2 id="so33">박지현</h2>
+							<span id="so34">PM & 개발</span>	
 						</div>
 						<div class="item">
 							<div class="staff-img">
-								<img src="images/team/6.jpg" class="img-responsive" alt="" id="so35">
+								<img src="images/team/wonkyung.jpg" style='height: 202px; width: 186px; object-fit: contain' class="img-responsive" alt="" id="so35">
 								<div class="team-inner">
 									<ul class="team-social">
-										<li><a class="facebook" href="#"><i class="fa fa-facebook" id="so36"></i></a></li>
-										<li><a class="twitter" href="#"><i class="fa fa-twitter" id="so37"></i></a></li>
-										<li><a class="google" href="#"><i class="fa fa-google-plus" id="so38"></i></a></li>
-										<li><a class="pinterest" href="#"><i class="fa fa-pinterest" id="so39"></i></a></li>
+										<li><a class="facebook" href="#"><i class="fab fa-facebook"></i></a></li>
+										<li><a class="twitter" href="#"><i class="fab fa-twitter" id="so37"></i></a></li>
+										<li><a class="google" href="#"><i class="fab fa-google-plus" id="so38"></i></a></li>
+										<li><a class="pinterest" href="#"><i class="fab fa-pinterest" id="so39"></i></a></li>
 									</ul>
 								</div>
 							</div>
-							<h2 id="so45">PM & 개발</h2>
-							<span id="so46">이원경</span>	
+							<h2 id="so45">이원경</h2>
+							<span id="so46">PM & 개발</span>
 						</div>
 					</div>
 				</div>
