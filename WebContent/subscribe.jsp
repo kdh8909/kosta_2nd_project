@@ -74,22 +74,22 @@
 			<div class="row" style="margin-bottom:30px;">
 				<h3 class="uppercase text-center">스크랩</h3>
 			</div>
-			<div class="panel-group" id="accordion-e1">
 			
 		<c:choose>
 		<c:when test="${perOrCom=='Company'}">
 		
 				<c:forEach items="${list}" var="itms">
+				<div class="panel-group" id="accordion-e1">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
+							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapse${state.count }">
 							<h5>성명 : ${itms.name}</h5>
 							<span class="fa fa-chevron-down"></span>
 							</a>
 						</h4>
 					</div>
-					<div id="collapseOne" class="panel-collapse collapse in">
+					<div id="#collapse${state.count }" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<div class="row">
 								<p>스크랩된 개인 표출할 내용 없는디</p> 
@@ -97,41 +97,72 @@
 						</div>
 					</div>
 				</div>
+			</div>
 				</c:forEach>
-		
 							
 		</c:when>			
-			
 		<c:otherwise>
-		
-				<c:forEach items="${list}" var="itms">
+				<c:forEach items="${list}" var="itms" varStatus="state">
+				<div class="panel-group" id="accordion-e1">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
-							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapseOne">
+							<a class="accordion-toggle" id="aa${state.count }" data-toggle="collapse" data-parent="#accordion-e1" href="#collapse${state.count }">
 							<h5>회사명 : ${itms.companyName}</h5> <h5>분류 : ${itms.companyType}</h5>
 							<h5>전화번호 : ${itms.companyPhone}</h5><h5> 홈페이지 : ${itms.companyPage}</h5>
+							<input type="hidden" id="hidden${state.count }" value="${itms.companyName}">
 							<span class="fa fa-chevron-down"></span>
 							</a>
 						</h4>
 					</div>
-					<div id="collapseOne" class="panel-collapse collapse in">
+					
+					<script type="text/javascript">
+					
+					$(document).ready(function(){
+						
+						$("#aa${state.count }").click(function(){
+	
+ 							$.ajax({url : "./companyRecruitInfo" //서버요청주소
+								  , type : "post" // get or post 방식
+								  , dataType : "json" //서버가 보내오는 데이터 타입
+								  , data : "companyName="+$("#hidden${state.count }").val() //서버에게 보내는 parameter 정보
+								  , success : function(result){
+									  
+									   var str = "";
+									  
+										$.each(result,function(index, item){
+											str += item.recruitTilte + "&nbsp;&nbsp;" + " ~ " +item.recruitDeadline +"<br>";
+										});
+
+									  $("#text${state.count }").html(str);
+								  }
+								  , error : function(err){
+									  console.log(err);
+								  }
+							});
+
+						});
+
+					});
+					
+					</script>
+					
+					
+					<div id="collapse${state.count }" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<div class="row">
-								<p>해당회사별 채용공고 표출</p> 
+								<p id="text${state.count }"> </p> 
 							</div>
 						</div>
 					</div>
 				</div>
+				</div>
 				</c:forEach>
-		
-		
 		</c:otherwise>
 		</c:choose>	
 				
 		
-					
-			</div>
+				
 		</div>
 	</div>
 

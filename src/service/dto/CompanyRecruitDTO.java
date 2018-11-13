@@ -124,4 +124,16 @@ public class CompanyRecruitDTO {
 		this.companyName = companyName;
 	}
 
+	@Override
+	public String toString() {
+		return "CompanyRecruitDTO [recruitNumber=" + recruitNumber + ", companyId=" + companyId + ", companyWorkAddr="
+				+ companyWorkAddr + ", companyEmploymentType=" + companyEmploymentType + ", companySalary="
+				+ companySalary + ", companyCareer=" + companyCareer + ", companyEducation=" + companyEducation
+				+ ", recruitTilte=" + recruitTilte + ", recruitDeadline=" + recruitDeadline + ", companyName="
+				+ companyName + "]";
+	}
+	
+	
+	
+
 }

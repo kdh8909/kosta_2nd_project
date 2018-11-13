@@ -315,7 +315,7 @@
 												<label class="sr-only" for="title"></label> <input
 													class="form-control input-lg" name="personSelfIntroductionTitle"
 													id="intro_title" placeholder="제목을 입력하세요." required=""
-													type="text" value=${dto.personSelfIntroductionTitle}>
+													type="text" value=${dto.personSelfIntroductionTitle} maxlength="500">
 											</div>
 											<div class="form-group col-md-10 col-sm-10">
 												<textarea class="form-control" rows="10"
