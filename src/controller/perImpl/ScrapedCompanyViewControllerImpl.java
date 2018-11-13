@@ -17,6 +17,7 @@ import service.ApplicantService;
 import service.CompanyService;
 import service.aimpl.ApplicantServiceImpl;
 import service.aimpl.CompanyServiceImpl;
+import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyInfoDTO;
 import service.dto.ScrapPersonDTO;
 
@@ -55,10 +56,10 @@ public class ScrapedCompanyViewControllerImpl implements Controller {
 			
 			String companyScraperId = (String) session.getAttribute("userId");
 			System.out.println(companyScraperId);
-			
-			List<ScrapPersonDTO> list = new ArrayList<>();
+			List<PersonResumeDTO> list = new ArrayList<PersonResumeDTO>();
 			
 			list = csv.scrapedPersonView(companyScraperId);
+			
 			session.setAttribute("list", list);
 			
 			System.out.println(list);
