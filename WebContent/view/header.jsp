@@ -406,7 +406,7 @@ button.btn-check-login:hover {
 					<div id="navbar-collapse-1"
 						class="navbar-collapse collapse navbar-right">
 						<ul class="nav navbar-nav">
-							<li class="page-scroll""><a href="index.jsp"
+							<li class="page-scroll""><a href="start.html"
 								style="font-family: 'Noto Serif KR', sans-serif; font-size: 1.5em;">홈</a></li>
 							<li class="page-scroll"><a
 								href="controller?command=resumeSelectAll"
