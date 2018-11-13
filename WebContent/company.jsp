@@ -166,7 +166,7 @@ a:hover {
 				<div class="col-md-9" style="padding: 5px 5px 5px 30px;">
 					<h4 class="space30">Company Posts</h4>
 
-					<c:forEach items="${list}" var="itms">
+					<c:forEach items="${list}" var="itms" varStatus="state">
 
 						<div class="col-md-11"
 							style="border: 1px solid #ccc; border-radius: 5px; padding: 0px; margin-bottom: 20px">
@@ -206,10 +206,12 @@ a:hover {
 							</c:when>
 							<c:otherwise>
 							
+							
+							
 							<div class="col-md-8">
 								<ul>
 									<li><a href="#"
-										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"  data-toggle="modal" data-target="#send" data-dismiss="modal">
+										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"  data-toggle="modal" data-target="#send${state.count }" data-dismiss="modal">
 											<i class="far fa-envelope-open"></i>쪽지보내기
 									</a><a href="controller?command=scrapCompany&targetId=${itms.companyId}" 
 									style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
@@ -217,10 +219,39 @@ a:hover {
 								</ul>
 							</div>
 							
+					<div class="modal fade" id="send${state.count }" tabindex="-1" role="dialog"
+					aria-labelledby="send" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document"
+						style="width: 400px; margin-top: 300px;">
+						<div class="modal-content">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-4 col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body">
+												<h4>쪽지보내기 (TO: ${itms.companyName})</h4>
+												<form action="controller?command=sendMessageFromCompanyPage&sendId=${itms.companyId}" method="post">
+													<textarea class="form-control counted" name="messageContents"
+														placeholder="메세지를 입력하세요." rows="5"
+														style="margin-bottom: 10px; resize: none; wrap: hard;"
+														maxlength="50"></textarea>
+													<script type="text/javascript" language="javascript"
+														src="./js/charcount.js"></script>
+													<button class="btn btn-info" type="submit">쪽지보내기</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+							
 							</c:otherwise>
 							</c:choose>
 						</div>
-						<div class="modal fade" id="send" tabindex="-1" role="dialog"
+						<%-- <div class="modal fade" id="send" tabindex="-1" role="dialog"
 					aria-labelledby="send" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document"
 						style="width: 400px; margin-top: 300px;">
@@ -247,7 +278,7 @@ a:hover {
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 						
 						
 					</c:forEach>

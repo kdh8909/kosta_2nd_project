@@ -40,7 +40,8 @@ public class Propertiez {
 		updatePersonResume("controller.perImpl.UpdatePersonResumeControllerImpl"),
 		deleteMessage("controller.perImpl.DeleteMessageControllerImpl"),
 		sendMessage("controller.perImpl.SendMessagePtoCReControllerImpl"),
-		selectCompanyInfoByCompanyId("controller.perImpl.SelectCompanyInfoByCompanyIdControllerImpl");
+		selectCompanyInfoByCompanyId("controller.perImpl.SelectCompanyInfoByCompanyIdControllerImpl"),
+		sendMessageFromCompanyPage("controller.perImpl.SendMessageFromCompanyPageControllerImpl");
 		
 		private String controller;
 
