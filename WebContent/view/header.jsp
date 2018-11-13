@@ -13,7 +13,6 @@
 		console.log("헤더");
 	});
 </script>
-
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet"
@@ -330,99 +329,36 @@ button.btn-check-login:hover {
 							src="images/basic/logo.png" width="40" alt=""></a>
 					</div>
 				
-				<c:choose><c:when test="${not empty sessionScope.userId}">
-					<div class="header-x pull-right"><!-- onmouseover="location.href='controller?command=sendMessagePtoC'" -->
-						<div class="s-cart">
+				<c:choose
+				><c:when test="${not empty sessionScope.userId}">
+					<div class="header-x pull-right">
+						<div class="s-cart"> 
 							<div class="sc-trigger">
-								<i class="far fa-envelope"></i><span>3</span>
+								<i class="far fa-envelope" id="trigger"></i><span>3</span>
 							</div>
 							<div class="cart-info">
-								<small><em class="highlight">3개의 </em>새로운 쪽지가 있습니다.</small> <br>
+								<small><em class="highlight">3</em> 개의 새로운 쪽지가 있습니다.</small> <br>
 								<br>
 								<table class="table table-hover" id="Msg">
 									<thead>
 										<tr>
 											<th>번호</th>
-											<th>보낸 회원</th>
+											<th>보낸 사람</th>
 											<th>내용</th>
-											<th>보낸날짜</th>
+											<th>보낸 날짜</th>
 										</tr>
 									</thead>
-	
 					<c:choose><c:when test="${sessionScope.perOrCom=='Person'}">
-
-<script type="text/javascript">
-  $(document).ready(function(){ //alert("문서 준비 완료!")
-
-	    //전체 검색하기 $.ajax();
-        function selectAll(){
-        	$.ajax({ url: "../msgPtoCList" , //서버요청주소
-        		     type: "post", //요청방식(get, post)
-        		     dataType: "json" ,//서버로부터 받는 데이터타입(text, html, json, xml)
-        		     //data: "예정 없음~",//서버에게 보내는 parameter정보
-        		     success: function(result){
-        			 //alert(result)
-        			$("#Msg tr:gt(0)").remove();
-     		       
-    		        var str="";
-    		         $.each(result, function(index, item){
-    		        	 str+="<tr>";
-    		        	 str+="<td>"+item.messageFlag+"</td>";
-    		        	 str+="<td>"+item.companyReceiveId+"</td>";
-    		        	 str+="<td>"+item.messageContents+"</td>";
-    		        	 str+="<td>"+item.messageDate+"</td>";
-    		        	 str+="</tr>";
-    		         })
-    		         $("#Msg tr:eq(0)").after(str);
-    		         $("a").css("textDecoration", "none");
-        		} ,
-        		error: function(err){
-        			//alert(err+"=> 예외발생...");
-        		}
-        	});
-        }//전체검색
-     selectAll();
-  });
-</script>
+					
+					
+					
 					</c:when>
 					<c:when test="${sessionScope.perOrCom=='Company'}">
 	
-<script type="text/javascript">
-$(document).ready(function(){ //alert("문서 준비 완료!")
-	
-        function selectAll(){
-        	$.ajax({ url: "../msgCtoPList" , //서버요청주소
-        		     type: "post", //요청방식(get, post)
-        		     dataType: "json" ,//서버로부터 받는 데이터타입(text, html, json, xml)
-        		     //data: "예정 없음~",//서버에게 보내는 parameter정보
-        		     success: function(result){
-        			 //alert(result)
-        			$("#Msg tr:gt(0)").remove();
-     		       
-    		        var str="";
-    		         $.each(result, function(index, item){
-    		        	 str+="<tr>";
-    		        	 str+="<td>"+item.messageFlag+"</td>";
-    		        	 str+="<td>"+item.personReceiveId+"</td>";
-    		        	 str+="<td>"+item.messageContents+"</td>";
-    		        	 str+="<td>"+item.messageDate+"</td>";
-    		        	 str+="</tr>";
-    		         })
-    		         $("#Msg tr:eq(0)").after(str);
-    		         $("a").css("textDecoration", "none");
-        		} ,
-        		error: function(err){
-        			//alert(err+"=> 예외발생...");
-        		}
-        	});
-        }//전체검색
-        selectAll();
-     });
-</script>
-				</c:when>
-				</c:choose>
-				
-						</table>
+					</c:when>
+					</c:choose>
+					
+					</table>
 								<div style="display: flex; justify-content: center;">
 									<div class="cart-btn">
 										<a href="controller?command=personCheckMessage">쪽지함</a>
@@ -430,10 +366,41 @@ $(document).ready(function(){ //alert("문서 준비 완료!")
 								</div>
 							</div>
 						</div>
-					</div>		
-				
+					</div>
 			</c:when>
 		</c:choose>
+		
+<!-- 		<script type="text/javascript">
+					
+			$(document).ready(function(){
+				
+				$(document).on("mouseover", "#trigger", function(){
+					
+  					$.ajax({url : "./sendMessage"//서버요청주소
+						  , type : "get"// get or post 방식
+						  , dataType : "json" //서버가 보내오는 데이터 타입
+//						  , data : //서버에게 보내는 parameter 정보
+						  , success : function(){
+							  
+								$.each(wordArray, function(index, item){
+									
+									str+="<a href='#'>" + item + "</a><br>"
+									
+								});
+							  
+						  }
+						  , error : function(err){
+							  console.log(err);
+						  }
+					});
+
+				});
+				
+			});		
+		</script> -->
+		
+		
+		
 
 
 					<div id="navbar-collapse-1"
