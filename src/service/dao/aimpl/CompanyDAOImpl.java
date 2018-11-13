@@ -603,5 +603,71 @@ public class CompanyDAOImpl implements CompanyDAO {
 	      return result;
 
 	}
+	
+	@Override
+	   public int showUser() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_USER;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
+
+	   @Override
+	   public int showCompany() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_COMPANY;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
+
+	   @Override
+	   public int showAll() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_ALL;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
 
 }

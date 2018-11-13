@@ -74,4 +74,10 @@ public interface CompanyDAO {
 		    
 		    // 회사 정보 수정
 		    public int updateCompanyInfo(CompanyInfoDTO companyInfoDTO) throws SQLException;
+		    
+		    public int showUser() throws SQLException;
+		    
+		    public int showCompany() throws SQLException;
+		    
+		    public int showAll() throws SQLException;
 }

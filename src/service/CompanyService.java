@@ -78,4 +78,6 @@ public interface CompanyService {
 	    // 회사 정보 수정
 	    public int updateCompanyInfo(CompanyInfoDTO companyInfoDTO) throws SQLException;
 	    
+	    public List<Integer> showbackgroundDb() throws SQLException;
+	    
 }

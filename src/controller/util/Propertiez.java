@@ -23,6 +23,7 @@ public class Propertiez {
 		selectAllCompanyInfo("controller.comImpl.SelectAllCompanyInfoControllerImpl"),
 		selectCompanyInfobyComId("controller.comImpl.SelectCompanyInfobyComIdControllerImpl"),
 		updateCompanyInfo("controller.comImpl.UpdateCompanyInfoControllerImpl"),
+		showBackgroundDB("controller.comImpl.ShowbackgroundDbImpl"),
 		
 		companyCheckedMessage("controller.perImpl.CompanyCheckedMessageControllerImpl"),
 		companyCheckMessage("controller.perImpl.CompanyCheckMessageControllerImpl"),

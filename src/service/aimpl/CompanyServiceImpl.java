@@ -1,21 +1,16 @@
 package service.aimpl;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-import service.ApplicantService;
 import service.CompanyService;
-import service.dao.ApplicantDAO;
 import service.dao.CompanyDAO;
-import service.dao.aimpl.ApplicantDAOImpl;
 import service.dao.aimpl.CompanyDAOImpl;
 import service.dto.CompanyInfoDTO;
 import service.dto.CompanyLoginDTO;
 import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
-import service.dto.MessageBoxPCDTO;
-import service.dto.PersonLoginDTO;
-import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapPersonDTO;
 
 public class CompanyServiceImpl implements CompanyService {
@@ -203,5 +198,16 @@ public class CompanyServiceImpl implements CompanyService {
 		}
 		
 	}
+	   @Override
+	   public List<Integer> showbackgroundDb() throws SQLException {
+	      List<Integer> list = new ArrayList<>();
+	      
+	         list.add(dao.showAll());
+	         list.add(dao.showCompany());
+	         list.add(dao.showUser());      
+	      
+	      
+	      return list;
+	   }
 
 }

@@ -132,4 +132,10 @@ public interface SqlQuerys {
  //기업정보 업데이트하기 
  String C_UPDATE_INFO = "UPDATE company_info SET company_category=?, company_ceo=?, company_name=?, company_head_addr=?, company_type=?,company_employees=?, company_phone=?, company_estblish=?, company_page=?, company_img=? WHERE COMPANY_ID = ?";
  
+ String COUNT_COMPANY="select count(recruit_number) from COMPANY_RECRUIT";
+ 
+ String COUNT_USER="select count(person_occupation) from person_resume";
+ 
+ String COUNT_ALL="select sum(C.cnt) from(select count(company_id) cnt from company_login\r\n" + 
+       " union all select count(person_id )from person_login) C";
 }
