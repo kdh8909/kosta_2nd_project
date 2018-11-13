@@ -58,7 +58,7 @@
 				<div class="team-home" >
 					<div class="text-center space40" style="padding:10%">
 						<h2 class="title uppercase">${sessionScope.resultMsg}</h2><br><br>
-						<input type="button" value="홈으로" class="btn btn-primary" onclick="location.href='index.jsp'">
+						<input type="button" value="홈으로" class="btn btn-primary" onclick="location.href='start.html'">
 					</div>
 				</div>
 			</c:otherwise>

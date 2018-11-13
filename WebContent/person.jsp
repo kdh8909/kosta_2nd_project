@@ -50,6 +50,20 @@ a:hover {
 	border-radius: 10px 10px;
 }
 </style>
+
+<script>
+$(function(){
+	$("#person_msg").click(function(){
+		alert(11);
+	});
+	
+	
+})
+		
+										
+</script>
+
+
 </head>
 <body>
 <!-- <body onload="window.location.href='controller?command=resumeSelectAll'"> -->
@@ -206,12 +220,14 @@ a:hover {
 									<div class="card-footer">
 									<ul class="list-inline">
 										<li>
-										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;" id="person_msg">
 										<i	class="far fa-envelope-open"></i>쪽지보내기</a></li>
 										
 										<li class="pull-right">
-										<a href="#"	style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<a href="#"	style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;" id="person_scrap">
 										<i class="far fa-heart"></i>스크랩</a></li>
+										
+										
 									</ul>
 									</div>								
 									</c:otherwise>
@@ -288,7 +304,7 @@ a:hover {
 
 
 	<!-- jQuery -->
-<!-- 	<script src="js/jquery.js"></script> -->
+	<script src="js/jquery.js"></script>
 
 	<!-- Plugins -->
 	<script src="js/bootstrap.min.js"></script>

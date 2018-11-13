@@ -222,7 +222,7 @@
 	</div>
 
 	<!-- MAIN MEMBER COUNT -->
-		<div id="stats1" class="padding60 container" style="padding-left:100px;">
+		<div id="stats1" class="padding60 container" style="margin-left:27%">
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
 				<div class="stats1-info">

@@ -31,46 +31,43 @@ public class ScrapedCompanyViewControllerImpl implements Controller {
 		req.setCharacterEncoding("UTF-8");
 
 		HttpSession session = req.getSession();
-				
+
 		String perOrCom = (String) session.getAttribute("perOrCom");
 
 		ModelAndView mv = new ModelAndView();
-		
-		
-		try { mv.setPath("./subscribe.jsp");
-		
-		if(perOrCom.equals("Person")) {
-			List<ScrapCompanyInfoDTO> list = new ArrayList<>();
-			
-			String personScraperId = (String) session.getAttribute("userId");
-			System.out.println(personScraperId);
-	
-			
-			  list = asv.scrapedCompanyView(personScraperId);
-			  session.setAttribute("list", list);
-			  
+
+		try {
+			mv.setPath("./subscribe.jsp");
+
+			if (perOrCom.equals("Person")) {
+				List<ScrapCompanyInfoDTO> list = null;
 				
-				System.out.println(list);
-			
-		} else if (perOrCom.equals("Company")) {
-			
-			String companyScraperId = (String) session.getAttribute("userId");
-			System.out.println(companyScraperId);
-			List<PersonResumeDTO> list = new ArrayList<PersonResumeDTO>();
-			
-			list = csv.scrapedPersonView(companyScraperId);
-			
-			session.setAttribute("list", list);
-			
-			System.out.println(list);
-			
-		}
+				String personScraperId = (String) session.getAttribute("userId");
+
+				list = asv.scrapedCompanyView(personScraperId);
+				
+				if(list.size() > 0) {
+				session.setAttribute("list", list);
+				}else {
+					mv.setPath("./events/result.jsp");
+					session.setAttribute("resultMsg", "스크랩된 항목이 없습니다.");
+				}
 	
-		
-		} catch (SQLException e) { //mv.setPath("./errors/error.jsp"); 
-								   mv.setPath("./events/result.jsp");
-								   session.setAttribute("resultMsg", "리스트 검색에 실패하였습니다.."); 
-		   						   return mv; }
+			} else if (perOrCom.equals("Company")) {
+
+				String companyScraperId = (String) session.getAttribute("userId");
+				List<PersonResumeDTO> list = new ArrayList<PersonResumeDTO>();
+
+				list = csv.scrapedPersonView(companyScraperId);
+
+				session.setAttribute("list", list);
+			}
+
+		} catch (SQLException e) { // mv.setPath("./errors/error.jsp");
+			mv.setPath("./events/result.jsp");
+			session.setAttribute("resultMsg", "리스트 검색에 실패하였습니다..");
+			return mv;
+		}
 		return mv;
 	}
 

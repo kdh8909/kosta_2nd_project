@@ -15,12 +15,12 @@
 
 	<!-- PAGE HEADER -->
 	<div class="page_header">
-		<div class="page_header_parallax2">
+		<div class="page_header_parallax3">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12">
 						<h3>
-							<span>이력서</span>Presentation <br>your career!
+							<span>개인상세정보</span>
 						</h3>
 					</div>
 				</div>
@@ -32,7 +32,8 @@
 					<div class="col-md-12">
 						<ul class="bcrumbs">
 							<li><a href="#"><i class="fa fa-home"></i> 홈</a></li>
-							<li><a href="#">이력서작성</a></li>
+							<li><a href="#">개인</a></li>
+							<li><a href="#">상세정보</a></li>
 						</ul>
 						<div class="clearfix"></div>
 					</div>
@@ -65,12 +66,18 @@
 							
 							<div class="row" style="padding-top:20px;">
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>이름</h4>
+                      								</div>
 									<label class="sr-only" for="name"></label> 
 									<input
 										class="form-control input-lg" name="name" id="name"
 										placeholder="이름" required="" value=${dto.personName} readonly="readonly">
 								</div>
 								<div class="form-group col-md-8 col-sm-8">
+								<div class="text-center" style="float: left">
+                          								<h4>이메일</h4>
+                      								</div>
 									<label class="sr-only" for="email"></label> <input
 										class="form-control input-lg" name="email" id="email"	
 										placeholder="이메일" required="" type="email" value=${dto.personEmail} readonly="readonly">
@@ -79,11 +86,17 @@
 							
 							<div class="row">
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>나이</h4>
+                      								</div>
 									<label class="sr-only" for="age"></label> <input
 										class="form-control input-lg" name="age" id="age"
 										placeholder="나이" required="" type="text" value=${dto.personAge} readonly="readonly">
 								</div>
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>생년월일</h4>
+                      								</div>
 									<label class="sr-only" for="birth"></label> <input
 										class="form-control input-lg" name="birth" id="birth"
 										placeholder="생년월일    ex)19890907" required="" type="text" value=${dto.personBirth} readonly="readonly">
@@ -100,18 +113,27 @@
 
 							<div class="row">
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>성별</h4>
+                      								</div>
 									<label class="sr-only" for="sex"></label> 
 									<input class="form-control input-lg" name="sex" id="sex"
 										type="text" value=${dto.personSex} readonly="readonly">
 								</div>
 
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>경력여부</h4>
+                      								</div>
 									<label class="sr-only" for="personCareer"></label> 
 									<input class="form-control input-lg" name="personCareer" id="personCareer" 
 										type="text" value=${dto.personCareer} readonly="readonly">
 								</div>
 
 								<div class="form-group col-md-4 col-sm-4">
+								<div class="text-center" style="float: left">
+                          								<h4>구직여부</h4>
+                      								</div>
 									<label class="sr-only" for="personJobStatus"></label>
 									
 									<c:choose>
@@ -129,22 +151,32 @@
 							</div>
 
 							<div class="space20"></div>
-
+							<hr>
 							<div class="row">
-								<!-- <div class="form-group col-md-12 col-sm-12">
+								<div class="form-group col-md-12 col-sm-12">
+								<h3>자기소개서</h3>
 									<input class="form-control input-lg" name="title" id="title"
-										placeholder="제목을 입력하세요." required="" type="text" style="resize:none;wrap:hard;">
-								</div> -->
-								
-								<!-- 여기 경력사항 / 자기소개제목 추가필요 -->
+										placeholder="제목을 입력하세요." required="" type="text" style="resize:none;wrap:hard;" value="${dto.personSelfIntroductionTitle}" readonly="readonly">
+								</div>
 
 								<div class="form-group col-md-12 col-sm-12">
 									<textarea class="form-control" rows="10" name="content" id="content" placeholder="자기소개를 입력하세요." 
 													maxlength="1000" style="resize:none;wrap:hard;" readonly="readonly">${dto.personSelfIntroduction}</textarea>
-									<script type="text/javascript" language="javascript" src="./js/charcount.js"></script> 
 								</div>
 								
 							</div>
+							<hr>
+							<div class="space20"></div>
+							<div class="row">
+								<div class="form-group col-md-12 col-sm-12">
+								<h3>경력사항</h3>
+									<textarea class="form-control" rows="10" name="content" id="content" placeholder="경력사항" 
+													maxlength="1000" style="resize:none;wrap:hard;" readonly="readonly">${dto.personExperience}</textarea>	
+								</div>
+								
+							</div>
+							
+				
 
 
 							<!-- <input class="button btn-md" value="전송" type="submit"> -->

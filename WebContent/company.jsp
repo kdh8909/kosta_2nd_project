@@ -77,7 +77,7 @@ a:hover {
 						<div class="col-md-12">
 							<ul class="bcrumbs">
 								<li><a href="#"><i class="fa fa-home"></i> 홈</a></li>
-								<li>개인</li>
+								<li>회사</li>
 							</ul>
 							<div class="clearfix"></div>
 						</div>

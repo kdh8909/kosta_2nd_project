@@ -57,6 +57,9 @@ public class UpdatePersonLoginControllerImpl implements Controller {
 			  session.setAttribute("personPwd", personPwd);
 			  session.setAttribute("personPhone", personPhone);
 			  
+			  mv.setPath("./events/result.jsp");
+			  session.setAttribute("resultMsg", "수정 되었습니다."); 
+			  
 		  } else if(perOrCom.equals("Company")) {
 			  
 			  CompanyLoginDTO companyLoginDTO = new CompanyLoginDTO(personId, personPwd, personPhone, perOrCom);
@@ -68,6 +71,9 @@ public class UpdatePersonLoginControllerImpl implements Controller {
 			  
 			  session.setAttribute("personPwd", personPwd);
 			  session.setAttribute("personPhone", personPhone);	
+			  
+			  mv.setPath("./events/result.jsp");
+			  session.setAttribute("resultMsg", "수정 되었습니다."); 
 		  }
 		
 
@@ -75,6 +81,7 @@ public class UpdatePersonLoginControllerImpl implements Controller {
 								   mv.setPath("./events/result.jsp");
 								   session.setAttribute("resultMsg", "개인회원 pw 및 핸드폰번호수정에 실패하였습니다."); 
 		   						   return mv; }
+		
 		return mv;
 	}
 
