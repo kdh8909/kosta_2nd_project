@@ -153,10 +153,14 @@ a:hover {
 					</div>
 				</aside>
 
+
+
+
+				
 				<!-- List -->
 				<h4 class="space30">Person Posts</h4>
 				<c:forEach items="${list}" var="itms">	
-				
+			
 				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
 							<div class="card-img" align="center">
@@ -185,7 +189,7 @@ a:hover {
 									<div class="card-footer">
 									<ul class="list-inline">
 										<li>
-										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;">
+										<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;"  data-toggle="modal" data-target="#send" data-dismiss="modal">
 										<i class="far fa-envelope-open"></i>쪽지보내기</a></li>
 										
 										<li class="pull-right">
@@ -193,6 +197,10 @@ a:hover {
 										<i class="far fa-heart"></i>스크랩</a></li>
 									</ul>
 									</div>
+									
+									
+									
+									
 									</c:when>
 									<c:otherwise> <!-- 개인이 로그인했을때는 다른개인에게 쪽지보내기/스크랩불가 -->
 									<div class="card-footer">
@@ -213,8 +221,37 @@ a:hover {
 						</div>	
 					</div>
 					
+					<div class="modal fade" id="send" tabindex="-1" role="dialog"
+					aria-labelledby="send" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document"
+						style="width: 400px; margin-top: 300px;">
+						<div class="modal-content">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-4 col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body">
+												<h4>쪽지보내기 (TO: ${itms.personName})</h4>
+												<form action="controller?command=sendMessage&sendId=${itms.personId}" method="post">
+													<textarea class="form-control counted" name="messageContents"
+														placeholder="메세지를 입력하세요." rows="5"
+														style="margin-bottom: 10px; resize: none; wrap: hard;"
+														maxlength="50"></textarea>
+													<script type="text/javascript" language="javascript"
+														src="./js/charcount.js"></script>
+													<button class="btn btn-info" type="submit">쪽지보내기</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					
 					</c:forEach>
-
+						
 
 
 					<div class="sorter" style="margin: auto;left:-15px;float:right;">
