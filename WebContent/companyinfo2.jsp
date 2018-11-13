@@ -215,15 +215,22 @@
 														<div class="text-center" style="float: left">
 															<h4>규모</h4>
 														</div>
+														
+														<script type="text/javascript">
+                                                    		$(document).ready(function(){                                                 
+                                                        		$("#selectboxCompanyType").val("${dto.companyType}").attr("selected","selected");
+                                                    		 });
+                                                    	</script>
+														
 														<label class="sr-only" for="companyType"></label> <select
-															class="form-control"
+															class="form-control" id="selectboxCompanyType"
 															style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;"
 															name="companyType">
 															<option>규모</option>
-															<option value="대기업" selected=${dto.companyType}>대기업</option>
-															<option value="공기업" selected=${dto.companyType}>공기업</option>
-															<option value="중소기업" selected=${dto.companyType}>중소기업</option>
-															<option value="외국계" selected=${dto.companyType}>외국계</option>
+															<option value="대기업">대기업</option>
+															<option value="공기업">공기업</option>
+															<option value="중소기업">중소기업</option>
+															<option value="외국계">외국계</option>
 														</select>
 													</div>										
 
@@ -231,16 +238,23 @@
 														<div class="text-center" style="float: left">
 															<h4>카테고리</h4>
 														</div>
+														
+														<script type="text/javascript">
+                                                    		$(document).ready(function(){                                                 
+                                                        		$("#selectboxCompanyCategory").val("${dto.companyCategory}").attr("selected","selected");
+                                                    		 });
+                                                    	</script>
+														
 														<label class="sr-only" for="companyCategory"></label> <select
-															class="form-control"
+															class="form-control" id="selectboxCompanyCategory"
 															style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 															name="companyCategory">
 															<option>카테고리</option>
-															<option value="IT" selected=${dto.companyCategory}>IT</option>
-															<option value="금융업" selected=${dto.companyCategory}>금융업</option>
-															<option value="유통업" selected=${dto.companyCategory}>유통업</option>
-															<option value="서비스업" selected=${dto.companyCategory}>서비스업</option>
-															<option value="기타" selected=${dto.companyCategory}>기타</option>
+															<option value="IT">IT</option>
+															<option value="금융업">금융업</option>
+															<option value="유통업">유통업</option>
+															<option value="서비스업">서비스업</option>
+															<option value="기타">기타</option>
 														</select>
 													</div>
 

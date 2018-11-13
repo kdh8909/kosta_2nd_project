@@ -195,7 +195,7 @@
 													
 													<div class="form-group col-md-2 col-sm-2">
 													<div class="text-center" style="float: left">
-                          								<h4>경력 여부</h4>
+                          								<h4>경력 여부 </h4>
                       								</div>
                       								
                       								<script type="text/javascript">

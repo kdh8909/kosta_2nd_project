@@ -4,12 +4,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert Title</title>
-<style>
-
-
-
-
-</style>
 </head>
 <body>
 <!-- Header !-->
@@ -46,7 +40,7 @@
 	</div>
 
 	<!-- INNER CONTENT -->
-	
+
 	<div class="inner-content" style="padding-top:30px;">
 		<div class="container">
 			<div class="row">
@@ -61,15 +55,14 @@
 			<div class="row" style="width:50%;">
 			<div class="container">
 			<div class="row" style="display: flex; justify-content: center;">
-				<table id="recruit_table" style="width:50%;border:1px solid #ccc;;border-radius:10px;">
+				<table id="recruit_table" style="border-radius:10px;">
 					<tr>
-					<td colspan="3"><h3>${itms.recruitTilte}</h3></td>
-					<td>
+					<td colspan="3" style="height:50px;"><h3 style="padding:0;margin:0;border-bottom:1px solid black;">${itms.recruitTilte}</h3></td>
+					<td style="padding-left:50px;">
 					<ul class="list-inline">
 						<li class="pull-right">
-						<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;color:skyblue;">
-						<i	class="far fa-envelope-open" style="color:red;"></i>쪽지보내기</a></li>
-										
+						<a href="#" style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;color:skyblue;" data-toggle="modal" data-target="#senda" data-dismiss="modal">
+						<i	class="far fa-envelope-open" style="color:red;"></i>쪽지보내기</a></li>	
 						<li class="pull-right">
 						<a href="#"	style="cursor: pointer;border: 1px solid #ccc; border-radius: 15px; padding: 5px;color:skyblue;">
 						<i class="far fa-heart" style="color:red;"></i>스크랩</a></li>
@@ -104,26 +97,15 @@
 					<td style="color:#3399ff;"></td>
 					</tr>
 				</table>
+
 				</div>
 				</div>	
 			</div>
 		</div>
 		<div class="space30"></div>
-		
-		
 		</c:forEach>
-
-
-
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
+
 	<!-- FOOTER COPYRIGHT -->
 	<%@ include file="view/footer.jsp"%>
 

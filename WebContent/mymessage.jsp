@@ -7,11 +7,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert Title</title>
-<script>
-	$(function() {
-		console.log("메인-shell");
-	});
-</script>
 <style>
 .custab {
 	border: 1px solid #ccc;
