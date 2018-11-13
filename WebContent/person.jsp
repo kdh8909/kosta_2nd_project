@@ -164,7 +164,7 @@ a:hover {
 				<div class="col-md-3 cardz" style="padding: 0 30px 40px 10px !important;">
 						<div class="card">
 							<div class="card-img" align="center">
-								<img class="img-responsive avatar img-thumbnail" src="img/${itms.personImg}" style="cursor: pointer" 
+								<img class="img-responsive avatar img-thumbnail" src="save/person/${itms.personImg}" style="cursor: pointer" 
 									 width="150px" height="150px" onError="javascript:this.src='img/man-default.jpg'">
 							</div>
 							<div class="card-block">
