@@ -94,7 +94,7 @@ public interface SqlQuerys {
    String SCRAP_C_P_LIST_COMPANY_INFO = "SELECT B.COMPANY_ID, B.COMPANY_NAME, B.COMPANY_TYPE, B.COMPANY_PHONE, B.COMPANY_PAGE FROM SCRAP_COMPANY A, COMPANY_INFO B WHERE A.COMPANY_TARGET_ID = B.COMPANY_ID AND A.PERSON_SCRAPER_ID = ?";
 
    //기업페이지에서 스크랩된 개인정보 표출
-   String SCRAP_P_C_LIST_PERSON_RESUME = "SELECT A.*, B.PERSON_NAME FROM SCRAP_PERSON A, PERSON_RESUME B WHERE A.PERSON_TARGET_ID = B.PERSON_ID AND A.COMPANY_SCRAPER_ID = ?";
+   String SCRAP_P_C_LIST_PERSON_RESUME = "SELECT B.* FROM SCRAP_PERSON A, PERSON_RESUME B WHERE A.PERSON_TARGET_ID = B.PERSON_ID AND A.COMPANY_SCRAPER_ID = ?";
    
    // 모든회사정보 표출하기
    String SELECT_ALL_COMPANIES = "SELECT * FROM COMPANY_INFO";
@@ -132,4 +132,10 @@ public interface SqlQuerys {
  //기업정보 업데이트하기 
  String C_UPDATE_INFO = "UPDATE company_info SET company_category=?, company_ceo=?, company_name=?, company_head_addr=?, company_type=?,company_employees=?, company_phone=?, company_estblish=?, company_page=?, company_img=? WHERE COMPANY_ID = ?";
  
+ String COUNT_COMPANY="select count(recruit_number) from COMPANY_RECRUIT";
+ 
+ String COUNT_USER="select count(person_occupation) from person_resume";
+ 
+ String COUNT_ALL="select sum(C.cnt) from(select count(company_id) cnt from company_login\r\n" + 
+       " union all select count(person_id )from person_login) C";
 }

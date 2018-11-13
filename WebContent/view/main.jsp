@@ -222,32 +222,27 @@
 	</div>
 
 	<!-- MAIN MEMBER COUNT -->
-		<div id="stats1" class="padding60 container">
+		<div id="stats1" class="padding60 container" style="padding-left:100px;">
 		<div class="row">
 			<div class="col-md-3 col-sm-6">
 				<div class="stats1-info">
-					<p><span class="count">499</span></p>
-					<h2>등록 개인</h2>
+			<p><span class="count">${requestScope.showuser}</span></p>
+            <h2>등록 개인</h2>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="stats1-info">
+               <p><span class="count">${requestScope.showcompany}</span></p>
+               <h2>등록 회사</h2>
+            </div>
+         </div>
+         <div class="col-md-3 col-sm-6">
+            <div class="stats1-info">
+               <p><span class="count">${requestScope.showAll}</span></p>
+               <h2>총 회원</h2>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="stats1-info">
-					<p><span class="count">1123</span></p>
-					<h2>등록 회사</h2>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="stats1-info">
-					<p><span class="count">4807</span></p>
-					<h2>총 회원</h2>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6">
-				<div class="stats1-info">
-					<p><span class="count">157</span></p>
-					<h2>이번주 신규 등록</h2>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 	
@@ -258,7 +253,7 @@
 				<h2 class="title uppercase">팀원</h2>
 				
 			</div>
-			<div class="team-box">
+						<div class="team-box">
 				<div class="container">
 					<div id="home-team" class="owl-carousel owl-theme">
 						<div class="item">

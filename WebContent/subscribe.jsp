@@ -78,21 +78,21 @@
 		<c:choose>
 		<c:when test="${perOrCom=='Company'}">
 		
-				<c:forEach items="${list}" var="itms">
+				<c:forEach items="${list}" var="itms" varStatus="state">
 				<div class="panel-group" id="accordion-e1">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h4 class="panel-title">
 							<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-e1" href="#collapse${state.count }">
-							<h5>성명 : ${itms.name}</h5>
+							<h5>성명 : ${itms.personName}<br>경력 여부 : ${itms.personCareer}<br>분야 : ${itms.personOccupation}</h5>
 							<span class="fa fa-chevron-down"></span>
 							</a>
 						</h4>
 					</div>
-					<div id="#collapse${state.count }" class="panel-collapse collapse in">
+ 					<div id="collapse${state.count }" class="panel-collapse collapse in">
 						<div class="panel-body">
 							<div class="row">
-								<p>스크랩된 개인 표출할 내용 없는디</p> 
+								<p>자기소개 제목: ${itms.personSelfIntroductionTitle}</p> 
 							</div>
 						</div>
 					</div>

@@ -82,12 +82,12 @@
 							data-dismiss="modal">${itms.messageContents}</a></td>
 						<td>${itms.messageDate}</td>
 						<td class="text-center"><a class="btn btn-warning btn-xs"
-							data-toggle="modal" data-target="#send" data-dismiss="modal">보내기</a></td>
+							data-toggle="modal" data-target="#send${state.count }" data-dismiss="modal">보내기</a></td>
 						<td class="text-center"><a href="controller?command=deleteMessage&messageNo=${itms.messageNo}"
 							class="btn btn-danger btn-xs">삭제</a>
 							
 											<!-- Modal -->
-				<div class="modal fade" id="send" tabindex="-1" role="dialog"
+				<div class="modal fade" id="send${state.count }" tabindex="-1" role="dialog"
 					aria-labelledby="send" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document"
 						style="width: 400px; margin-top: 300px;">

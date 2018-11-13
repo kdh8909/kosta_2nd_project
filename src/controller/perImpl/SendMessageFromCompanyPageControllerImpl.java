@@ -2,6 +2,7 @@ package controller.perImpl;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -15,10 +16,11 @@ import service.ApplicantService;
 import service.CompanyService;
 import service.aimpl.ApplicantServiceImpl;
 import service.aimpl.CompanyServiceImpl;
+import service.dto.CompanyInfoDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 
-public class SendMessagePtoCControllerImpl implements Controller {
+public class SendMessageFromCompanyPageControllerImpl implements Controller {
 	ApplicantService asv = ApplicantServiceImpl.getInstance();
 	CompanyService csv = CompanyServiceImpl.getInstance();
 
@@ -39,7 +41,7 @@ public class SendMessagePtoCControllerImpl implements Controller {
 		String url = "error/error.jsp";
 		
 		try {
-			url = "mymessage.jsp";
+			url = "./company.jsp";
 			
 			if(perOrCom.equals("Person")) {
 				
@@ -48,9 +50,11 @@ public class SendMessagePtoCControllerImpl implements Controller {
 				
 				String personReceiveId = (String) session.getAttribute("userId");
 				
-				List<MessageBoxCPDTO> list = null;
-				list = csv.personCheckMessage(personReceiveId);
-				req.setAttribute("message", list);
+				List<CompanyInfoDTO> list = new ArrayList<>();
+				  list = csv.selectAllCompanyInfo();
+				  session.setAttribute("list", list); 
+				
+
 
 				
 			} else if(perOrCom.equals("Company")) {
@@ -61,9 +65,10 @@ public class SendMessagePtoCControllerImpl implements Controller {
 				
 				String companyReceiveId = (String) session.getAttribute("userId");
 				
-				List<MessageBoxPCDTO> list = null;
-				list = asv.companyCheckMessage(companyReceiveId);
-				req.setAttribute("message", list);
+				List<CompanyInfoDTO> list = new ArrayList<>();
+				  list = csv.selectAllCompanyInfo();
+				  session.setAttribute("list", list); 
+
 	
 				
 			}

@@ -23,6 +23,7 @@ public class Propertiez {
 		selectAllCompanyInfo("controller.comImpl.SelectAllCompanyInfoControllerImpl"),
 		selectCompanyInfobyComId("controller.comImpl.SelectCompanyInfobyComIdControllerImpl"),
 		updateCompanyInfo("controller.comImpl.UpdateCompanyInfoControllerImpl"),
+		showBackgroundDB("controller.comImpl.ShowbackgroundDbImpl"),
 		
 		companyCheckedMessage("controller.perImpl.CompanyCheckedMessageControllerImpl"),
 		companyCheckMessage("controller.perImpl.CompanyCheckMessageControllerImpl"),
@@ -40,7 +41,8 @@ public class Propertiez {
 		updatePersonResume("controller.perImpl.UpdatePersonResumeControllerImpl"),
 		deleteMessage("controller.perImpl.DeleteMessageControllerImpl"),
 		sendMessage("controller.perImpl.SendMessagePtoCReControllerImpl"),
-		selectCompanyInfoByCompanyId("controller.perImpl.SelectCompanyInfoByCompanyIdControllerImpl");
+		selectCompanyInfoByCompanyId("controller.perImpl.SelectCompanyInfoByCompanyIdControllerImpl"),
+		sendMessageFromCompanyPage("controller.perImpl.SendMessageFromCompanyPageControllerImpl");
 		
 		private String controller;
 

@@ -326,7 +326,7 @@ button.btn-check-login:hover {
 							<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 								class="icon-bar"></span>
 						</button>
-						<a href="index.jsp" class="navbar-brand"><img
+						<a href="controller?command=showBackgroundDB" class="navbar-brand"><img
 							src="images/basic/logo.png" width="40" alt=""></a>
 					</div>
 				

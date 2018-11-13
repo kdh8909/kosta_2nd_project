@@ -15,6 +15,7 @@ import service.dto.CompanyRecruitDTO;
 import service.dto.MessageBoxCPDTO;
 import service.dto.MessageBoxPCDTO;
 import service.dto.PersonLoginDTO;
+import service.dto.PersonResumeDTO;
 import service.dto.ScrapCompanyDTO;
 import service.dto.ScrapCompanyInfoDTO;
 import service.dto.ScrapPersonDTO;
@@ -477,14 +478,14 @@ public class CompanyDAOImpl implements CompanyDAO {
 	}
 
 	@Override
-	public List<ScrapPersonDTO> scrapedPersonView(String companyScraperId) throws SQLException {
+	public List<PersonResumeDTO> scrapedPersonView(String companyScraperId) throws SQLException {
 
 		
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		List<ScrapPersonDTO> list = new ArrayList<>();
-		ScrapPersonDTO scrapPersonDTO = null;
+		PersonResumeDTO personResumeDTO = null;
+		List<PersonResumeDTO> list = new ArrayList<PersonResumeDTO>();
 		
 		try {
 			con = DBUtil.getConnection();
@@ -494,9 +495,11 @@ public class CompanyDAOImpl implements CompanyDAO {
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				scrapPersonDTO = new ScrapPersonDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
-						, rs.getString(5));
-				list.add(scrapPersonDTO);
+				personResumeDTO = new PersonResumeDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)
+						                             ,rs.getString(5), rs.getInt(6), rs.getString(7), rs.getString(8)
+						                             ,rs.getString(9), rs.getString(10), rs.getString(11)
+						                             ,rs.getString(12), rs.getString(13), rs.getString(14));
+				list.add(personResumeDTO);
 			}
 		} finally {
 			//´Ý±â
@@ -603,5 +606,71 @@ public class CompanyDAOImpl implements CompanyDAO {
 	      return result;
 
 	}
+	
+	@Override
+	   public int showUser() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_USER;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
+
+	   @Override
+	   public int showCompany() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_COMPANY;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
+
+	   @Override
+	   public int showAll() throws SQLException {
+	        PreparedStatement ps = null;
+	         ResultSet rs = null;
+	         int result=0;
+	         Connection con = null;
+
+	         try {
+	            con = DBUtil.getConnection();
+	            String sql=SqlQuerys.COUNT_ALL;
+	            ps = con.prepareStatement(sql);
+	            rs = ps.executeQuery();
+	            while(rs.next()) {
+	               result=rs.getInt(1);
+	            }
+	         } finally {
+	          
+	            DBUtil.dbClose(rs, ps, con);
+	         }
+	         return result;
+	   }
 
 }

@@ -256,7 +256,6 @@
 														<option value="시스템개발">시스템개발</option>
 														<option value="인공지능(AI)">인공지능(AI)</option>
 														<option value="빅데이터">빅데이터</option>
-														<option value="학생/무직">학생/무직</option>
 													</select>
 													</div>
 
