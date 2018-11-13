@@ -34,13 +34,15 @@ public class ScrapCompanyControllerImpl implements Controller {
 	      HttpSession session = req.getSession();
 	       
 	      String personScraperId = (String) session.getAttribute("userId");
-	      String companyTargetId = req.getParameter("companyTargetId");
+	      String companyTargetId = req.getParameter("targetId");
 
 
 	      ScrapCompanyDTO scrapCompanyDTO = new ScrapCompanyDTO(null, null, personScraperId, companyTargetId);      
 	      
 	      ModelAndView mv = new ModelAndView();
 	      String url = "errorMsg";
+	      
+	      System.out.println(scrapCompanyDTO);
 	      
 	      try {
 	         // 이동할 화면 설정

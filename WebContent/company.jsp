@@ -189,15 +189,37 @@ a:hover {
 									<li style="float: left; padding-right: 10px"><h5>${itms.companyPhone}</h5></li>
 								</ul>
 							</div>
+							
+							<c:choose> 
+							<c:when test="${perOrCom=='Company'}"> <!-- 회사가 로그인했을때는 다른회사에게 쪽지보내기/스크랩불가 -->
+							
 							<div class="col-md-8">
 								<ul>
-									<li><a
+									<li><a href="#"
 										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
 											<i class="far fa-envelope-open"></i>쪽지보내기
-									</a><a style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									</a><a href="#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
 									<li></li>
 								</ul>
 							</div>
+							
+							</c:when>
+							<c:otherwise>
+							
+							<div class="col-md-8">
+								<ul>
+									<li><a href="#"
+										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
+											<i class="far fa-envelope-open"></i>쪽지보내기
+									</a><a href="controller?command=scrapCompany&targetId=${itms.companyId}" 
+									style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									<li></li>
+								</ul>
+							</div>
+							
+							</c:otherwise>
+							</c:choose>
+							
 						</div>
 					</c:forEach>
 

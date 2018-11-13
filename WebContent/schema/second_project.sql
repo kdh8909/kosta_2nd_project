@@ -1,5 +1,6 @@
 <<<<<<< HEAD
-INSERT INTO PERSON_RESUME VALUES ('PERSON01', '이화랑', '웹개발', '경력', 'PERSON01.jpg', '35', '여자', '1984-04-28', '11@naver.com', '서울/경기', '0', '경력 7년', '영어가 되는 개발자', '싱가포르 스타트업에서 JAVA 기반 웹개발 경력 7년을 쌓았습니다.');
+
+
 =======
 >>>>>>> branch 'master' of https://github.com/kdh8909/kosta_2nd_project.git
 
