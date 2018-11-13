@@ -37,7 +37,7 @@ public class LoginControllerImpl implements Controller {
 				  session.setAttribute("userId", pId);
 				  session.setAttribute("perOrCom", perOrCom);
 				  //session.setAttribute("logDate", session.getCreationTime());
-				  mv.setPath("./index.jsp");// 로그인 페이지로 이동
+				  mv.setPath("./start.html");// 로그인 페이지로 이동
 			  } else { mv.setPath("./events/result.jsp");
 			  	  session.setAttribute("resultMsg", "로그인에 실패하였습니다..");  
 			  }// 최종 결과를 받아서 저장해서 뷰로 이동한다
