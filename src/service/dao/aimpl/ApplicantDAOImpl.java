@@ -248,8 +248,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	         con = DBUtil.getConnection();
 	         ps = con.prepareStatement(sql);
 	         
-	         ps.setString(1, scrapCompanyDTO.getPersonScraperId());
-	         ps.setString(2, scrapCompanyDTO.getCompanyTargetId());
+	         ps.setString(1, scrapCompanyDTO.getScraperId());
+	         ps.setString(2, scrapCompanyDTO.getTargetId());
 
 	         result = ps.executeUpdate();
 
@@ -272,8 +272,8 @@ public class ApplicantDAOImpl implements ApplicantDAO {
 	            con = DBUtil.getConnection();
 	            ps = con.prepareStatement(sql);
 	            
-	            ps.setString(1, scrapCompanyDTO.getPersonScraperId());
-	            ps.setString(2, scrapCompanyDTO.getCompanyTargetId());
+	            ps.setString(1, scrapCompanyDTO.getScraperId());
+	            ps.setString(2, scrapCompanyDTO.getTargetId());
 	            
 	            result = ps.executeUpdate();
 	   

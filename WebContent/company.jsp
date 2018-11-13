@@ -189,16 +189,67 @@ a:hover {
 									<li style="float: left; padding-right: 10px"><h5>${itms.companyPhone}</h5></li>
 								</ul>
 							</div>
+							
+							<c:choose> 
+							<c:when test="${perOrCom=='Company'}"> <!-- 회사가 로그인했을때는 다른회사에게 쪽지보내기/스크랩불가 -->
+							
 							<div class="col-md-8">
 								<ul>
-									<li><a
+									<li><a href="#"
 										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;">
 											<i class="far fa-envelope-open"></i>쪽지보내기
-									</a><a style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									</a><a href="#" style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
 									<li></li>
 								</ul>
 							</div>
+							
+							</c:when>
+							<c:otherwise>
+							
+							<div class="col-md-8">
+								<ul>
+									<li><a href="#"
+										style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"  data-toggle="modal" data-target="#send" data-dismiss="modal">
+											<i class="far fa-envelope-open"></i>쪽지보내기
+									</a><a href="controller?command=scrapCompany&targetId=${itms.companyId}" 
+									style="cursor: pointer; border: 1px solid #ccc; border-radius: 15px; padding: 5px;margin-right:5px;"><i class="far fa-heart"></i>스크랩</a></i></li>
+									<li></li>
+								</ul>
+							</div>
+							
+							</c:otherwise>
+							</c:choose>
 						</div>
+						<div class="modal fade" id="send" tabindex="-1" role="dialog"
+					aria-labelledby="send" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered" role="document"
+						style="width: 400px; margin-top: 300px;">
+						<div class="modal-content">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-4 col-md-4">
+										<div class="panel panel-default">
+											<div class="panel-body">
+												<h4>쪽지보내기 (TO: ${itms.companyName})</h4>
+												<form action="controller?command=sendMessage&sendId=${itms.companyId}" method="post">
+													<textarea class="form-control counted" name="messageContents"
+														placeholder="메세지를 입력하세요." rows="5"
+														style="margin-bottom: 10px; resize: none; wrap: hard;"
+														maxlength="50"></textarea>
+													<script type="text/javascript" language="javascript"
+														src="./js/charcount.js"></script>
+													<button class="btn btn-info" type="submit">쪽지보내기</button>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+						
+						
 					</c:forEach>
 
 					<%-- 					<div class="col-md-11"

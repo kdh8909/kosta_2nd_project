@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/kdh8909/kosta_2nd_project.git
+
+SELECT * FROM COMPANY_LOGIN
 
 ------------------------------------------------ 새계정추가
 CONN system/admin;
@@ -127,11 +134,11 @@ CREATE TABLE scrap_person
 
 ------------------------------------------------ 시퀀스드랍
 
-drop sequence message_box_c_p_seq
-drop sequence message_box_p_c_seq
-drop sequence scrap_company_seq
-drop sequence scrap_person_seq
-drop sequence recruit_seq
+drop sequence message_box_c_p_seq;
+drop sequence message_box_p_c_seq;
+drop sequence scrap_company_seq;
+drop sequence scrap_person_seq;
+drop sequence recruit_seq;
 
 ------------------------------------------------ 시퀀스생성
 
@@ -260,22 +267,22 @@ INSERT INTO PERSON_LOGIN VALUES ('PERSON20','4321', '010-2912-5921');
 
 INSERT INTO PERSON_RESUME VALUES ('PERSON01', '이화랑', '웹개발', '경력', 'PERSON01.jpg', '35', '여자', '1984-04-28', '11@naver.com', '서울/경기', '0', '경력 7년', '영어가 되는 개발자', '싱가포르 스타트업에서 JAVA 기반 웹개발 경력 7년을 쌓았습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON02', '김은호', '응용프로그램개발', '신입', 'PERSON02.jpg', '26', '남자', '1993-03-02', 'seaw@gmail.com', '부산', '0', '', '열심히 일하겠습니다.', '신입으로서 열심히 일하겠습니다.');
-INSERT INTO PERSON_RESUME VALUES ('PERSON03', '이은하', '시스템개발', '경력 ', 'PERSON03.jpg', '36', '여자', '1983-12-02', 'awerq21@naver.com', '제주', '0', '경력 6년', 'SPRING 마스터입니다.', 'SPRING에 자신있습니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON03', '이은하', '시스템개발', '경력', 'PERSON03.jpg', '36', '여자', '1983-12-02', 'awerq21@naver.com', '제주', '0', '경력 6년', 'SPRING 마스터입니다.', 'SPRING에 자신있습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON04', '최태인', '인공지능(AI)', '경력', 'PERSON04.jpg', '32', '남자', '1987-05-16', 'iwq2812@naver.com', '서울/경기', '1', '경력 4년', '한국의 알파고를 만들겠습니다.', '구글 알파고를 이기겠습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON05', '이가현', '빅데이터', '신입', 'PERSON05.jpg', '28', '여자', '1991-11-21', 'lhgw@naver.com', '부산', '0', '', '마케팅 CRM 직무에 지원합니다.', '데이터 분석으로 고객의 니즈를 끄집어내겠습니다.');
-INSERT INTO PERSON_RESUME VALUES ('PERSON06', '최은성', '웹개발', '경력 ', 'PERSON06.jpg', '30', '남자', '1989-10-11', '219aef@gmail.com', '제주', '1', '경력 5년', 'JAVA, 파이썬 웹개발 모두 가능합니다.', 'JAVA와 파이썬에 모두 능통합니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON06', '최은성', '웹개발', '경력', 'PERSON06.jpg', '30', '남자', '1989-10-11', '219aef@gmail.com', '제주', '1', '경력 5년', 'JAVA, 파이썬 웹개발 모두 가능합니다.', 'JAVA와 파이썬에 모두 능통합니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON07', '서인아', '응용프로그램개발', '경력', 'PERSON07.jpg', '37', '여자', '1982-04-20', 'aefweg@naver.com', '서울/경기', '0', '경력 9년', '프로그램 개발을 위해 준비된 지원자', '맡겨만 주세요. 기대 이상으로 해냅니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON08', '김지훈', '시스템개발', '신입', 'PERSON08.jpg', '32', '남자', '1987-08-13', 'baw212bv@naver.com', '부산', '0', '', '한 번만 읽어주세요.', '소처럼 정말 열심히 일하겠습니다. ');
-INSERT INTO PERSON_RESUME VALUES ('PERSON09', '이송아', '인공지능(AI)', '경력 ', 'PERSON09.jpg', '37', '여자', '1982-08-04', 'weq11@naver.com', '제주', '1', '경력 10년', '파이썬 사용 경력 10년입니다.', '파이썬에는 자신있습니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON09', '이송아', '인공지능(AI)', '경력', 'PERSON09.jpg', '37', '여자', '1982-08-04', 'weq11@naver.com', '제주', '1', '경력 10년', '파이썬 사용 경력 10년입니다.', '파이썬에는 자신있습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON10', '유동욱', '빅데이터', '경력', 'PERSON10.jpg', '32', '남자', '1987-10-21', 'se212@gmail.com', '서울/경기', '1', '경력 3년', '빅데이터 직무 희망합니다.', 'Hadoop 사용 가능합니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON11', '오가희', '웹개발', '신입', 'PERSON11.jpg', '26', '여자', '1993-10-08', 'gaerfq2@naver.com', '부산', '0', '', '웹 프레임워크 과정을 수강했습니다.', '세 번의 프로젝트를 통해 실전을 위한 준비를 했습니다.');
-INSERT INTO PERSON_RESUME VALUES ('PERSON12', '김명성', '응용프로그램개발', '경력 ', 'PERSON12.jpg', '28', '남자', '1991-07-09', '121lkj@naver.com', '제주', '0', '경력 2년', '항상 새 마음으로 일하겠습니다.', '초심을 잃지 않고 열심히 일하겠습니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON12', '김명성', '응용프로그램개발', '경력', 'PERSON12.jpg', '28', '남자', '1991-07-09', '121lkj@naver.com', '제주', '0', '경력 2년', '항상 새 마음으로 일하겠습니다.', '초심을 잃지 않고 열심히 일하겠습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON13', '고상희', '시스템개발', '경력', 'PERSON13.jpg', '31', '여자', '1988-11-15', 'poifwe@gmail.com', '서울/경기', '0', '경력 5년', '5년 경력의 시스템 개발자', '5년 간 다수의 프로젝트를 경험했습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON14', '윤상범', '인공지능(AI)', '신입', 'PERSON14.jpg', '26', '남자', '1993-09-24', 'eo924@gmail.com', '부산', '0', '', 'AI 연구소에서 일하고 싶습니다.', '끈기있게 열심히 하겠습니다.');
-INSERT INTO PERSON_RESUME VALUES ('PERSON15', '이현성', '빅데이터', '경력 ', 'PERSON15.jpg', '39', '여자', '1980-05-12', 'dsf0099@naver.com', '제주', '0', '경력12년', '제주도에서 일하고 싶습니다.', '제주도로 이사를 가게 되어 이직하게 되었습니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON15', '이현성', '빅데이터', '경력', 'PERSON15.jpg', '39', '여자', '1980-05-12', 'dsf0099@naver.com', '제주', '0', '경력12년', '제주도에서 일하고 싶습니다.', '제주도로 이사를 가게 되어 이직하게 되었습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON16', '강현우', '웹개발', '경력', 'PERSON16.jpg', '32', '남자', '1987-09-03', 'kdwf09@naver.com', '서울/경기', '1', '경력 4년', '자바 기반 프로젝트 다수 참여', 'Node.js도 가능합니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON17', '노연희', '응용프로그램개발', '신입', 'PERSON17.jpg', '25', '여자', '1994-06-17', 'piojk@naver.com', '부산', '0', '', '안녕하세요. 응용프로그램 직무 지원합니다.', '컴퓨터 공학을 전공했습니다.');
-INSERT INTO PERSON_RESUME VALUES ('PERSON18', '조형진', '시스템개발', '경력 ', 'PERSON18.jpg', '36', '남자', '1983-06-23', 'akljef@gmail.com', '제주', '0', '경력 7년', '안녕하세요.', '반갑습니다.');
+INSERT INTO PERSON_RESUME VALUES ('PERSON18', '조형진', '시스템개발', '경력', 'PERSON18.jpg', '36', '남자', '1983-06-23', 'akljef@gmail.com', '제주', '0', '경력 7년', '안녕하세요.', '반갑습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON19', '정하윤', '인공지능(AI)', '경력', 'PERSON19.jpg', '29', '여자', '1990-12-05', 'paeikk21@naver.com', '서울/경기', '1', '경력 3년', 'AI 직무 지원합니다.', 'AI 면접 시스템을 만들고 싶습니다.');
 INSERT INTO PERSON_RESUME VALUES ('PERSON20', '송진우', '빅데이터', '신입', 'PERSON20.jpg', '26', '남자', '1993-08-18', 'nbdkj01@gmail.com', '부산', '0', '', '빅데이터 전공했습니다.', '경영학을 복수전공하면서 데이터분석을 위한 준비를 했습니다.');
 

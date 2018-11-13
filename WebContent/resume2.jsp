@@ -175,27 +175,42 @@
 													<div class="text-center" style="float: left">
                           								<h4>성별</h4>
                       								</div>
+                      								
+                      								<script type="text/javascript">
+                                                    $(document).ready(function(){                                                 
+                                                        $("#selectBoxPersonSex").val("${dto.personSex}").attr("selected","selected");
+                                                     });
+                                                    </script>
+                      								
+                      								
 													<label class="sr-only" for="sex"></label> <select
-														class="form-control"
+														class="form-control" id="selectBoxPersonSex"
 														style="width: 100px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personSex">
 														<option>성별</option>
-														<option value="남자" selected=${dto.personSex}>남자</option>
-														<option value="여자" selected=${dto.personSex}>여자</option>
+														<option value="남자">남자</option>
+														<option value="여자">여자</option>
 													</select> 
 													</div>
 													
 													<div class="form-group col-md-2 col-sm-2">
 													<div class="text-center" style="float: left">
-                          								<h4>경력 여부</h4>
+                          								<h4>경력 여부 </h4>
                       								</div>
+                      								
+                      								<script type="text/javascript">
+                                                    $(document).ready(function(){                                                 
+                                                        $("#selectBoxPersonCareer").val("${dto.personCareer}").attr("selected","selected");
+                                                     });
+                                                    </script>
+                      								
 													<label class="sr-only" for="new_old"></label> <select
-														class="form-control"
+														class="form-control" id="selectBoxPersonCareer"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personCareer">
 														<option>경력 여부</option>
-														<option value="신입" selected=${dto.personCareer}>신입</option>
-														<option value="경력" selected=${dto.personCareer}>경력</option>
+														<option value="신입">신입</option>
+														<option value="경력">경력</option>
 													</select> 
 													</div>
 													
@@ -203,13 +218,20 @@
 													<div class="text-center" style="float: left">
                           								<h4>구직 여부</h4>
                       								</div>
+                      								
+                      								<script type="text/javascript">
+                                                    $(document).ready(function(){                                                 
+                                                        $("#selectBoxPersonJobStatus").val("${dto.personJobStatus}").attr("selected","selected");
+                                                     });
+                                                    </script>
+                      								
 													<label class="sr-only" for="status"></label> <select
-														class="form-control"
+														class="form-control" id="selectBoxPersonJobStatus"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personJobStatus">
 														<option>구직 여부</option>
-														<option value="0" selected=${dto.personJobStatus}>구직중</option>
-														<option value="1" selected=${dto.personJobStatus}>재직중</option>
+														<option value="0">구직중</option>
+														<option value="1">재직중</option>
 													</select> 
 													</div>
 													
@@ -217,17 +239,24 @@
 													<div class="text-center" style="float: left">
                           								<h4>분야</h4>
                       								</div>
+                      								
+                      								<script type="text/javascript">
+                                                    $(document).ready(function(){                                                 
+                                                        $("#selectBoxPersonOccupation").val("${dto.personOccupation}").attr("selected","selected");
+                                                     });
+                                                    </script>
+                      								
 													<label class="sr-only" for="occupation"></label> <select
-														class="form-control"
+														class="form-control" id="selectBoxPersonOccupation"
 														style="width: 120px; cursor: pointer; margin-left: 16px; display: inline-block;"
 														name="personOccupation">
 														<option>분야</option>
-														<option value="웹개발" selected=${dto.personOccupation}>웹개발</option>
-														<option value="응용프로그램개발" selected=${dto.personOccupation}>응용프로그램개발</option>
-														<option value="시스템개발" selected=${dto.personOccupation}>시스템개발</option>
-														<option value="인공지능(AI)/빅데이터"
-															selected=${dto.personOccupation}>인공지능(AI)/빅데이터</option>
-														<option value="학생/무직" selected=${dto.personOccupation}>학생/무직</option>
+														<option value="웹개발">웹개발</option>
+														<option value="응용프로그램개발">응용프로그램개발</option>
+														<option value="시스템개발">시스템개발</option>
+														<option value="인공지능(AI)">인공지능(AI)</option>
+														<option value="빅데이터">빅데이터</option>
+														<option value="학생/무직">학생/무직</option>
 													</select>
 													</div>
 
@@ -286,7 +315,7 @@
 												<label class="sr-only" for="title"></label> <input
 													class="form-control input-lg" name="personSelfIntroductionTitle"
 													id="intro_title" placeholder="제목을 입력하세요." required=""
-													type="text" value=${dto.personSelfIntroductionTitle}>
+													type="text" value=${dto.personSelfIntroductionTitle} maxlength="500">
 											</div>
 											<div class="form-group col-md-10 col-sm-10">
 												<textarea class="form-control" rows="10"
