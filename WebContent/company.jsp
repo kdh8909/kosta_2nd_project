@@ -219,8 +219,7 @@ a:hover {
 								</ul>
 							</div>
 							
-					<div class="modal fade" id="send${state.count }" tabindex="-1" role="dialog"
-					aria-labelledby="send" aria-hidden="true">
+					<div class="modal fade" id="send${state.count }" tabindex="-1" role="dialog" aria-labelledby="send" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered" role="document"
 						style="width: 400px; margin-top: 300px;">
 						<div class="modal-content">
