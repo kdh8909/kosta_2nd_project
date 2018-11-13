@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-
-
 =======
 >>>>>>> branch 'master' of https://github.com/kdh8909/kosta_2nd_project.git
 
